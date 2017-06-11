@@ -1,3 +1,5 @@
+
+@media only screen and (max-width : 1370px){
 #sorry{
 	display: none;
 }
@@ -967,38 +969,18 @@
     transform: rotate(270deg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width : 1370px) {
-#inputs {
-	display: none;
 }
-#sorry {
-	display: block;
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	font-size: 20px;
-	font-family: Verdana;
-	left: 25%;
-}
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width : 1364px) {
@@ -1037,21 +1019,3 @@
 }
 }
 
-
-@media only screen and (min-width: 1366px) {
-#inputs {
-	display: none;
-}
-#sorry {
-	color: #575656;
-	display: block;
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	font-size: 30px;
-	font-family:Helvetica;
-	left: 25%;
-	top: 45%;
-	min-width: 133px;
-}
-}
