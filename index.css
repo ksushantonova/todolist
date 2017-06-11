@@ -1,0 +1,1038 @@
+#sorry{
+	display: none;
+}
+
+#variables{
+	display: inline-block;
+	margin-bottom: 50px;
+	width: 250px;
+	text-align: left;
+}
+
+#inputs2{
+	display: inline-block;
+	margin-bottom: 50px;
+	width: 200px;
+	text-align: left;
+}
+
+
+#getFigure{
+	position: relative;
+	display: inline-block;
+	width: 130px;
+}
+#getFigure p{
+	width: 100px;
+}
+#getM{
+	position: relative;
+	display: inline-block;
+	width: 130px;
+}
+#getM p{
+	width: 100px;
+}
+#gSp{
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	
+}
+#gSp p{
+	width: 100px;
+}
+#gHips {
+	position: relative;
+	display: inline-block;
+	width: 130px;
+}
+#gHips p{
+	width: 100px;
+}
+#gBalley {
+	position: relative;
+	display: inline-block;
+	width: 130px;
+}
+#gBalley p{
+	width: 100px;
+}
+#gAss {
+	position: relative;
+	display: inline-block;
+	width: 130px;
+}
+#gAss p{
+	width: 100px;
+}
+
+								/* вытачки */
+
+#vytochki {
+	position: relative;
+	width: 70%;
+	height: 50%;
+	left: 15%;
+
+}
+#vytochkii{
+	margin: 70px 0 50px 0;
+}
+#v1p{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 12.5vw;
+	left: 27vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#v2p{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 12.5vw;
+	left: 15vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	}
+
+	#v1z{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 12.5vw;
+	left: 39.7vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+	#v2z{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 12.5vw;
+	left: 51.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+	#m5v{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 33vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+
+}
+	#m3v1{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 20.7vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+	#m3v2{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 9vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+	#m7v1{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 46vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+	#m7v2{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 56vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+	#m9v{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 38vw;
+	left: 64.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+#f9{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 43.5vw;
+	left: 65.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#f5{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 43.5vw;
+	left: 32.4vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#f1{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 43.5vw;
+	left: 0vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#hp1{
+	transform: rotate(270deg);
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 32vw;
+	left: 20.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#hp2{
+	transform: rotate(270deg);
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 32vw;
+	left: 8.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#hp5{
+	transform: rotate(270deg);
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 32vw;
+	left: 32vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#hz1{
+	transform: rotate(270deg);
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 32vw;
+	left: 45.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+#hz2{
+	transform: rotate(270deg);
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 32vw;
+	left: 55.8vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+							/* Штаны передняя и задняя */
+
+#shtany1 {
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	
+
+}
+#p {
+		margin:50px 0 50px 20px;
+}
+#z{
+		margin:50px 0 51px 55px;
+
+}
+#shtany2 {
+	position: relative;
+	display: inline-block;
+	width: 49%;
+	
+
+}
+
+.black {
+	width: 100%;
+	height: 3px;
+	background: black;
+}
+
+									/* передняя */
+#vep{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 87vw;
+	left: 17vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}#vsp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 73.5vw;
+    left: 29.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}#vdp1{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 63vw;
+    left: 21vw;
+	width: 40px;
+	margin: 0 0 0 0;
+	
+}
+#nop{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 61vw;
+    left: 3.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}#vnp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 66vw;
+    left: 6.4vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}#kp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.2vw;
+	bottom: 62.5vw;
+    left: 4.4vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}#tnp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 46.8vw;
+	left: 45.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}
+#tkp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 62vw;
+	left: 43vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}
+#evp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 55.7vw;
+    left: 13.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}
+#kpn{
+	text-align: center;
+  	position: absolute;
+    font-size: 0.8vw;
+    bottom: 52.2vw;
+    left: 3vw;
+  	width: 30px;
+  	margin: 0 0 0 0;
+
+	
+}
+#ppp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 34.7vw;
+    left: 10.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#vpp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 34.7vw;
+    left: 19vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#nppp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 4.5vw;
+    left: 10.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#nvpp{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 4.5vw;
+    left: 19vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#tkn{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 18.8vw;
+	left: 43vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+							/* задняя */
+#vez{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 87.5vw;
+    left: 27.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(367deg);
+}
+
+#vsz{
+	text-align: center;
+    position: absolute;
+    font-size: 1.5vw;
+    bottom: 78vw;
+    left: 37vw;
+    width: 30px;
+    margin: 0 0 0 0;
+    transform: rotate(280deg);
+}
+
+#vdz1{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 60.5vw;
+    left: 28vw;
+	width: 30px;
+	margin: 0 0 0 0;
+}
+
+#vnz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.3vw;
+    bottom: 68vw;
+    left: 13vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+#noz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 59.2vw;
+    left: 7.8vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#kz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.2vw;
+	bottom: 61vw;
+    left: 2.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+	
+}
+#kv{
+	text-align: center;
+	position: absolute;
+	font-size: 1.2vw;
+	bottom: 73.5vw;
+    left: 13.3vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+
+#tnz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 46.8vw;
+	left: 51.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+#tkz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 18.8vw;
+	left: 49.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+#evz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 56vw;
+    left: 20vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+#kzs{
+	text-align: center;
+	position: absolute;
+	font-size: 1vw;
+	bottom: 52vw;
+    left: 6vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#kzn{
+	text-align: center;
+	position: absolute;
+	font-size: 1.1vw;
+    bottom: 34.4vw;
+    left: 11.2vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	
+}
+#vpz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 34.4vw;
+	left: 16.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+}
+#ppz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 34.4vw;
+	left: 26vw;
+	width: 30px;
+	margin: 0 0 0 0;
+}
+#nppz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 4.5vw;
+	left: 16.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+}
+#nvpz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 4.5vw;
+	left: 26vw;
+	width: 30px;
+	margin: 0 0 0 0;
+}
+
+#tknz{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	bottom: 62vw;
+	left: 49.5vw;
+	width: 30px;
+	margin: 0 0 0 0;
+	transform: rotate(270deg);
+}
+
+		/* верхняя часть  */
+
+
+#polochkaa{
+	width: 100%;
+}
+#polochka1 {
+	position: relative;
+	width: 37.5%;
+	display: inline-block;
+	margin-left: 60px;
+	margin-top: 55px;
+	margin-bottom: 55px;
+
+
+}
+#pol{
+	margin: 0 20px 0 30px;
+}
+#sp{
+	margin: 0 20px 0 20px;
+}
+#spinka {
+	position: relative;
+	display: inline-block;
+	width: 38%;
+	float: right;
+	margin-right: 110px;
+	margin-top: 55px;
+	margin-bottom: 55px;
+
+
+	
+
+}
+
+   							/* полочка */
+
+.pol{
+	text-align: center;
+	position: absolute;
+	font-size: 1.5vw;
+	margin: 0 0 0 0;
+
+}
+#a1t1{
+	bottom: 21vw;
+	left: -0.5vw;
+	transform: rotate(270deg);
+}
+#a2t2{
+	bottom: 24vw;
+	left: 10.5vw;
+	transform: rotate(270deg);
+}
+#mvp{
+	bottom: 40.5vw;
+    left: 6.3vw;
+}
+#vgrp{
+	bottom: 33.5vw;
+    left: 12.5vw;
+	transform: rotate(270deg);
+}
+#shgp{
+	bottom: 17.3vw;
+    left: 8.9vw;
+}
+#a2t2np{
+	bottom: 9vw;
+	left: 10.5vw;
+	transform: rotate(270deg);
+}
+#poltnp{
+	bottom: 45.5vw;
+	left: 12vw;
+	transform: rotate(270deg);
+}
+#normap{
+	bottom: 38.7vw;
+    left: 12.5vw;
+	transform: rotate(270deg);
+}
+#naklonp{
+	bottom: 48.7vw;
+    left: 20vw;
+    transform: rotate(18deg);
+}
+#shgp2{
+	bottom: 37.1vw;
+    left: 18.5vw;
+}
+#p4{
+	bottom: 41.3vw;
+    left: 23.3vw;
+	transform: rotate(270deg);
+}
+#pv1{
+	bottom: 25vw;
+    left: 18vw;
+    transform: rotate(297deg);
+}
+
+#polmg{
+	font-size: 1.2vw;
+	bottom: 29.3vw;
+    left: 23.3vw;
+    transform: rotate(36deg);
+}
+#normanp{
+	bottom: 1vw;
+    left: 33.7vw;
+
+}
+#vbokap{
+	bottom: 12vw;
+    left: 39vw;
+	transform: rotate(270deg);
+}
+
+									/* спинка */
+
+#a8t8{
+	bottom: 23vw;
+	left: 30.3vw;
+	transform: rotate(270deg);
+}	
+#a9t9{
+	bottom: 23vw;
+	left: 38.4vw;
+	transform: rotate(270deg);
+}	
+
+#mvz{
+	bottom: 43.5vw;
+    left: 33vw;
+	
+}	
+
+#mvz2{
+	bottom: 38vw;
+    left: 27.5vw;
+	transform: rotate(270deg);
+}	
+
+#mvk{
+	font-size: 1.3vw;
+	bottom: 47.5vw;
+    left: 28vw;
+	transform: rotate(270deg);
+}	
+
+#shpl{
+	bottom: 51.5vw;
+    left: 17vw;
+	
+}	
+
+#vpv{
+	font-size: 1.2vw;
+	bottom: 49vw;
+    left: 4.8vw;
+	transform: rotate(270deg);
+}
+
+#shsp{
+	bottom: 32.3vw;
+    left: 18.3vw;
+	
+}	
+
+#nn{
+	bottom: 0.8vw;
+    left: 4vw;
+}	
+
+#vbz{
+	bottom: 12vw;
+    left: -0.5vw;
+	transform: rotate(270deg);
+}	
+
+#kvz{
+	font-size: 1.2vw;
+	bottom: 23.8vw;
+    left: 6.7vw;
+	
+}	
+
+#dkv{
+	font-size: 1.3vw;
+    bottom: 48.8vw;
+    left: 24vw;
+    transform: rotate(353deg);
+}	
+
+#dv{
+	bottom: 44.6vw;
+    left: 21vw;
+	transform: rotate(270deg);
+}	
+
+#shv{
+	font-size: 1vw;
+    bottom: 48.55vw;
+    left: 18.8vw;
+    transform: rotate(353deg);
+}	
+
+#vk{
+	font-size: 1vw;
+    bottom: 29.5vw;
+    left: 9vw;
+	transform: rotate(270deg);
+}	
+
+						/* соединение */
+
+#per {
+	position: relative;
+	width: 36%;
+	display: inline-block;
+	
+
+}
+#polv {
+		margin:50px 0 50px 110px;
+}
+#zadnv{
+		margin:50px 0 51px 240px;
+
+}
+#zadn {
+	position: relative;
+	display: inline-block;
+	width: 38%;
+	
+
+}
+
+  						/* переднее соединение */
+
+#kd1{
+	font-size: 1vw;
+    bottom: 23.8vw;
+    left: 40.5vw;
+
+
+}
+#kn1{
+	font-size: 1.4vw;
+    bottom: 40.2vw;
+    left: 24.6vw;
+	transform: rotate(270deg);
+
+}
+#nn2{
+	font-size: 1.4vw;
+    bottom: 40vw;
+    left: 35.2vw;
+	transform: rotate(270deg);
+
+}
+#kv1{
+    bottom: 23.5vw;
+    left: 25.2vw;
+}
+#kv2{
+    bottom: 23.5vw;
+    left: 35.7vw;
+}
+#m5d2p{
+	font-size: 1.2vw;
+    bottom: 2.5vw;
+    left: 40.5vw;
+}
+#vbn{
+    bottom: 14vw;
+    left: 6.5vw;
+	transform: rotate(270deg);
+}
+
+								/* заднее */
+
+#n1{
+	font-size: 1.4vw;
+	bottom: 44.2vw;
+    left: 25.2vw;
+    transform: rotate(270deg);
+}
+#n2{
+    bottom: 43.2vw;
+    left: 40vw;
+    transform: rotate(270deg);
+}
+#n3{
+	bottom: 43.2vw;
+    left: 52vw;
+    transform: rotate(270deg);
+}
+#rast{
+	bottom: 47vw;
+    left: 46.5vw;
+}
+#k1{
+    font-size: 1vw;
+    bottom: 23.8vw;
+    left: 18vw;
+}
+#k2{
+    bottom: 23.5vw;
+    left: 24.2vw;
+}
+#k3{
+
+    bottom: 23.5vw;
+    left: 40.5vw;
+}
+#k4{
+	font-size: 1vw;
+	bottom: 23.8vw;
+    left: 52.6vw;
+}
+#m5d2z{
+	font-size: 1.2vw;
+    bottom: 2.5vw;
+    left: 18.1vw;
+}
+#vbn2{
+    bottom: 14vw;
+    left: 52.5vw;
+    transform: rotate(270deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 1364px) {
+#inputs {
+	display: none;
+}
+#sorry {
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	font-size: 20px;
+	font-family: Verdana;
+	left: 25%;
+}
+}
+
+
+@media only screen and (max-width : 1364px) {
+#inputs {
+	display: none;
+}
+#sorry {
+	color: #575656;
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	font-size: 25px;
+	font-family: Helvetica;
+	left: 25%;
+	top: 45%;
+}
+}
+
+
+@media only screen and (max-width : 640px) {
+#inputs {
+	display: none;
+}
+#sorry {
+	color: #575656;
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	font-size: 15px;
+	font-family:Helvetica;
+	left: 25%;
+	top: 45%;
+	min-width: 133px;
+}
+}
