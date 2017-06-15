@@ -22,7 +22,9 @@ var ot = document.getElementById("Ot"),
  vp = document.getElementById("P6"),
  or = document.getElementById("Or"),
  dl = document.getElementById("Dl"),
+ pr = document.getElementById("Pr"),
  dr = document.getElementById("Dr");
+ mr = document.getElementById("Mr");
 
 
 
@@ -149,6 +151,15 @@ function defaultData(){
 	if (data.cg == 0){
 		data.cg = 2.25 * Ng;
 	}
+	if (data.cg == 0){
+		data.cg = 2.25 * Ng;
+	}
+	if (data.dl == 0){
+		spu = 4 * Np;
+	};
+	if (data.dr == 0){
+		spu2 = 4.5 * Np;
+	};
 }
 
 
@@ -201,6 +212,7 @@ function square(){
 var figure; 
 
 function getFigure(){
+
        var fig = document.getElementsByName("figure");
         for (var i = 0; i < fig.length; i++) {
             if (fig[i].checked){
@@ -213,6 +225,7 @@ function getFigure(){
 var hips;
 
 function getHips(){
+
 	var hip = document.getElementsByName("hips");
 	for (var i = 0; i < hip.length; i++){
 		if (hip[i].checked){
@@ -566,16 +579,55 @@ function rasV(){
 	k3 = evyz;
 	k2 = 0;
 	k4 = 0;
-}
+};
 
 };
+
+var shr,kr,Nr,shkv,vok,zk,o1,o2,o3,o4,o5,o6,o7,o8,spu,spu2,bok,q,qk,qkv,qksh,nizl,nizp,nizk;
+
+function getRukav(){
+ 	shr = data.or + 4;
+ 	Nr = shr / 6.5;
+ 	kr = Nr / 2;
+ 	shkv = 1.5 * Nr;
+ 	zk = kr;
+ 	o1 = 0.75 * kr;
+ 	o2 = 1.5 * kr;
+ 	o3 = kr;
+ 	o4 = 0.75 * kr;
+ 	o5 = kr / 2;
+ 	o6 = 1;
+ 	bok = 0.5;
+    qk = "Q + " +  Math.floor((k2)*100)/100 + "";
+ 	qkv = 2 * Nr;
+ 	qksh = kr;
+ 	nizk = kr;
+}
+
+function proyma(){
+  if (data.mr < Nr){
+  	vok = (data.pr / 3) + (kr / 2);
+  	nizl = (2.5 * Nr) + (kr / 2);
+  	nizp = (2 * Nr) + (kr / 2);
+  } else if (data.mr > Nr && data.mr < (1.5 * Nr)){
+  	vok = data.pr / 3;
+	nizl = 2.5 * Nr;
+	nizp = 2 * Nr;
+  } else if (data.mr > (1.5 * Nr)){
+  	vok = (data.pr / 3) - (kr / 2);
+  	nizl = (2.5 * Nr) - (kr / 2);
+  	nizp = (2 * Nr) - (kr / 2);
+  };
+	
+	spu = data.dl - vok;	
+	spu2 = (data.dr - spu) - vok; 
+}
 
 
 
 /* Скрипт */
 
-var btn = document.getElementById("get");
-btn.onclick = main;
+
 
 function setValueVytochki(){
 	document.getElementById("v1p").innerHTML = Math.floor((v1p)*100)/100;
@@ -588,6 +640,11 @@ function setValueVytochki(){
 	document.getElementById("m7v1").innerHTML = Math.floor((m7v1)*100)/100;
 	document.getElementById("m7v2").innerHTML = Math.floor((m7v2)*100)/100;
 	document.getElementById("m9v").innerHTML = Math.floor((m9v)*100)/100;
+
+	document.getElementById("hp1").innerHTML = Math.floor((getBal() * Np)* 100)/100;
+	document.getElementById("hp5").innerHTML = Math.floor((getHips() * Np)* 100)/100;
+	document.getElementById("hz1").innerHTML = Math.floor((getAss() * Np)* 100)/100;
+	document.getElementById("hz2").innerHTML = Math.floor((getAss() * Np)* 100)/100;	
 
 if (f1 > 0){
 	document.getElementById("f1").innerHTML = "+" + Math.floor((f1)*100)/100;
@@ -614,10 +671,8 @@ if(m3v2 == 0){
 } else {
 document.getElementById("hp2").innerHTML = Math.floor((getBal() * Np)* 100)/100; }
 
-	document.getElementById("hp1").innerHTML = Math.floor((getBal() * Np)* 100)/100;
-	document.getElementById("hp5").innerHTML = Math.floor((getHips() * Np)* 100)/100;
-	document.getElementById("hz1").innerHTML = Math.floor((getAss() * Np)* 100)/100;
-	document.getElementById("hz2").innerHTML = Math.floor((getAss() * Np)* 100)/100;	
+
+	
 	
 
 
@@ -671,7 +726,7 @@ document.getElementById("a1t1").innerHTML = Math.floor((a1t1)*100)/100;
 	document.getElementById("normap").innerHTML = Math.floor((normap)*100)/100;
 	document.getElementById("naklonp").innerHTML = Math.floor((naklonp)*100)/100;
 	document.getElementById("shgp2").innerHTML = Math.floor((shgp2)*100)/100;
-	document.getElementById("p4").innerHTML = Math.floor((p4)*100)/100;
+	document.getElementById("p4").innerHTML = "X - " + Math.floor((1.5 * kg)*100)/100 + "";
 	document.getElementById("pv1").innerHTML = pv1;
 	document.getElementById("polmg").innerHTML = Math.floor((polmg)*100)/100;
 	document.getElementById("normanp").innerHTML = Math.floor((normanp)*100)/100;
@@ -692,7 +747,7 @@ document.getElementById("a1t1").innerHTML = Math.floor((a1t1)*100)/100;
 	document.getElementById("dv").innerHTML = Math.floor((dv)*100)/100;
 	document.getElementById("shv").innerHTML = Math.floor((shv)*100)/100;
 	document.getElementById("vk").innerHTML = Math.floor((vk)*100)/100;
-	
+	document.getElementById("x1").innerHTML = "X";
 
 }
 
@@ -720,8 +775,102 @@ function setValueSoed(){
 
 }
 
+function setValueRukav(){
+
+	document.getElementById("shkv").innerHTML = Math.floor((shkv)*100)/100;
+	document.getElementById("vok").innerHTML = Math.floor((vok)*100)/100;
+	document.getElementById("zk").innerHTML = Math.floor((zk)*100)/100;
+	document.getElementById("o1").innerHTML =  Math.floor((o1)*100)/100;
+	document.getElementById("o2").innerHTML = Math.floor((o2)*100)/100;
+	document.getElementById("o3").innerHTML = Math.floor((o3)*100)/100;
+	document.getElementById("o4").innerHTML = Math.floor((o4)*100)/100;
+	document.getElementById("o5").innerHTML = Math.floor((o5)*100)/100;
+	document.getElementById("o6").innerHTML = Math.floor((o6)*100)/100;
+	document.getElementById("o7").innerHTML = "(1/2)";
+	document.getElementById("o8").innerHTML = "(1/2)";
+	document.getElementById("spu").innerHTML = Math.floor((spu)*100)/100;
+	document.getElementById("spu2").innerHTML = Math.floor((spu2)*100)/100;
+	document.getElementById("bok").innerHTML =  Math.floor((bok)*100)/100;
+	document.getElementById("q").innerHTML = "Q";
+	document.getElementById("qk").innerHTML = qk;
+	document.getElementById("qkv").innerHTML = Math.floor((qkv)*100)/100;
+	document.getElementById("qksh").innerHTML = Math.floor((qksh)*100)/100;
+	document.getElementById("nizl").innerHTML = Math.floor((nizl)*100)/100;
+	document.getElementById("nizp").innerHTML = Math.floor((nizp)*100)/100;
+	document.getElementById("nizk").innerHTML = Math.floor((nizk)*100)/100;
+		document.getElementById("R").innerHTML = Math.floor(((2 * data.ot)/(2 * 3.14))*100)/100;
+
+}
+
+
+									// верстка
+
+var btn = document.getElementById("get");
+
+btn.addEventListener("click",  function(){
+	btn.style.display = "none";
+	document.getElementById("getM").style.display = "none";
+	document.getElementById("thanks").style.display = "block";
+	main;
+}
+ );
+
+
+
+
+
+
+var btn2 = document.getElementById("get2");
+btn2.onclick = function(){
+	btn2.style.display = "none";
+	document.getElementById("bt3").style.display = "block";
+	document.getElementById("variables").style.display = "none";
+	document.getElementById("inputs2").style.display = "none";
+	document.getElementById("getFigure").style.display = "block";
+
+
+};
+var btn3 = document.getElementById("get3");
+btn3.onclick = function(){
+	btn3.style.display = "none";
+	document.getElementById("bt4").style.display = "block";
+	document.getElementById("getFigure").style.display = "none";
+	document.getElementById("gHips").style.display = "block";
+
+};
+var btn4 = document.getElementById("get4");
+btn4.onclick = function(){
+	btn4.style.display = "none";
+	document.getElementById("bt5").style.display = "block";
+	document.getElementById("gHips").style.display = "none";
+	document.getElementById("gSp").style.display = "block";
+	document.getElementById("gBalley").style.display = "block";
+	document.getElementById("gAss").style.display = "block";
+};
+
+var btn5 = document.getElementById("get5");
+btn5.onclick = function(){
+	btn5.style.display = "none";
+	document.getElementById("bt").style.display = "block";
+	document.getElementById("gSp").style.display = "none";
+	document.getElementById("gBalley").style.display = "none";
+	document.getElementById("gAss").style.display = "none";
+	document.getElementById("getM").style.display = "block";
+};
+
+
+
+
+
+
+
+
+
 
 							      // финальная функция
+
+var btn = document.getElementById("get");
+btn.onclick = main;
 
 function main(){
 data = {
@@ -745,7 +894,9 @@ data = {
   vp: +vp.value,
   or: +or.value,
   dr: +dr.value,
-  dl: +dl.value
+  dl: +dl.value,
+  pr: +pr.value,
+  mr: +mr.value
 };
 
 getNp();
@@ -775,9 +926,9 @@ getFigure();
      getSoed();
      rasV();
       setValueSoed();
-    console.log(osanka);
-
-
+      getRukav();
+      proyma();
+      setValueRukav();
 };
 
-
+// поправить штуку с x на построении полочки и спинки

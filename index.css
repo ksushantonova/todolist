@@ -4,69 +4,233 @@
 	display: none;
 }
 
+
 #variables{
-	display: inline-block;
-	margin-bottom: 50px;
+	position: relative;
 	width: 250px;
 	text-align: left;
+	margin: 20px 0 60px 70px;
+	height: 500px;
+	top: 50px;
+	left: 450px;
+	display: inline-block;
+
+
 }
 
 #inputs2{
+	position: relative;
 	display: inline-block;
-	margin-bottom: 50px;
-	width: 200px;
+	width: 250px;
 	text-align: left;
+	top: 50px;
+	left: 450px;
+
 }
 
+
+ #variables p{
+	width: 150px;
+	font-family: Helvetica;
+}
+
+
+ #inputs2 p {
+	width: 150px;
+	font-family: Helvetica;
+}
+input{
+	font-family: Helvetica;
+
+}
+#bt{
+	width: 100%;
+	display: none;
+}
+#bt2{
+	width: 100%;
+	display: block;
+}
+#bt3{
+	width: 100%;
+	display: none;
+}
+#bt4{
+	width: 100%;
+	display: none;
+}
+#bt5{
+	width: 100%;
+	display: none;
+}
+#get{
+	position: relative;
+	left: 40%;
+	bottom:30px;
+	padding: 10px 100px 10px 100px;
+
+}
+
+#get2{
+	position: relative;
+	left: 41.5%;
+	bottom:30px;
+	padding: 10px 100px 10px 100px;
+
+}
+#get3{
+	position: relative;
+	left: 41.5%;
+	bottom:30px;
+	padding: 10px 100px 10px 100px;
+
+}
+#get4{
+	position: relative;
+	left: 41.5%;
+	bottom:30px;
+	padding: 10px 100px 10px 100px;
+
+}
+
+#get5{
+	position: relative;
+	left: 41.5%;
+	bottom:30px;
+	padding: 10px 100px 10px 100px;
+
+}
+
+
+#c1{
+	margin: 5px 7px 0 0;
+	padding: 5px 24px 5px 24px;
+	border-radius: 5px;
+}
+#c2{
+	margin: 5px 7px 0 0;
+	padding: 5px 24px 5px 24px;
+	border-radius: 5px;
+}
+#c3{
+	margin: 5px 7px 0 0;
+	padding: 5px 24px 5px 24px;
+	border-radius: 5px;
+}
+#c4{
+	margin: 5px 7px 0 0;
+	padding: 5px 24px 5px 24px;
+	border-radius: 5px;
+}
+
+
+
+#pp{
+	font-size: 17px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+
+input[type="text"]{
+  color: black;
+  border: 1.45px solid #CFCFCF;
+  border-radius: 5px;
+
+}
 
 #getFigure{
 	position: relative;
-	display: inline-block;
-	width: 130px;
+	width: 800px;
+	display: none;
+	height: 450px;
+	top: 36px;
+    left: 31.5%;
 }
-#getFigure p{
-	width: 100px;
+#getFigure div {
+	position: relative;
+	width: 150px;
+	height: auto;
+	margin: 10px 10px 0 10px;
+	display: inline-block;
+
+}
+
+#getFigure div img{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	
 }
 #getM{
 	position: relative;
-	display: inline-block;
+	display: none;
 	width: 130px;
+	height: 250px;
+	margin: 0 0 25px 0;
+	top: 109px;
+    left: 642px;
 }
 #getM p{
 	width: 100px;
 }
 #gSp{
 	position: relative;
-	display: inline-block;
-	width: 160px;
+	display: none;
+	width: 150px;
+	left: 622px;
+    bottom: -115px;
+	margin: 0;
 	
 }
+
 #gSp p{
 	width: 100px;
 }
 #gHips {
 	position: relative;
-	display: inline-block;
+	display: none;
 	width: 130px;
+	height: 600px;
+    left: 41.5%;
+    top: 35px;
+
 }
-#gHips p{
-	width: 100px;
-}
+
 #gBalley {
 	position: relative;
-	display: inline-block;
-	width: 130px;
+	display: none;
+	width: 150px;
+    left: 462px;
+    bottom: 0px;
+    margin: 0;
+
 }
-#gBalley p{
-	width: 100px;
-}
+
 #gAss {
 	position: relative;
-	display: inline-block;
+	display: none;
 	width: 130px;
+	left: 816px;
+	bottom: 109px;
+	margin: 0;
 }
 #gAss p{
 	width: 100px;
+}
+#thanks{
+	position: relative;
+	text-align: center;
+	display: none;
+	width: 300px;
+	height: 100px;
+	font-size: 30px;
+	font-family: Helvetica;
+	font-weight: bold;
+	top: 28px;
+    left: 40%;
+
 }
 
 								/* вытачки */
@@ -676,7 +840,7 @@
 .pol{
 	text-align: center;
 	position: absolute;
-	font-size: 1.5vw;
+	font-size: 1.4vw;
 	margin: 0 0 0 0;
 
 }
@@ -849,6 +1013,11 @@
     bottom: 29.5vw;
     left: 9vw;
 	transform: rotate(270deg);
+}
+#x1 {
+    bottom: 39.5vw;
+    left: 9.5vw;
+	transform: rotate(270deg);
 }	
 
 						/* соединение */
@@ -968,7 +1137,168 @@
     left: 52.5vw;
     transform: rotate(270deg);
 }
+					/* рукав и юбка */
 
+
+#ruk {
+	position: relative;
+	width: 45%;
+	display: inline-block;
+	
+
+}
+#r {
+		margin:65px 0 50px 110px;
+}
+#u{
+		margin:50px 0 51px 225px;
+
+}
+#ubka {
+	position: relative;
+	width: 30%;
+	display: inline-block;
+}
+
+
+				/* рукав */
+
+#shkv{
+	bottom: 84.4vw;
+    left: 12vw;
+}
+
+#vok{
+    bottom: 72.5vw;
+    left: 5.8vw; 
+    transform: rotate(270deg);
+}
+
+#zk{
+	font-size: 1.2vw;
+    bottom: 84.4vw;
+    left: 49.3vw;
+
+}
+
+
+#o1{
+    bottom: 84.4vw;
+    left: 25vw;
+
+}
+
+#o2{
+    font-size: 1.2vw;
+    bottom: 61vw;
+    left: 9.7vw;
+   
+}
+
+#o3{
+    font-size: 1vw;
+    bottom: 63.4vw;
+    left: 12.8vw;
+    transform: rotate(270deg);
+}
+
+
+#o4{
+	font-size: 1vw;
+    bottom: 71.9vw;
+    left: 15.9vw;
+
+}
+
+
+#o5{
+	font-size: 1vw;
+    bottom: 80vw;
+    left: 34vw;
+}
+
+#o6{
+	font-size: 1vw;
+    bottom: 65.5vw;
+    left: 43vw;
+ 
+}
+#o7{
+	font-size: 1.3vw;
+    bottom: 75.5vw;
+    left: 33.5vw;
+    transform: rotate(46deg);
+}
+#o8{
+    bottom: 65.5vw;
+    left: 47.5vw;
+    transform: rotate(37deg);
+}
+
+#spu{
+    bottom: 48vw;
+    left: 28.5vw;
+    transform: rotate(270deg);
+}
+
+#spu2{
+    bottom: 20vw;
+    left: 28.5vw;
+    transform: rotate(270deg);
+}
+
+#bok{
+	font-size: 1vw;
+	bottom: 35.5vw;
+    left: 10.5vw;
+}
+
+#q{
+    bottom: 35.5vw;
+    left: 19.1vw;
+}
+
+
+#qk{
+    bottom: 36vw;
+    left: 36.5vw;
+    transform: rotate(355deg);
+}
+
+
+#qkv{
+    bottom: 32.3vw;
+    left: 39.5vw;
+}
+
+
+#qksh{
+	font-size: 1.2vw;
+	bottom: 34.5vw;
+    left: 46.7vw;
+    transform: rotate(270deg);
+}
+
+
+#nizl{
+    bottom: 6.5vw;
+    left: 19.5vw;
+}
+
+#nizp{
+    bottom: 6.5vw;
+    left: 34vw;
+}
+#nizk{
+	font-size: 1vw;
+    bottom: 4.3vw;
+    left: 41.7vw;
+    transform: rotate(270deg);
+}
+#R {
+    bottom: 27.8vw;
+    left: 43.7vw;
+    transform: rotate(270deg);
 }
 
 
