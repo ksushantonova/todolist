@@ -805,12 +805,30 @@ function setValueRukav(){
 
 									// верстка
 
+var zapros, zapros2;
+function getZapros(){
+    var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+var xhr = new XHR();
+    xhr.open('GET', 'https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22USDUAH,EURUAH,USDEUR%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=', false);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState === 4) {
+           zapros = JSON.parse(xhr.responseText).query.results.rate["0"].Ask;
+           zapros2 = JSON.parse(xhr.responseText).query.results.rate["0"].Bid;
+           document.getElementById("kurs").innerHTML = "USD:&nbsp&nbsp" + Math.floor((zapros2)*100)/100 + "&nbsp&nbsp" + Math.floor((zapros)*100)/100 + "";
+        }
+    };
+    xhr.send();
+}
+
 var btn = document.getElementById("get");
 
 btn.addEventListener("click",  function(){
 	btn.style.display = "none";
 	document.getElementById("getM").style.display = "none";
 	document.getElementById("thanks").style.display = "block";
+	document.getElementById("kurs").style.display = "block";
+	 getZapros();
 	main;
 }
  );
@@ -824,6 +842,7 @@ var btn2 = document.getElementById("get2");
 btn2.onclick = function(){
 	btn2.style.display = "none";
 	document.getElementById("bt3").style.display = "block";
+	btn3.style.display = "block";
 	document.getElementById("variables").style.display = "none";
 	document.getElementById("inputs2").style.display = "none";
 	document.getElementById("getFigure").style.display = "block";
@@ -834,6 +853,7 @@ var btn3 = document.getElementById("get3");
 btn3.onclick = function(){
 	btn3.style.display = "none";
 	document.getElementById("bt4").style.display = "block";
+	btn4.style.display = "block";
 	document.getElementById("getFigure").style.display = "none";
 	document.getElementById("gHips").style.display = "block";
 
@@ -842,6 +862,7 @@ var btn4 = document.getElementById("get4");
 btn4.onclick = function(){
 	btn4.style.display = "none";
 	document.getElementById("bt5").style.display = "block";
+	btn5.style.display = "block";
 	document.getElementById("gHips").style.display = "none";
 	document.getElementById("gSp").style.display = "block";
 	document.getElementById("gBalley").style.display = "block";
@@ -852,10 +873,20 @@ var btn5 = document.getElementById("get5");
 btn5.onclick = function(){
 	btn5.style.display = "none";
 	document.getElementById("bt").style.display = "block";
+	btn.style.display = "block";
 	document.getElementById("gSp").style.display = "none";
 	document.getElementById("gBalley").style.display = "none";
 	document.getElementById("gAss").style.display = "none";
 	document.getElementById("getM").style.display = "block";
+	document.getElementById("bt6").style.display = "block";
+};
+
+var btn6 = document.getElementById("get6");
+btn6.onclick = function(){
+	document.getElementById("thanks").style.display = "none";
+	btn2.style.display = "block";
+	document.getElementById("variables").style.display = "inline-block";
+	document.getElementById("inputs2").style.display = "inline-block";
 };
 
 
@@ -931,4 +962,3 @@ getFigure();
       setValueRukav();
 };
 
-// поправить штуку с x на построении полочки и спинки
