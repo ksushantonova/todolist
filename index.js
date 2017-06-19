@@ -836,6 +836,7 @@ $( document ).ready(function (){
 
 	$("#getM").fadeOut(function(){
 	$("#thanks").fadeIn();
+	$("#guide").fadeIn();
 	// $("#kurs").fadeIn();
 	$(".black").fadeIn();
 
@@ -870,11 +871,17 @@ document.getElementById("bt6").style.display = "block";
 var btn2 = document.getElementById("get2");
 btn2.onclick = function(){
 	btn2.style.display = "none";
+	$("#mer2").fadeOut();
+	$("#mer1").fadeOut();
 	document.getElementById("bt3").style.display = "block";
+	// document.getElementById("mer1").style.display = "none";
+	// document.getElementById("mer2").style.display = "none";
+	document.getElementById("helps").style.display = "none";
 	btn3.style.display = "block";
 $("#variables").fadeOut(function(){
 	$("#getFigure").fadeIn();
 	$("#bt3").fadeIn();
+
 });
 $("#inputs2").fadeOut();
 
@@ -954,6 +961,11 @@ btn6.onclick = function(){
 	document.getElementById("inputs2").style.display = "inline-block";
 	document.getElementById("kurs").style.display = "none";
 	document.getElementById("corr").style.display = "none";
+	document.getElementById("helps").style.display = "block";
+	document.getElementById("guide").style.display = "none";
+
+
+
 };
 
 function noVal(){
@@ -986,10 +998,26 @@ cod.onclick = function(){
 	document.getElementById("variables").style.display = "inline-block";
 	document.getElementById("inputs2").style.display = "inline-block";
 	document.getElementById("kurs").style.display = "none";
+	document.getElementById("helps").style.display = "block";
+	document.getElementById("guide").style.display = "none";
+
+
+};
+
+var helps = document.getElementById("helps");
+helps.onclick = function(){
+	$("#mer1").fadeIn();
+	$("#mer2").fadeIn();
 };
 
 var btn = document.getElementById("get");
 btn.onclick = main;
+
+
+
+setTimeout(function (){
+	document.getElementById("helps").style.color = "#898989";
+}, 10000);
 
 function main(){
 data = {

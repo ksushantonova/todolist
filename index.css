@@ -1,19 +1,75 @@
 
-@media only screen and (max-width : 1450px){
+@media only screen and (max-width : 1370px){
 #sorry{
 	display: none;
 }
+span{
+	color: #4F4F4F;
+	font-weight: bold;
+}
+#guide span{
+	color: red;
+}
+body{
+	margin: 0 0 0 0;
+}
+
+#mer1{
+text-align: justify;
+color: #727272;
+position: absolute;
+width: 400px;
+height: 550px;
+display: none;
+font-size: 12.5px;
+margin: 35px 30px 30px 50px;
+}
+
+#mer2{
+text-align: justify;
+color: #727272;
+position: absolute;
+width: 400px;
+height: 550px;
+display: none;
+font-size: 12.5px;
+margin: 35px 50px 30px 30px;
+left: 870px;
+top: 0px;
+}
 #corr{
 	position: absolute;
-    top: 71px;
+    top: 130px;
     left: 577px;
 	display: none;
 	color: red;
 	width: 300px;
 	height: 50px;
-	font-weight: bold;
 	font-family: Helvetica;
 	font-size: 14px;
+	font-weight: bold;
+
+}
+.black {
+	width: 100%;
+	height: 3px;
+	margin-top: 30px;
+	background: black;
+	display: none;
+}
+
+#helps{
+	position: absolute;
+    top: 600px;
+	left: 625px;
+	display: block;
+	color: white;
+	width: 300px;
+	height: 50px;
+	font-family: Helvetica;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
 
 }
 #corr a{
@@ -29,7 +85,7 @@
 	margin: 20px 0 60px 70px;
 	height: 500px;
 	top: 50px;
-	left: 450px;
+	left: 457px;
 	display: inline-block;
 	color: #4B4B4B;
 
@@ -42,11 +98,10 @@
 	width: 250px;
 	text-align: left;
 	top: 50px;
-	left: 450px;
+	left: 417px;
 	color: #4B4B4B;
 
 }
-
  #variables p{
 	width: 150px;
 	font-family: Helvetica;
@@ -88,7 +143,7 @@ height: 100px;
 }
 #get{
 	position: relative;
-	left: 40%;
+	left: 39.5%;
 	bottom:30px;
 	padding: 10px 100px 10px 100px;
 	font-size: 15px;
@@ -99,7 +154,7 @@ height: 100px;
 
 #get2{
 	position: relative;
-	left: 41.5%;
+	left: 40.5%;
 	bottom:30px;
 	padding: 10px 100px 10px 100px;
 	font-size: 15px;
@@ -109,7 +164,7 @@ height: 100px;
 }
 #get3{
 	position: relative;
-	left: 41.5%;
+	left: 40.5%;
 	bottom:30px;
 	padding: 10px 100px 10px 100px;
 	font-size: 15px;
@@ -119,7 +174,7 @@ height: 100px;
 }
 #get4{
 	position: relative;
-	left: 41.5%;
+	left: 40.5%;
 	bottom:30px;
 	padding: 10px 100px 10px 100px;
 	font-size: 15px;
@@ -130,7 +185,7 @@ height: 100px;
 
 #get5{
 	position: relative;
-	left: 41.5%;
+	left: 40.5%;
 	bottom:30px;
 	padding: 10px 100px 10px 100px;
 	font-size: 15px;
@@ -193,7 +248,7 @@ input[type="text"]{
 	display: none;
 	height: 450px;
 	top: 36px;
-    left: 31.5%;
+    left: 30.5%;
     color: #4B4B4B;
 }
 #getFigure div {
@@ -243,7 +298,7 @@ input[type="text"]{
 	display: none;
 	width: 130px;
 	height: 600px;
-    left: 41.5%;
+    left: 40.5%;
     top: 35px;
     color: #4B4B4B;
 
@@ -281,8 +336,9 @@ input[type="text"]{
 	font-size: 27px;
 	font-family: Helvetica;
 	font-weight: bold;
-	top: 32px;
+	top: 55px;
     left: 40%;
+  	margin: 0 0 0 0;
 
 }
 
@@ -290,13 +346,29 @@ input[type="text"]{
 	position: relative;
 	text-align: center;
 	display: none;
-	width: 300px;
+	width: 200px;
 	height: 50px;
 	font-size: 19px;
 	font-family: Helvetica;
 	font-weight: bold;
-    top: -13px;
-    left: 80%;
+    top: -31px;
+    left: 85%;
+    margin: 0 0 0 0;
+
+}
+#guide{
+	position: relative;
+	text-align: center;
+	display: none;
+	width: 550px;
+	height: 50px;
+	font-size: 15px;
+	font-family: Helvetica;
+	font-weight: bold;
+ 	top: -1px;
+    left: 30.3%;
+    margin: 0 0 0 0;
+
 
 }
 
@@ -535,12 +607,6 @@ input[type="text"]{
 
 }
 
-.black {
-	width: 100%;
-	height: 3px;
-	background: black;
-	display: none;
-}
 
 									/* передняя */
 #vep{
