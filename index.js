@@ -849,6 +849,8 @@ document.getElementById("polochkaa").style.display = "block";
 document.getElementById("polvytachki").style.display = "block";
 document.getElementById("rukav").style.display = "block";
 document.getElementById("bt6").style.display = "block";
+document.getElementById("mist").style.display = "none";
+document.getElementById("btn7").style.display = "block";
 
 
 	});
@@ -882,6 +884,7 @@ $("#variables").fadeOut(function(){
 	$("#getFigure").fadeIn();
 	$("#bt3").fadeIn();
 
+
 });
 $("#inputs2").fadeOut();
 
@@ -901,6 +904,7 @@ btn3.onclick = function(){
 $("#getFigure").fadeOut(function(){
 	$("#gHips").fadeIn();
 	$("#bt4").fadeIn();
+
 	
 
 
@@ -933,7 +937,8 @@ $("#gHips").fadeOut(function(){
 var btn5 = document.getElementById("get5");
 btn5.onclick = function(){
 	btn5.style.display = "none";
-	btn.style.display = "block";
+
+
 
 
 
@@ -941,7 +946,10 @@ $("#gBalley").fadeOut();
 $("#gAss").fadeOut();
 $("#gSp").fadeOut(function(){
 	$("#getM").fadeIn();
-	$("#bt").fadeIn();
+	$("#mist").fadeIn();
+			$("#bt").fadeIn();
+	btn.style.display = "block";
+
 
 
 });
@@ -1004,8 +1012,22 @@ cod.onclick = function(){
 
 };
 
+var mistak = document.getElementById("mist");
+mistak.onclick = function(){
+	document.getElementById("getM").style.display = "none";
+	btn2.style.display = "block";
+	mistak.style.display = "none";
+	document.getElementById("variables").style.display = "inline-block";
+	document.getElementById("inputs2").style.display = "inline-block";
+	btn.style.display = "none";
+	document.getElementById("helps").style.display = "block";
+
+
+};
+
 var helps = document.getElementById("helps");
 helps.onclick = function(){
+	helps.style.display = "none";
 	$("#mer1").fadeIn();
 	$("#mer2").fadeIn();
 };
@@ -1013,10 +1035,21 @@ helps.onclick = function(){
 var btn = document.getElementById("get");
 btn.onclick = main;
 
+   function saveImg(){
+            html2canvas($('body'), {
+                onrendered: function (canvas) {   
+    canvas.toBlob(function(blob) {
+    saveAs(blob ,"lekala.png");
+}, "image/png");                  
+                }
+            });
+
+        }
+
 
 
 setTimeout(function (){
-	document.getElementById("helps").style.color = "#898989";
+	document.getElementById("helps").style.color = "#B1B1B1";
 }, 10000);
 
 function main(){
