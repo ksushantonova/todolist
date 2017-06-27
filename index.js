@@ -1,6 +1,49 @@
 
 /* Инпуты */
 
+
+       function saveImg(){
+                html2canvas($("body"), {
+                    onrendered: function(canvas) {
+                    		 canvas.toBlob(function(blob) {
+   							 saveAs(blob ,"lekala.png");
+							}, "image/png");   
+                        }
+                   }) };
+
+
+var el = document.getElementsByTagName("input");
+for (var i = 0; i < el.length; i++){
+	el[i].onkeypress = function(e) {
+  e = e || event;
+
+  if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+  var chr = getChar(e);
+
+  if (chr == null) return;
+
+  if (chr < '0' || chr > '9') {
+    return false;
+  }
+}
+}
+ function getChar(event) {
+      if (event.which == null) {
+        if (event.keyCode < 32) return null;
+        return String.fromCharCode(event.keyCode)
+      }
+
+      if (event.which != 0 && event.charCode != 0) {
+        if (event.which < 32) return null;
+        return String.fromCharCode(event.which) 
+      }
+
+      return null; 
+    }
+
+
+
 var ot = document.getElementById("Ot"),
  ob = document.getElementById("Ob"),
  m3 = document.getElementById("m3"),
@@ -30,7 +73,7 @@ var ot = document.getElementById("Ot"),
 
 /* Функции */
 
-//пофиксить баг с дефолт-датой
+//пофиксить баг с дефолт-датой   //пофикшено
 var data;
 var co;
 
@@ -293,16 +336,16 @@ var os2;
 function getOsanka(){
 	if(osanka == "sut"){
 		os2 = "sut";
-		osanka = 1.5 * k;
+		osanka = 1.5 * kg;
 	} else if (osanka == "rovno-per"){
 		os2 = "rovno-per";
-		osanka = k / 2;
+		osanka = kg / 2;
 	} else if (osanka == "norm"){
 		os2 = "norm";
-		osanka = 0.75 * k;
+		osanka = 0.75 * kg;
 	} else if (osanka == "vyslop"){
 		os2 = "vyslop";
-		osanka = k;
+		osanka = kg;
 	}
 
 }
@@ -339,7 +382,7 @@ function vytachkiCount(){
 	};
 
 	if (data.m7 <= N){
-		v1z = 0;
+		v1z =  1.5 * N;
 		v2z = 2.5 * N;
 	} else if ( data.m7 > N){
 		v1z = 1.5 * N;
@@ -603,7 +646,7 @@ function getRukav(){
  	o5 = kr / 2;
  	o6 = 1;
  	bok = 0.5;
-    qk = "Q + " +  Math.floor((k2)*100)/100 + "";
+    qk = "Q + " +  Math.floor((kr)*100)/100 + "";
  	qkv = 2 * Nr;
  	qksh = kr;
  	nizk = kr;
@@ -827,21 +870,13 @@ var xhr = new XHR();
 }
 
 var btn = document.getElementById("get");
-
 btn.addEventListener("click",  function(){
-	btn.style.display = "none";
-	
 $( document ).ready(function (){
-
-
-	$("#getM").fadeOut(function(){
-	$("#thanks").fadeIn();
-	$("#guide").fadeIn();
-	// $("#kurs").fadeIn();
+	$("#div4").fadeOut(function(){
+	$("#div5").fadeIn();
 	$(".black").fadeIn();
 
 document.getElementById("kurs").style.display = "block";
-
 document.getElementById("shtany1").style.display = "inline-block";
 document.getElementById("shtany2").style.display = "inline-block";
 document.getElementById("vytochkii").style.display = "block";
@@ -849,14 +884,11 @@ document.getElementById("polochkaa").style.display = "block";
 document.getElementById("polvytachki").style.display = "block";
 document.getElementById("rukav").style.display = "block";
 document.getElementById("bt6").style.display = "block";
-document.getElementById("mist").style.display = "none";
-document.getElementById("btn7").style.display = "block";
+
+
 
 
 	});
-	// document.getElementById("getM").style.display = "none";
-	// document.getElementById("thanks").style.display = "block";
-	// document.getElementById("kurs").style.display = "block";
 	 getZapros();
 	main;
 
@@ -872,107 +904,49 @@ document.getElementById("btn7").style.display = "block";
 
 var btn2 = document.getElementById("get2");
 btn2.onclick = function(){
-	btn2.style.display = "none";
-	$("#mer2").fadeOut();
 	$("#mer1").fadeOut();
-	document.getElementById("bt3").style.display = "block";
-	// document.getElementById("mer1").style.display = "none";
-	// document.getElementById("mer2").style.display = "none";
-	document.getElementById("helps").style.display = "none";
-	btn3.style.display = "block";
-$("#variables").fadeOut(function(){
-	$("#getFigure").fadeIn();
-	$("#bt3").fadeIn();
+	$("#mer2").fadeOut();
+	$("#save").fadeOut();
+	$("#myname").fadeOut();
+$("#div0").fadeOut(function(){
+	$("#div1").fadeIn();
+
+});};
 
 
-});
-$("#inputs2").fadeOut();
 
-
-	// document.getElementById("variables").style.display = "none";
-	// document.getElementById("inputs2").style.display = "none";
-	// document.getElementById("getFigure").style.display = "block";
-
-
-};
 var btn3 = document.getElementById("get3");
 btn3.onclick = function(){
-	btn3.style.display = "none";
-	document.getElementById("bt4").style.display = "block";
-	btn4.style.display = "block";
-
-$("#getFigure").fadeOut(function(){
-	$("#gHips").fadeIn();
-	$("#bt4").fadeIn();
-
-	
-
-
+$("#div1").fadeOut(function(){
+	$("#div2").fadeIn();
 });
-	// document.getElementById("getFigure").style.display = "none";
-	// document.getElementById("gHips").style.display = "block";
-
 };
+
+
 var btn4 = document.getElementById("get4");
 btn4.onclick = function(){
-	btn4.style.display = "none";
-	document.getElementById("bt5").style.display = "block";
-	btn5.style.display = "block";
+$("#div2").fadeOut(function(){
+$("#div3").fadeIn();
+});};
 
 
-$("#gHips").fadeOut(function(){
-	$("#gSp").fadeIn();
-		$("#gBalley").fadeIn();
-			$("#gAss").fadeIn();
-			$("#bt5").fadeIn();
-
-});
-
-	// document.getElementById("gHips").style.display = "none";
-	// document.getElementById("gSp").style.display = "block";
-	// document.getElementById("gBalley").style.display = "block";
-	// document.getElementById("gAss").style.display = "block";
-};
 
 var btn5 = document.getElementById("get5");
 btn5.onclick = function(){
-	btn5.style.display = "none";
-
-
-
-
-
-$("#gBalley").fadeOut();
-$("#gAss").fadeOut();
-$("#gSp").fadeOut(function(){
-	$("#getM").fadeIn();
-	$("#mist").fadeIn();
-			$("#bt").fadeIn();
-	btn.style.display = "block";
-
-
-
+$("#div3").fadeOut(function(){
+$("#div4").fadeIn();
 });
 
-	// document.getElementById("gSp").style.display = "none";
-	// document.getElementById("gBalley").style.display = "none";
-	// document.getElementById("gAss").style.display = "none";
-	// document.getElementById("getM").style.display = "block";
+
 
 };
 
-var btn6 = document.getElementById("get6");
+var btn6 = document.getElementById("bt6");
 btn6.onclick = function(){
-	document.getElementById("thanks").style.display = "none";
-	btn2.style.display = "block";
-	document.getElementById("variables").style.display = "inline-block";
-	document.getElementById("inputs2").style.display = "inline-block";
-	document.getElementById("kurs").style.display = "none";
-	document.getElementById("corr").style.display = "none";
-	document.getElementById("helps").style.display = "block";
-	document.getElementById("guide").style.display = "none";
-
-
+	document.getElementById("div5").style.display = "none";
+		$("#save").fadeOut();
+	$("#div0").fadeIn();
+	$("#helps").fadeIn();
 
 };
 
@@ -1000,28 +974,23 @@ function noVal(){
 
 var cod = document.getElementById("corr");
 cod.onclick = function(){
-	document.getElementById("thanks").style.display = "none";
-	btn2.style.display = "block";
-	cod.style.display = "none";
-	document.getElementById("variables").style.display = "inline-block";
-	document.getElementById("inputs2").style.display = "inline-block";
-	document.getElementById("kurs").style.display = "none";
-	document.getElementById("helps").style.display = "block";
-	document.getElementById("guide").style.display = "none";
+cod.style.display = "none";
+document.getElementById("div5").style.display = "none";
+		$("#save").fadeOut();
+	$("#div0").fadeIn();
+	$("#helps").fadeIn();
 
 
 };
 
 var mistak = document.getElementById("mist");
 mistak.onclick = function(){
-	document.getElementById("getM").style.display = "none";
-	btn2.style.display = "block";
-	mistak.style.display = "none";
-	document.getElementById("variables").style.display = "inline-block";
-	document.getElementById("inputs2").style.display = "inline-block";
-	btn.style.display = "none";
-	document.getElementById("helps").style.display = "block";
+$("#div4").fadeOut(function(){
+		$("#save").fadeOut();
+	$("#div0").fadeIn();
+		$("#helps").fadeIn();
 
+});
 
 };
 
@@ -1030,27 +999,28 @@ helps.onclick = function(){
 	helps.style.display = "none";
 	$("#mer1").fadeIn();
 	$("#mer2").fadeIn();
+	$("#save").fadeIn();
 };
+
 
 var btn = document.getElementById("get");
 btn.onclick = main;
-
-   function saveImg(){
-            html2canvas($('body'), {
-                onrendered: function (canvas) {   
-    canvas.toBlob(function(blob) {
-    saveAs(blob ,"lekala.png");
-}, "image/png");                  
-                }
-            });
-
-        }
 
 
 
 setTimeout(function (){
 	document.getElementById("helps").style.color = "#B1B1B1";
-}, 10000);
+}, 5000);
+
+var date = new Date;
+
+var sav = document.getElementById("save");
+sav.addEventListener("click",  function(){
+var name = prompt("Вадите ваше имя");
+document.getElementById("myname").innerHTML = "" + name.toUpperCase() + ", " + date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "";
+document.getElementById("myname").style.display = "block";
+		saveImg();
+});
 
 function main(){
 data = {
@@ -1086,6 +1056,8 @@ getFigure();
 	getAss();
 	gSp();
 	gM();
+	getRukav();
+	proyma(); 
 	basic();
 	defaultData();
 	verifyAll();
@@ -1093,23 +1065,22 @@ getFigure();
     getOsanka();
     vytachkiCount();
     razmerVytach();
-    setValueVytochki();
     getWidthSh();
     getShtanyP();
     getShtanyZ();
-    setValueShtany();
      getPol();
      getMvz();
      getZad();
      korrNaMale();
-     setValueVerh();
      getSoed();
      rasV();
-      setValueSoed();
-      getRukav();
-      proyma();
+         setValueVytochki();
+        setValueShtany();
+        setValueVerh();
+         setValueSoed();
       setValueRukav();
       noVal();
+
 
 
 };
