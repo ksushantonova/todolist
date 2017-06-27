@@ -1,5 +1,5 @@
-
-@media only screen and (max-width : 1370px){
+/* 
+@media only screen and (max-width : 1000px){ */
 #sorry{
 	display: none;
 }
@@ -1499,7 +1499,7 @@ input[type="text"]{
 }
 
 
-
+/* 
 @media only screen and (max-width : 1300px) {
 #inputs {
 	display: none;
@@ -1515,9 +1515,9 @@ input[type="text"]{
 	left: 25%;
 	top: 45%;
 }
-}
+} */
 
-
+/* 
 @media only screen and (max-width : 640px) {
 #inputs {
 	display: none;
@@ -1534,7 +1534,7 @@ input[type="text"]{
 	top: 45%;
 	min-width: 133px;
 }
-}
+} */
 
 
 
