@@ -12,29 +12,23 @@ span{
 body{
 	margin: 0 0 0 0;
 }
+input {
+	width: 100%;
+}
 
 #mer1{
+	margin-top: 50px;
 text-align: justify;
 color: #727272;
-position: absolute;
-width: 400px;
-height: 550px;
-display: none;
 font-size: 12.5px;
-margin: 35px 30px 30px 50px;
+
 }
 
 #mer2{
+	margin-top: 50px;
 text-align: justify;
 color: #727272;
-position: absolute;
-width: 400px;
-height: 550px;
-display: none;
 font-size: 12.5px;
-margin: 35px 50px 30px 30px;
-left: 870px;
-top: 0px;
 }
 #corr{
 	position: absolute;
@@ -57,17 +51,12 @@ top: 0px;
 }
 
 #helps{
-	position: relative;
-    top: 123px;
-    left: 45.5%;
-	display: block;
 	color: white;
-	width: 300px;
-	height: 20px;
 	font-family: Helvetica;
 	font-size: 14px;
 	font-weight: bold;
 	cursor: pointer;
+	margin-top: 10px;
 
 }
 #mist{
@@ -126,42 +115,29 @@ top: 0px;
 }
 
 #variables{
-	position: relative;
-    width: 200px;
-	text-align: left;
-	height: 400px;
-    top: 74px;
-    left: 38.5%;
-	display: inline-block;
 	color: #4B4B4B;
-
+	margin-top: 70px;
+		padding: 0 auto;
+}
+#variables div{
+	margin-top: 10px;
 
 }
 
 #inputs2{
-	position: relative;
-	display: inline-block;
-    width: 200px;
-    height: 400px;
-	text-align: left;
-    top: 74px;
-    left: 39.2%;
-
 	color: #4B4B4B;
+	margin-top: 70px;
+		padding: 0 auto;
 
 }
- #variables p{
-	width: 150px;
-	font-family: Helvetica;
+
+#inputs2 div{
+	margin-top: 10px;
 }
 
-
- #inputs2 p {
-	width: 150px;
-	font-family: Helvetica;
-}
 input{
 	font-family: Helvetica;
+	width: 100%;
 }
 #bt{
     position: relative;
@@ -169,19 +145,20 @@ input{
     left: 0px;
 	width: 90%;
 }
-#bt2{
-	position: relative;
-    top: 114px;
-    left: 0px;
-	width: 90%;
-	display: block;
 
-}
+
 #bt3{
 	position: relative;
     top: 15px;	
     left: 0px;
 	width: 90%;
+
+
+}
+#bt2{
+	margin-top: 50px;
+	padding: 0;
+
 
 
 }
@@ -212,14 +189,9 @@ height: 100px;
 }
 
 #get2{
-	position: relative;
-    left: 45%;
-    bottom: 0px;
-	padding: 10px 100px 10px 100px;
-	font-size: 15px;
+
 	font-weight: bold;
 	color: #4B4B4B;
-
 }
 #get3{
 	position: relative;
