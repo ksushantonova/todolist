@@ -1,86 +1,156 @@
 
  class ToDoListItem {
-        constructor (value, parent, deleteEvent, counter, changeEvent, doneall, deleteall, task, watch){
+        constructor (value, parent, counter, task, watch){
 //получаем все ивенты через свойства, а так же нужные нам данные
             this.watch = watch;
             this.local = task;
             this.inputValue = value;
-            this.parent = parent.childNodes[3];
+            this.parent = parent; // items
             this.counter = counter;
-            this.deleteEvent = deleteEvent;
-            this.changeEvent = changeEvent;
-            this.mainContainer;
-            this.check;
             this.checkedItem = false;
-            this.doneAllButton = doneall;
-            this.deleteAllButton = deleteall;
-            this.newInput;
-            this.remove;
             this.init();
         }
 
 // строим новый айтем
-         init(){
-            this.workingWithLocalStorage();
-            this.htmlBuild();
-            this.check = this.mainContainer.firstElementChild.childNodes[1];
-            this.newInput = this.mainContainer.firstElementChild.childNodes[3];
-            this.remove = this.mainContainer.firstElementChild.childNodes[5];
-            this.checkItem();
-            this.newItemValue(); 
-            this.doneAll();
-            this.isChecked();
-            this.removeTask();
-            this.parent.parentNode.dispatchEvent(this.watch);
+    init(){
+        this.newEvents();
+        this.workingWithLocalStorage();
+        this.htmlBuild();
+        this.mainElements();
+        this.mainContainerStyles();
+        this.startInputValue();
+        this.focusTodolistInput();
+        this.checkItem();
+        this.newItemValue(); 
+        this.isChecked();
+        this.removeTask();
+       this.parent.parentNode.parentNode.dispatchEvent(this.watch);
            
     }
 
-
+// если есть какие-то локальные данные, забираем из них инпут, и информацию, какие из айтемов были чекнуты
     workingWithLocalStorage(){
-      if (this.local !== null){
+        if (this.local !== null){
             this.inputValue = this.local.inputValue;
             this.checkedItem = this.local.checkedItem;
-            this.parent.parentNode.dispatchEvent(this.watch);
+            this.parent.parentNode.parentNode.dispatchEvent(this.watch);
 
     }};
 
+    startInputValue(){
+        this.newInput.value = this.inputValue;
+    }
 
+    mainElements(){
+        this.check = this.mainContainer.firstElementChild.childNodes[1];
+        this.newInput = this.mainContainer.firstElementChild.childNodes[3];
+        this.remove = this.mainContainer.firstElementChild.childNodes[5];
+    }
+
+    mainContainerStyles(){
+        this.newInput.addEventListener('mouseover', () => {
+             this.remove.style.display = "block";
+             this.mainContainer.style.borderTop = "1px solid #E5E5E5";
+              this.mainContainer.style.borderBottom = "1px solid #E5E5E5";
+
+        });
+
+          this.newInput.addEventListener('input', () => {
+             this.remove.style.display = "block";
+             this.mainContainer.style.borderTop = "1px solid#E5E5E5";
+              this.mainContainer.style.borderBottom = "1px solid #E5E5E5";
+
+        });
+
+           this.remove.addEventListener('mouseover', () => {
+            this.remove.style.display = "block";
+             this.mainContainer.style.borderTop = "1px solid #E5E5E5";
+              this.mainContainer.style.borderBottom = "1px solid #E5E5E5";
+
+
+        });
+
+            this.newInput.addEventListener('blur', () => {
+            this.remove.style.display = "none";
+             this.mainContainer.style.border = "none";
+
+        });
+
+         this.remove.addEventListener('mouseout', (e) => {
+            this.remove.style.display = "none";
+               this.mainContainer.style.border = "none"; 
+        });
+
+         this.newInput.addEventListener('mouseout', (e) => {
+            this.remove.style.display = "none";
+               this.mainContainer.style.border = "none"; 
+        });
+    }
+
+
+
+    newEvents(){
+
+        
+        this.deleteEvent = new CustomEvent("deleteEvent",{
+                detail: {count: "done"}      
+        });
+
+        this.changeEvent = new CustomEvent("changeEvent",{
+                detail: {count: "done"}      
+        });
+
+        this.focusInput = new CustomEvent("focusInput", {
+                 detail: {count: "done"}
+        });
+
+    }
+
+// постройка каркасса айтема
    htmlBuild(){
-          this.mainContainer = document.createElement("div");
-          this.parent.appendChild(this.mainContainer);
-          this.mainContainer.className = "mainContainer";
-          this.mainContainer.innerHTML = ` 
+        this.mainContainer = document.createElement("div");
+        this.parent.appendChild(this.mainContainer);
+        this.mainContainer.className = "mainContainer";
+        this.mainContainer.innerHTML = ` 
                      <div class='container'>
                         <div class='check'>
                         <input type='checkbox' style='position:relative; cursor: pointer'>
                         </div>
                         <input class='newInput' value='${this.inputValue}'>
-                        <div class='remove'><img src='cross.svg' style='heigth: 18px; width: 18px'></img></div>
+                        <div class='remove'><img src='cross.png' style='heigth: 18px; width: 22px; display:block'></img></div>
                   </div>`; 
+        this.parent.parentNode.parentNode.dispatchEvent(this.watch);
         }
     
-
+   focusTodolistInput(){
+        this.newInput.addEventListener("keyup", (e) => {
+             if(e.keyCode == 13){
+             this.parent.parentNode.parentNode.dispatchEvent(this.focusInput);
+           };
+        });
+   }     
 
 // метод удаления из Дома
     removeTask(){
         this.remove.addEventListener("click", () => {
         this.deleteEvent.detail.number = this.counter;   
-        this.parent.parentNode.dispatchEvent(this.deleteEvent);
+        this.parent.parentNode.parentNode.dispatchEvent(this.deleteEvent);
         this.mainContainer.remove();
-        this.parent.parentNode.dispatchEvent(this.watch);
+        this.parent.parentNode.parentNode.dispatchEvent(this.watch);
     });
 }
 
+// следим за изменениями в чекбоксах, результат записываем в класс.
     isChecked(){
         this.check.addEventListener('change', () => {
              if (this.check.firstElementChild.checked){
             this.checkedItem = true;
              this.checkItem();
-             this.parent.parentNode.dispatchEvent(this.watch);
+            this.parent.parentNode.parentNode.dispatchEvent(this.watch);
         } else {
             this.checkedItem = false;
                this.checkItem();
-               this.parent.parentNode.dispatchEvent(this.watch);
+               this.parent.parentNode.parentNode.dispatchEvent(this.watch);
             }
         });
     }
@@ -90,38 +160,26 @@
         this.newInput.addEventListener("input", () => {
         this.changeEvent.detail.number = this.counter; 
         this.changeEvent.detail.value = this.newInput.value;
-        this.parent.parentNode.dispatchEvent(this.changeEvent);
-        this.parent.parentNode.dispatchEvent(this.watch);
+        this.parent.parentNode.parentNode.dispatchEvent(this.changeEvent);
+        this.parent.parentNode.parentNode.dispatchEvent(this.watch);
         })
     }
 
-// метод выполнения задания
+// если в классе статус чекбокса checked - применяем стили, и наоборот
     checkItem(){
-            if (this.checkedItem){
-            this.check.className = "checkedcheck";
-            this.newInput.className = "checked";
-            this.remove.className = "checkedremove";
-            this.check.firstElementChild.checked = true;
-            this.parent.parentNode.dispatchEvent(this.watch);
-            } else {
-            this.check.className = "check";
-            this.newInput.className = "newInput";
-            this.remove.className = "remove";
-            this.parent.parentNode.dispatchEvent(this.watch);
+        if (this.checkedItem){
+        this.check.className = "checkedcheck";
+        this.newInput.className = "checked";
+        this.remove.className = "checkedremove";
+        this.check.firstElementChild.checked = true;
+       this.parent.parentNode.parentNode.dispatchEvent(this.watch);
+        } else {
+        this.check.className = "check";
+        this.newInput.className = "newInput";
+        this.remove.className = "remove";
+        this.parent.parentNode.parentNode.dispatchEvent(this.watch);
             }
     };  
-
-    doneAll(){
-       this.doneAllButton.addEventListener('click', () => {   
-        if (this.checkedItem == false){
-            this.checkedItem = true;
-            this.check.firstElementChild.checked = true;
-            this.checkItem();
-            this.parent.parentNode.dispatchEvent(this.watch);
-        };
-       });
-    }
-
 
     }
 
