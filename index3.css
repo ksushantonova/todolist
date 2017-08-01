@@ -267,6 +267,7 @@ Components– Toolbars */
     }
 
     .checkedremove{
+        display: none;
         background-color: white;
         width: 25px;
         height: 23px;
