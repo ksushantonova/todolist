@@ -63,10 +63,10 @@
 
         // });
 
-        //     this.newInput.parentNode.addEventListener('blur', () => {
-        //     this.remove.style.display = "none";
+            this.newInput.parentNode.addEventListener('blur', () => {
+            this.remove.style.display = "none";
 
-        // });
+        });
 
         //  this.remove.addEventListener('mouseout', (e) => {
         //     this.remove.style.display = "none";
