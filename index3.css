@@ -272,7 +272,7 @@ Components– Toolbars */
         background-color: white;
         width: 25px;
         height: 23px;
-        padding: 9px 3px 0 0;
+    padding: 9px 17px 0 8px;
         cursor: pointer;
 
 
@@ -436,7 +436,7 @@ Components– Toolbars */
          color: grey;
          font-family: Roboto;   
          background: white;
-         width: 72%;
+         width: 70.5%;
          height: 25px;
          padding: 6px 0 0 3px;
          border: none;
