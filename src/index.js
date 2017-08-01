@@ -5,7 +5,7 @@
 // - при загрузке страницы проверять наличие сохраненных данных и строить по ним ToDoList с айтемами, если данных нет, то выводить только один пустой ToDoList (edited)
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://ksushantonova.github.io', { scope: '/sw-test/' }).then(function(reg) {
+  navigator.serviceWorker.register('https://ksushantonova.github.io/sw-test/', { scope: '/sw-test/' }).then(function(reg) {
     // регистрация сработала
     console.log('Registration succeeded. Scope is ' + reg.scope);
   }).catch(function(error) {
