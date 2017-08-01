@@ -1,4 +1,3 @@
-console.log('aaa');
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
