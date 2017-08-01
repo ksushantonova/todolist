@@ -36,13 +36,13 @@
     <div style="display:flex; flex-direction:column; width:250px">
     <div class="todoHeader">
    <div class="header" contenteditable="true" style="width: 164px;">Blabla</div> 
-    <div style="width:25px; height:25px; cursor:pointer; padding: 16px 0 0 13px;"><img src='all2.png' style='heigth: 23px; width: 23px'></img></div>
-    <div  style="width:25px;cursor:pointer; height:25px; padding: 16px 15px 0 16px;"><img src='del2.png' style='heigth: 23px; width: 23px'></img></div>
+    <div style="width:25px; height:25px; cursor:pointer; padding: 16px 0 0 13px;"><img src='src/gallery/all2.png' style='heigth: 23px; width: 23px'></img></div>
+    <div  style="width:25px;cursor:pointer; height:25px; padding: 16px 15px 0 16px;"><img src='src/gallery/del2.png' style='heigth: 23px; width: 23px'></img></div>
     </div>
     <div class="items"></div>  
         <div class="underdiv">
             <input class="input" type="text" placeholder=" + New task"/>
-            <div class="cross"><img src='cross.png' style='heigth: 30px; width: 22px'></img></div>
+            <div class="cross"><img src='src/gallery/cross.png' style='heigth: 30px; width: 22px'></img></div>
          </div> 
          </div>
                     `;

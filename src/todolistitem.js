@@ -117,7 +117,7 @@
                         <input type='checkbox' style='position:relative; cursor: pointer'>
                         </div>
                         <input class='newInput' value='${this.inputValue}'>
-                        <div class='remove'><img src='cross.png' style='heigth: 18px; width: 22px; display:block'></img></div>
+                        <div class='remove'><img src='src/gallery/cross.png' style='heigth: 18px; width: 22px; display:block'></img></div>
                   </div>`; 
         this.parent.parentNode.parentNode.dispatchEvent(this.watch);
         }
