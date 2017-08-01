@@ -116,6 +116,7 @@
    focusTodolistInput(){
         this.newInput.addEventListener("keyup", (e) => {
              if(e.keyCode == 13){
+             this.remove.style.display = "none";
              this.parent.parentNode.parentNode.dispatchEvent(this.focusInput);
            };
         });
