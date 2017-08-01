@@ -181,7 +181,7 @@ Components– Toolbars */
     .cross{
     height: 23px;
     width: auto;
-    padding: 9px 16px 5px 5px;
+    padding: 9px 16px 5px 17px;
     cursor: pointer;
      }
 
@@ -413,7 +413,7 @@ Components– Toolbars */
          color: black;
          font-family: Roboto;   
          background: white;
-         width: 82.5%;
+         width: 60.5%;
          height: 25px;
          padding: 6px 0 0 3px;
          border: none;
@@ -425,7 +425,7 @@ Components– Toolbars */
     background-color: white;
     padding: 10px 0 4px 16px;
     height: 20px;
-    width: 76%;
+    width: 70%;
     border: none;
 
     }
@@ -441,14 +441,6 @@ Components– Toolbars */
          border: none;
     }
 
-       .check{
-        background-color: white;
-        padding: 11px 9px 0 16px;
-        cursor: pointer;
-        width: 6.5%;
-
-
-    }
     
 
 }
