@@ -215,6 +215,7 @@ Components– Toolbars */
 
   
        .remove {
+       display: none; 
      background-color: white;
     height: auto;
     outline: none;
