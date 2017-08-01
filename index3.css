@@ -152,6 +152,7 @@ Components– Toolbars */
 
     .container{
         display: flex;
+            align-content: space-between;
         height: 40px;
         width: 250px;
         flex-direction: row;
@@ -164,6 +165,7 @@ Components– Toolbars */
     }
 
     .container:hover {
+          align-content: space-between;
         border: 1px solid #E5E5E5;
          border-right: none;
          border-left: none;
@@ -180,7 +182,6 @@ Components– Toolbars */
 
     .cross{
     height: 23px;
-    width: auto;
     padding: 9px 16px 5px 38px;
     cursor: pointer;
      }
@@ -221,7 +222,7 @@ Components– Toolbars */
     outline: none;
     border: 0;
     margin: 0px 0 0 0;
-    padding: 9px 8px 0 8px;
+    padding: 9px 17px 0 8px;
     cursor: pointer;
     float: right;
     }
@@ -413,7 +414,7 @@ Components– Toolbars */
          color: black;
          font-family: Roboto;   
          background: white;
-         width: 60.5%;
+         width: 70.5%;
          height: 25px;
          padding: 6px 0 0 3px;
          border: none;
