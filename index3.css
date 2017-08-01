@@ -320,6 +320,11 @@ Components– Toolbars */
 
  @media only screen and (max-width : 360px){
 
+    .underdiv{
+      display: flex;
+      align-content: space-between;
+    }
+    
      .main{
         display: flex;
         justify-content: center;
