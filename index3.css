@@ -67,14 +67,6 @@ Components– Toolbars */
         outline: none;
         }
 
-    .men{
-        display:flex; 
-        flex-direction:row; 
-        height: 25px;
-        width: 22px; 
-        margin: 20px 0 0 25px;
-      }
-
       body {
         margin: 0;
         display: flex;
@@ -186,31 +178,6 @@ Components– Toolbars */
       }
 
 
-      #button{
-/*         margin-left: 5px;
-        height: 50px;
-        width: 50px;
-        background: white;
-        padding-top: 5px; */
-      }
-
-
-
-         .but{
-/*          font-weight: 700;
-         font-family: Helvetica;
-         height: 33px;   
-         color: #525252;
-         border-style: solid;
-         border-color: #BABABA;
-         background-color:  #BABABA; 
-         border-radius: 0 10px 10px 0;
-         padding-left: 8px;
-         padding-right: 8px;
-        cursor: pointer; */
-
-
-    }
     .cross{
     height: 23px;
     width: auto;
@@ -244,12 +211,6 @@ Components– Toolbars */
         flex-direction: column;
         width: 250px;
 
-    }
-
-    #second{
-/*         display: flex;
-        flex-direction: column;
-        background: #EEEEEE; */
     }
 
     .remove{
@@ -340,13 +301,6 @@ Components– Toolbars */
         padding: 0;
       }
 
-      .men{
-        display:flex; 
-        flex-direction:row; 
-        height: 25px;
-        width: 22px; 
-        margin: 16px 0 0 17px;
-      }
 
       .head{
         display:flex; 
