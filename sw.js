@@ -7,9 +7,10 @@ self.addEventListener('install', function(event) {
         'src/todolist.js',
         'src/todolistitem.js',
         'src/builditem.js',
-        'src/gallery/all2.png',
-        'src/gallery/del2.png',
-        'src/gallery/cross.png',
+        'all2.png',
+        'del2.png',
+        'cross.png',
+        'plus.png',
         'src/index.js'
       ]);
     })
