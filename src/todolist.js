@@ -62,7 +62,6 @@
 
     doneallItems(){
            this.allDoneButton.addEventListener("click", () => {
-                console.log(this.tasks);
                 this.tasks.forEach(task => {
                 task.checkedItem = true;
                 task.check.firstElementChild.checked = true;
@@ -112,7 +111,6 @@
         });  
 
         this.parent.addEventListener("focusInput", () => {
-            console.log('aaa');
             this.input.focus();
         }); 
         };
@@ -146,7 +144,6 @@
 // строительство нового айтема
     buildTask(localData){
       this.tasks.push(new ToDoListItem(this.input.value, this.parent.childNodes[1].childNodes[3], this.taskCounter++,localData, this.watch));
-              console.log(this.tasks);
       this.cleanValue();
       this.parent.childNodes[1].childNodes[3].lastElementChild.childNodes[1].childNodes[3].focus();
       };
@@ -178,7 +175,6 @@
 
 // удаление листа 
     removeList(){
-      console.log(this.input.nextElementSibling);
     this.input.nextElementSibling.addEventListener("click", () => {
     this.deleteLists.detail.number = this.listCounter; 
     this.parent.dispatchEvent(this.deleteLists);
