@@ -423,12 +423,11 @@ Components– Toolbars */
   }
 
     .checkedremove{
-       background-color: grey;
     height: auto;
     outline: none;
     border: 0;
     margin: 0px 0 0 0;
-    padding: 9px 16px 0 8px;
+    padding: 9px 12px 0 11px;
     cursor: pointer;
     float: right;
   } 
