@@ -301,7 +301,7 @@ Components– Toolbars */
     flex-direction:column; 
     width:250px;
   }
-};
+}
 
 
  @media only screen and (max-width : 360px){
@@ -421,4 +421,4 @@ Components– Toolbars */
     padding: 6px 0 0 3px;
      border: none;
   }
-};
+}
