@@ -312,16 +312,16 @@ Components– Toolbars */
   }
     
   .main{
-    display: flex;
+/*     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: auto;
+    height: auto; */
     width: 100%;
-    margin: 10px 5px 0 5px;
+/*     margin: 10px 5px 0 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
+    border-radius: 2px; */
   }
 
   .container{
