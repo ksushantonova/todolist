@@ -63,9 +63,6 @@
 
         // });
 
-            this.newInput.parentNode.addEventListener('blur', () => {
-            this.remove.style.display = "none";
-
         });
 
          this.remove.addEventListener('mouseout', (e) => {
