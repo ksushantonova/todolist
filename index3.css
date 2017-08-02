@@ -423,11 +423,13 @@ Components– Toolbars */
   }
 
     .checkedremove{
-     display: none;
-     background-color: white;
-     width: 25px;
-     height: 23px;
-     padding: 9px 16px 0 8px;
-     cursor: pointer;
+       background-color: grey;
+    height: auto;
+    outline: none;
+    border: 0;
+    margin: 0px 0 0 0;
+    padding: 9px 16px 0 8px;
+    cursor: pointer;
+    float: right;
   } 
 }
