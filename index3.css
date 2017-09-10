@@ -50,6 +50,9 @@ Components - Lists
 Components– Lists: Controls
 Components– Text fields
 Components– Toolbars */
+  body{
+    font-family: Helvetica;
+  }
 
   #header{
     display: flex;
