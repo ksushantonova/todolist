@@ -1,71 +1,168 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ToDoListItem = exports.ToDoListItem = function () {
-    function ToDoListItem(value, parent, deleteEvent, counter, changeEvent) {
+var ToDoListItem = function () {
+    function ToDoListItem(value, parent, counter, task, watch) {
         _classCallCheck(this, ToDoListItem);
 
         //получаем все ивенты через свойства, а так же нужные нам данные
+        this.watch = watch;
+        this.local = task;
         this.inputValue = value;
-        this.parent = parent;
+        this.parent = parent; // items
         this.counter = counter;
-        this.deleteEvent = deleteEvent;
-        this.changeEvent = changeEvent;
-        this.makeVisual();
+        this.checkedItem = false;
+        this.init();
     }
 
     // строим новый айтем
 
 
     _createClass(ToDoListItem, [{
-        key: 'makeVisual',
-        value: function makeVisual() {
-            var container = document.createElement('div');
-            var remove = document.createElement('div');
-            var check = document.createElement('div');
-            var newInput = document.createElement('input');
-            var mainContainer = document.createElement('div');
-            check.innerHTML = "<input type='checkbox' style='position:relative'>";
-            newInput.value = this.inputValue;
-            container.className = "container";
-            remove.innerHTML = "<img src='cross.svg' style='heigth: 18px; width: 18px'></img>";
-            remove.className = "remove";
-            check.className = "check";
-            newInput.className = "newInput";
-            container.appendChild(check);
-            container.appendChild(newInput);
-            container.appendChild(remove);
-            mainContainer.appendChild(container);
-            mainContainer.className = "mainContainer";
-            this.parent.appendChild(mainContainer);
-
-            // и прямо в нем запускаем функцию чека, удаления, и перезаписывания value при инициализации            
-            this.checkItem(check);
-            this.newItemValue(newInput);
-            this.removeTask(remove);
+        key: 'init',
+        value: function init() {
+            this.newEvents();
+            this.workingWithLocalStorage();
+            this.htmlBuild();
+            this.mainElements();
+            this.mainContainerStyles();
+            this.startInputValue();
+            this.focusTodolistInput();
+            this.checkItem();
+            this.newItemValue();
+            this.isChecked();
+            this.removeTask();
+            this.parent.parentNode.parentNode.dispatchEvent(this.watch);
         }
+
+        // если есть какие-то локальные данные, забираем из них инпут, и информацию, какие из айтемов были чекнуты
+
+    }, {
+        key: 'workingWithLocalStorage',
+        value: function workingWithLocalStorage() {
+            if (this.local !== null) {
+                this.inputValue = this.local.inputValue;
+                this.checkedItem = this.local.checkedItem;
+                this.parent.parentNode.parentNode.dispatchEvent(this.watch);
+            }
+        }
+    }, {
+        key: 'startInputValue',
+        value: function startInputValue() {
+            this.newInput.value = this.inputValue;
+        }
+    }, {
+        key: 'mainElements',
+        value: function mainElements() {
+            this.check = this.mainContainer.firstElementChild.childNodes[1];
+            this.newInput = this.mainContainer.firstElementChild.childNodes[3];
+            this.remove = this.mainContainer.firstElementChild.childNodes[5];
+        }
+    }, {
+        key: 'mainContainerStyles',
+        value: function mainContainerStyles() {
+            var _this = this;
+
+            this.newInput.parentNode.addEventListener('mouseover', function () {
+                _this.remove.style.display = "block";
+            });
+
+            this.newInput.addEventListener('input', function () {
+                _this.remove.style.display = "block";
+            });
+
+            //    this.remove.addEventListener('mouseover', () => {
+            //     this.remove.style.display = "block";
+
+            // });
+
+            // });
+
+            this.remove.addEventListener('mouseout', function (e) {
+                _this.remove.style.display = "none";
+            });
+
+            this.newInput.parentNode.addEventListener('mouseout', function (e) {
+                _this.remove.style.display = "none";
+            });
+        }
+    }, {
+        key: 'newEvents',
+        value: function newEvents() {
+
+            this.deleteEvent = new CustomEvent("deleteEvent", {
+                detail: { count: "done" }
+            });
+
+            this.changeEvent = new CustomEvent("changeEvent", {
+                detail: { count: "done" }
+            });
+
+            this.focusInput = new CustomEvent("focusInput", {
+                detail: { count: "done" }
+            });
+        }
+
+        // постройка каркасса айтема
+
+    }, {
+        key: 'htmlBuild',
+        value: function htmlBuild() {
+            this.mainContainer = document.createElement("div");
+            this.parent.appendChild(this.mainContainer);
+            this.mainContainer.className = "mainContainer";
+            this.mainContainer.innerHTML = ' \n                     <div class=\'container\'>\n                        <div class=\'check\'>\n                        <input type=\'checkbox\' style=\'position:relative; cursor: pointer\'>\n                        </div>\n                        <input class=\'newInput\' value=\'' + this.inputValue + '\'>\n                        <div class=\'remove\'><img src=\'cross.png\' style=\'heigth: 18px; width: 22px; display:block\'></img></div>\n                  </div>';
+            this.parent.parentNode.parentNode.dispatchEvent(this.watch);
+        }
+    }, {
+        key: 'focusTodolistInput',
+        value: function focusTodolistInput() {
+            var _this2 = this;
+
+            this.newInput.addEventListener("keyup", function (e) {
+                if (e.keyCode == 13) {
+                    _this2.remove.style.display = "none";
+                    _this2.parent.parentNode.parentNode.dispatchEvent(_this2.focusInput);
+                };
+            });
+        }
+
         // метод удаления из Дома
 
     }, {
         key: 'removeTask',
-        value: function removeTask(element) {
-            var _this = this;
+        value: function removeTask() {
+            var _this3 = this;
 
-            // слушаем куда был клик
-            element.addEventListener("click", function () {
-                //передаем в ивент удаления в details номер этого айтема, чтобы класс наверху мог его удалить   
-                _this.deleteEvent.detail.number = _this.counter;
-                //запускаем ивент удаления 
-                _this.parent.dispatchEvent(_this.deleteEvent);
-                // удаляем элемент из ДОМа
-                element.parentElement.remove();
+            console.log(this.remove);
+            this.remove.addEventListener("click", function () {
+                _this3.deleteEvent.detail.number = _this3.counter;
+                _this3.parent.parentNode.parentNode.dispatchEvent(_this3.deleteEvent);
+                _this3.mainContainer.remove();
+                _this3.parent.parentNode.parentNode.dispatchEvent(_this3.watch);
+            });
+        }
+
+        // следим за изменениями в чекбоксах, результат записываем в класс.
+
+    }, {
+        key: 'isChecked',
+        value: function isChecked() {
+            var _this4 = this;
+
+            this.check.addEventListener('change', function () {
+                if (_this4.check.firstElementChild.checked) {
+                    _this4.checkedItem = true;
+                    _this4.checkItem();
+                    _this4.parent.parentNode.parentNode.dispatchEvent(_this4.watch);
+                } else {
+                    _this4.checkedItem = false;
+                    _this4.checkItem();
+                    _this4.parent.parentNode.parentNode.dispatchEvent(_this4.watch);
+                }
             });
         }
 
@@ -73,38 +170,34 @@ var ToDoListItem = exports.ToDoListItem = function () {
 
     }, {
         key: 'newItemValue',
-        value: function newItemValue(element) {
-            var _this2 = this;
+        value: function newItemValue() {
+            var _this5 = this;
 
-            // слушаем куда было нажатие клавиатуры
-            element.addEventListener("input", function () {
-                //передаем в ивент Изменений в details номер этого айтема 
-                _this2.changeEvent.detail.number = _this2.counter;
-                //передаем текущее значение на момент нажатия клавиатуры
-                _this2.changeEvent.detail.value = element.value;
-                //запускаем ивент Изменений 
-                _this2.parent.dispatchEvent(_this2.changeEvent);
+            this.newInput.addEventListener("input", function () {
+                _this5.changeEvent.detail.number = _this5.counter;
+                _this5.changeEvent.detail.value = _this5.newInput.value;
+                _this5.parent.parentNode.parentNode.dispatchEvent(_this5.changeEvent);
+                _this5.parent.parentNode.parentNode.dispatchEvent(_this5.watch);
             });
         }
 
-        // метод выполнения задания
+        // если в классе статус чекбокса checked - применяем стили, и наоборот
 
     }, {
         key: 'checkItem',
-        value: function checkItem(element) {
-            element.addEventListener('click', function () {
-                if (element.firstChild.checked) {
-                    //если значение секбокса true то меняются стили, которые его зачеркивают 
-                    element.className = "checkedcheck";
-                    element.nextElementSibling.className = "checked";
-                    element.nextElementSibling.nextElementSibling.className = "checkedremove";
-                    //если нет - то возвращают обратно в прежнее состояние 
-                } else {
-                    element.className = "check";
-                    element.nextElementSibling.className = "newInput";
-                    element.nextElementSibling.nextElementSibling.className = "remove";
-                }
-            });
+        value: function checkItem() {
+            if (this.checkedItem) {
+                this.check.className = "checkedcheck";
+                this.newInput.className = "checked";
+                this.remove.className = "checkedremove";
+                this.check.firstElementChild.checked = true;
+                this.parent.parentNode.parentNode.dispatchEvent(this.watch);
+            } else {
+                this.check.className = "check";
+                this.newInput.className = "newInput";
+                this.remove.className = "remove";
+                this.parent.parentNode.parentNode.dispatchEvent(this.watch);
+            }
         }
     }]);
 

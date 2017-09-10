@@ -63,7 +63,7 @@
 
         // });
 
-        });
+        // });
 
          this.remove.addEventListener('mouseout', (e) => {
             this.remove.style.display = "none";

@@ -1,7 +1,4 @@
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('v1').then(function(cache) {
-      return cache.addAll([
+const cash_Data = [
         'index.html',
         'index3.css',
         'src/todolist.js',
@@ -12,7 +9,13 @@ self.addEventListener('install', function(event) {
         'cross.png',
         'plus.png',
         'src/index.js'
-      ]);
+      ];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      return cache.addAll(cashData);
+    }
     })
   );
 });
