@@ -57,7 +57,7 @@ Components– Toolbars */
   #header{
     display: flex;
     flex-direction: row;
-    background-color:  #ffe200;
+    background-color:  #246E7E !important;
      width: 100%;
     color: white;
     height: 64px;
@@ -95,7 +95,7 @@ Components– Toolbars */
     right: 16px;
     display: flex;
     justify-content: center;
-    background:#00BFA5;
+    background:#246E7E;
     border: none;
     height: 56px;
     width: 56px;
