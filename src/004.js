@@ -28,9 +28,8 @@ export class UO004 {
     }
 
     getPlanNumber(input) {
-        input.addEventListener('change', () => {
+        input.addEventListener('input', () => {
             this.data.planNumber = input.value;
-            this.changeButton(this.button);
         });
     }
 
@@ -45,7 +44,8 @@ export class UO004 {
     }
 
     unlockButton(button) {
-        if ((this.data.planNumber.length > 0) && (this.data.ownerOrLeasee.length > 0)) {
+        if ((this.data.planNumber.length > 2) && (this.data.ownerOrLeasee.length > 2)) {
+            this.changeButton(this.button);
             this.changeScreen(button, this.allScreens, this.nextScreen);
         }
     }
@@ -71,9 +71,7 @@ export class UO004 {
             }
             e.target.className = "fa fa-circle radio004";
             this.data.ownerOrLeasee = e.target.parentNode.lastChild.data;
-            console.log(this.data);
         } else if (e.target.className == "p004") {
-            console.log(e.target.className);
             e.target.firstElementChild.className = 'fa fa-circle radio004';
             for (let j = 0; j < p.length; j++) {
                 if (p[j] !== e.target) {
@@ -81,7 +79,6 @@ export class UO004 {
                 }
             }
             this.data.ownerOrLeasee = e.target.lastChild.data;
-            console.log(this.data);
         }
     }
 

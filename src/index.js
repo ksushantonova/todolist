@@ -12,6 +12,7 @@ import { UO019 } from './019.js';
 import { UO020 } from './020.js';
 import { UO022 } from './022.js';
 import { UO026 } from './026.js';
+import { UO027 } from './027.js';
 
 
 // Final data for sending off to the server
@@ -45,6 +46,7 @@ new UO019(data);
 new UO020(data);
 new UO022(data);
 new UO026(data);
+new UO027();
 
 
 

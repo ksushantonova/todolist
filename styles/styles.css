@@ -34,7 +34,7 @@
     }
 
     /*не забыть убрать 2 пикселя*/
-    #UO-000, #UO-002, #UO-004, #UO-005, #UO-008, #UO-009, #UO-011, #UO-014, #UO-016, #UO-017, #UO-018, #UO-019, #UO-020, #UO-021, #UO-022, #UO-026, #result {
+    #UO-000, #UO-002, #UO-004, #UO-005, #UO-008, #UO-009, #UO-011, #UO-014, #UO-016, #UO-017, #UO-018, #UO-019, #UO-020, #UO-021, #UO-022, #UO-026, #result, #UO-027 {
         flex-direction: column;
         justify-content: center;
         width: 100em;
@@ -324,7 +324,7 @@
         color: #4D4D4F;
     }
 
-    #UO-004 .next, #UO-008 .next, #UO-014 .next, #UO-016 .next, #UO-020 .next, #UO-022 .next, #UO-026 .next {
+    #UO-004 .next, #UO-008 .next, #UO-014 .next, #UO-011 .next, #UO-016 .next, #UO-020 .next, #UO-022 .next, #UO-026 .next {
         margin: 2.5em 1em 2em 1em !important;
         opacity: 0.5;
         cursor: default;
@@ -570,6 +570,7 @@
 
     #result p {
         display: none;
+        font-size: 5em;
     }
 
     #result {
@@ -592,7 +593,7 @@
         margin: 3em 1.05em 2em 1.05em !important;
     }
 
-    #angleLeft000, #angleLeft002, #angleLeft004, #angleLeft008, #angleLeft011, #angleLeft014, #angleLeft016, #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022, #angleLeft026 {
+    #angleLeft000, #angleLeft002, #angleLeft004, #angleLeft008, #angleLeft011, #angleLeft014, #angleLeft016, #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022, #angleLeft026,  #angleLeft027 {
         position: absolute;
         font-size: 8em;
         top: 0.7em;
@@ -600,7 +601,7 @@
         color: white;
     }
 
-    #x000, #x002, #x004, #x008, #x011, #x014, #x016, #x017, #x019, #x020, #x022, #x026 {
+    #x000, #x002, #x004, #x008, #x011, #x014, #x016, #x017, #x019, #x020, #x022, #x026, #x027 {
         position: absolute;
         font-size: 6em;
         top: 1em;
@@ -668,6 +669,11 @@
 
     #business_owner {
         margin: 3em 3em 3em 6em !important;
+    }
+
+    #UO-027 .body p{
+        text-align: left;
+        font-size: 3.5em;
     }
 
 }

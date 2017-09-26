@@ -26,7 +26,6 @@ export class UO002 {
         container.addEventListener("click", (e) => {
             this.choiseData = e.target.id;
             data.describeYouBest = this.choiseData;
-            this.changeButton(this.button);
             this.unlockButton(this.button, this.data);
             this.changeImage(e, this.choiseData, this.choiseContainers);
 
@@ -40,12 +39,16 @@ export class UO002 {
 
     unlockButton(button, data){
         if (data.describeYouBest == "landholder"){
+              this.changeButton(this.button);
             this.changeScreen(button, this.allScreens, this.nextLandholder);
         } else if (data.describeYouBest == "government"){
+              this.changeButton(this.button);
             this.changeScreen(button, this.allScreens, this.nextGovernment);
         } else if(data.describeYouBest == "gas_industry"){
+              this.changeButton(this.button);
             this.changeScreen(button, this.allScreens, this.nextGas_industry);
         } else if (data.describeYouBest == "community"){
+              this.changeButton(this.button);
             this.changeScreen(button, this.allScreens, this.nextCommunity);
 
         }

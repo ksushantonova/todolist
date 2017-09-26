@@ -21,12 +21,11 @@ export class UO020 {
         this.showInfo(this.infoButton, this.infoScreen);
         this.hideInfo(this.infoScreenButton, this.infoScreen);
         this.getPlanNumber(this.input);
-        console.log(this.circles);
         this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.circles);
     }
 
     getPlanNumber(input) {
-        input.addEventListener('change', () => {
+        input.addEventListener('input', (e) => {
             this.changeButton(this.button);
             this.data.nearestPopulationCentre = input.value;
             this.changeScreen(this.button, this.allScreens, this.nextScreen);
@@ -74,7 +73,6 @@ export class UO020 {
 
     returnBack(backButton, allScreens, previousScreen, circles){
         backButton.addEventListener('click', () => {
-            console.log('catch');
             for (let i = 0; i < allScreens.length; i++) {
                 allScreens[i].style.display = "none";
             }

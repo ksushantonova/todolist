@@ -94,9 +94,9 @@ var _11 = __webpack_require__(11);
 
 var _12 = __webpack_require__(12);
 
-// Final data for sending off to the server
-// UO-000
+var _13 = __webpack_require__(14);
 
+// Final data for sending off to the server
 var data = {
     describeYouBest: "",
     planNumber: "",
@@ -113,7 +113,7 @@ var data = {
     userPassword: "",
     userPassword_again: ""
 
-};
+}; // UO-000
 
 new _.UO000(data);
 new _2.UO002(data);
@@ -127,6 +127,7 @@ new _9.UO019(data);
 new _10.UO020(data);
 new _11.UO022(data);
 new _12.UO026(data);
+new _13.UO027();
 
 /***/ }),
 /* 1 */
@@ -160,7 +161,6 @@ var UO000 = exports.UO000 = function () {
     _createClass(UO000, [{
         key: 'init',
         value: function init() {
-            console.log(this.allScreens);
             this.showMenues(this.menues);
             this.changeScreen(this.button, this.allScreens, this.nextScreen);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen);
@@ -296,7 +296,6 @@ var UO002 = exports.UO002 = function () {
             container.addEventListener("click", function (e) {
                 _this.choiseData = e.target.id;
                 data.describeYouBest = _this.choiseData;
-                _this.changeButton(_this.button);
                 _this.unlockButton(_this.button, _this.data);
                 _this.changeImage(e, _this.choiseData, _this.choiseContainers);
             });
@@ -311,12 +310,16 @@ var UO002 = exports.UO002 = function () {
         key: 'unlockButton',
         value: function unlockButton(button, data) {
             if (data.describeYouBest == "landholder") {
+                this.changeButton(this.button);
                 this.changeScreen(button, this.allScreens, this.nextLandholder);
             } else if (data.describeYouBest == "government") {
+                this.changeButton(this.button);
                 this.changeScreen(button, this.allScreens, this.nextGovernment);
             } else if (data.describeYouBest == "gas_industry") {
+                this.changeButton(this.button);
                 this.changeScreen(button, this.allScreens, this.nextGas_industry);
             } else if (data.describeYouBest == "community") {
+                this.changeButton(this.button);
                 this.changeScreen(button, this.allScreens, this.nextCommunity);
             }
         }
@@ -418,9 +421,8 @@ var UO004 = exports.UO004 = function () {
         value: function getPlanNumber(input) {
             var _this = this;
 
-            input.addEventListener('change', function () {
+            input.addEventListener('input', function () {
                 _this.data.planNumber = input.value;
-                _this.changeButton(_this.button);
             });
         }
     }, {
@@ -439,7 +441,8 @@ var UO004 = exports.UO004 = function () {
     }, {
         key: 'unlockButton',
         value: function unlockButton(button) {
-            if (this.data.planNumber.length > 0 && this.data.ownerOrLeasee.length > 0) {
+            if (this.data.planNumber.length > 2 && this.data.ownerOrLeasee.length > 2) {
+                this.changeButton(this.button);
                 this.changeScreen(button, this.allScreens, this.nextScreen);
             }
         }
@@ -470,9 +473,7 @@ var UO004 = exports.UO004 = function () {
                 }
                 e.target.className = "fa fa-circle radio004";
                 this.data.ownerOrLeasee = e.target.parentNode.lastChild.data;
-                console.log(this.data);
             } else if (e.target.className == "p004") {
-                console.log(e.target.className);
                 e.target.firstElementChild.className = 'fa fa-circle radio004';
                 for (var j = 0; j < p.length; j++) {
                     if (p[j] !== e.target) {
@@ -480,7 +481,6 @@ var UO004 = exports.UO004 = function () {
                     }
                 }
                 this.data.ownerOrLeasee = e.target.lastChild.data;
-                console.log(this.data);
             }
         }
     }, {
@@ -608,7 +608,6 @@ var UO008 = exports.UO008 = function () {
                 }
                 e.target.className = classNameSecond;
                 this.data[name] = e.target.parentNode.lastChild.data;
-                console.log(this.data);
             } else if (e.target.className == pClassName) {
                 e.target.firstElementChild.className = classNameSecond;
                 for (var j = 0; j < p.length; j++) {
@@ -617,7 +616,6 @@ var UO008 = exports.UO008 = function () {
                     }
                 }
                 this.data[name] = e.target.lastChild.data;
-                console.log(this.data);
             }
         }
     }, {
@@ -746,7 +744,6 @@ var UO011 = exports.UO011 = function () {
                 }
                 e.target.className = classNameSecond;
                 this.data[name] = e.target.parentNode.lastChild.data;
-                console.log(this.data);
             } else if (e.target.className == pClassName) {
                 e.target.firstElementChild.className = classNameSecond;
                 for (var j = 0; j < p.length; j++) {
@@ -755,22 +752,19 @@ var UO011 = exports.UO011 = function () {
                     }
                 }
                 this.data[name] = e.target.lastChild.data;
-                console.log(this.data);
             }
         }
     }, {
         key: 'unlockButton',
         value: function unlockButton(button) {
-            if (this.data.roleWithinTheGasIndustry.length !== undefined) {
-                this.changeButton(button);
+            if (this.data.roleWithinTheGasIndustry.length > 2) {
                 if (this.data.roleWithinTheGasIndustry !== "Other (please specify)") {
                     this.changeScreen(button, this.allScreens, this.nextScreen);
+                    this.changeButton(button);
                     this.changeCircle(this.button, this.allCircles, this.nextCircle);
                 } else {
                     this.specify.style.display = "block";
                     this.getSpecify(this.specify.firstElementChild);
-                    this.changeScreen(button, this.allScreens, this.nextScreen);
-                    this.changeCircle(this.button, this.allCircles, this.nextCircle);
                 }
             }
         }
@@ -779,9 +773,11 @@ var UO011 = exports.UO011 = function () {
         value: function getSpecify(input) {
             var _this2 = this;
 
-            input.addEventListener('change', function () {
+            input.addEventListener('input', function () {
                 _this2.data.roleWithinTheGasIndustry = input.value;
                 _this2.changeButton(_this2.button);
+                _this2.changeScreen(_this2.button, _this2.allScreens, _this2.nextScreen);
+                _this2.changeCircle(_this2.button, _this2.allCircles, _this2.nextCircle);
             });
         }
     }, {
@@ -988,7 +984,6 @@ var UO016 = exports.UO016 = function () {
         key: 'init',
         value: function init() {
             this.getPlanNumber(this.input);
-            this.changeScreen(this.button, this.allScreens, this.nextScreen);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen);
         }
     }, {
@@ -996,9 +991,10 @@ var UO016 = exports.UO016 = function () {
         value: function getPlanNumber(input) {
             var _this = this;
 
-            input.addEventListener('change', function () {
+            input.addEventListener('input', function () {
                 _this.changeButton(_this.button);
                 _this.data.businessName = input.value;
+                _this.changeScreen(_this.button, _this.allScreens, _this.nextScreen);
             });
         }
     }, {
@@ -1274,7 +1270,6 @@ var UO020 = exports.UO020 = function () {
             this.showInfo(this.infoButton, this.infoScreen);
             this.hideInfo(this.infoScreenButton, this.infoScreen);
             this.getPlanNumber(this.input);
-            console.log(this.circles);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.circles);
         }
     }, {
@@ -1282,7 +1277,7 @@ var UO020 = exports.UO020 = function () {
         value: function getPlanNumber(input) {
             var _this = this;
 
-            input.addEventListener('change', function () {
+            input.addEventListener('input', function (e) {
                 _this.changeButton(_this.button);
                 _this.data.nearestPopulationCentre = input.value;
                 _this.changeScreen(_this.button, _this.allScreens, _this.nextScreen);
@@ -1333,7 +1328,6 @@ var UO020 = exports.UO020 = function () {
         key: 'returnBack',
         value: function returnBack(backButton, allScreens, previousScreen, circles) {
             backButton.addEventListener('click', function () {
-                console.log('catch');
                 for (var i = 0; i < allScreens.length; i++) {
                     allScreens[i].style.display = "none";
                 }
@@ -1417,7 +1411,6 @@ var UO022 = exports.UO022 = function () {
                 }
                 e.target.className = classNameSecond;
                 this.data[name] = e.target.parentNode.lastChild.data;
-                console.log(this.data);
             } else if (e.target.className == pClassName) {
                 e.target.firstElementChild.className = classNameSecond;
                 for (var j = 0; j < p.length; j++) {
@@ -1426,7 +1419,6 @@ var UO022 = exports.UO022 = function () {
                     }
                 }
                 this.data[name] = e.target.lastChild.data;
-                console.log(this.data);
             }
         }
     }, {
@@ -1508,13 +1500,16 @@ var UO026 = exports.UO026 = function () {
         this.data = data;
         this.email = document.getElementById('email');
         this.password = document.getElementById('password');
+        this.terms = document.getElementById('terms');
         this.password_again = document.getElementById('password_again');
         this.button = document.getElementById('next026');
+        this.termScreen = document.getElementById('UO-027');
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('result');
         this.backButton = document.getElementById('angleLeft026');
         this.previousScreen = document.getElementById('UO-022');
         this.allCircles = document.getElementsByClassName('circle');
+        this.circlesContainer = document.getElementById('circles');
         this.previousCircle = document.getElementById('circle4');
         this.init();
     }
@@ -1522,10 +1517,10 @@ var UO026 = exports.UO026 = function () {
     _createClass(UO026, [{
         key: 'init',
         value: function init() {
+            this.showTerms(this.terms, this.allScreens, this.termScreen);
             this.getPlanNumber(this.email, "userEmail");
             this.getPlanNumber(this.password, "userPassword");
             this.getPlanNumber(this.password_again, "userPassword_again");
-            this.changeScreen(this.button, this.allScreens, this.nextScreen);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.allCircles, this.previousCircle);
         }
     }, {
@@ -1533,7 +1528,7 @@ var UO026 = exports.UO026 = function () {
         value: function getPlanNumber(input, name) {
             var _this = this;
 
-            input.addEventListener('change', function () {
+            input.addEventListener('input', function () {
                 _this.data[name] = input.value;
                 _this.checkInputs(_this.data);
             });
@@ -1543,6 +1538,7 @@ var UO026 = exports.UO026 = function () {
         value: function checkInputs(data) {
             if (data.userEmail.length > 0 && data.userPassword.length > 0 && data.userPassword_again.length > 0 && data.userPassword == data.userPassword_again) {
                 this.changeButton(this.button);
+                this.changeScreen(this.button, this.allScreens, this.nextScreen);
             }
         }
     }, {
@@ -1556,11 +1552,12 @@ var UO026 = exports.UO026 = function () {
         value: function changeScreen(button, allScreens, nextScreen) {
             var _this2 = this;
 
-            button.addEventListener('click', function (e) {
+            button.addEventListener('click', function () {
                 for (var i = 0; i < allScreens.length; i++) {
                     allScreens[i].style.display = "none";
                 }
                 nextScreen.style.display = "block";
+                _this2.circlesContainer.style.display = "none";
                 new _result.Result(_this2.data);
             });
         }
@@ -1576,6 +1573,16 @@ var UO026 = exports.UO026 = function () {
                     allCircles[_i].style.color = 'white';
                 }
                 previousCircle.style.color = "#007598";
+            });
+        }
+    }, {
+        key: 'showTerms',
+        value: function showTerms(button, allScreens, screen) {
+            button.addEventListener('click', function () {
+                for (var i = 0; i < allScreens.length; i++) {
+                    allScreens[i].style.display = "none";
+                }
+                screen.style.display = "block";
             });
         }
     }]);
@@ -1624,6 +1631,65 @@ var Result = exports.Result = function () {
     }]);
 
     return Result;
+}();
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var UO027 = exports.UO027 = function () {
+    function UO027(data) {
+        _classCallCheck(this, UO027);
+
+        this.data = data;
+        this.nextScreen = document.getElementById('UO-026');
+        this.allScreens = document.getElementsByClassName('screen');
+        this.button = document.getElementById('next027');
+        this.backButton = document.getElementById('angleLeft027');
+        this.previousScreen = document.getElementById('UO-026');
+        this.init();
+    }
+
+    _createClass(UO027, [{
+        key: 'init',
+        value: function init() {
+            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+            this.returnBack(this.backButton, this.allScreens, this.previousScreen);
+        }
+    }, {
+        key: 'changeScreen',
+        value: function changeScreen(button, allScreens, nextScreen) {
+            button.onclick = function () {
+                for (var i = 0; i < allScreens.length; i++) {
+                    allScreens[i].style.display = "none";
+                }
+                nextScreen.style.display = "block";
+            };
+        }
+    }, {
+        key: 'returnBack',
+        value: function returnBack(backButton, allScreens, previousScreen) {
+            backButton.addEventListener('click', function () {
+                for (var i = 0; i < allScreens.length; i++) {
+                    allScreens[i].style.display = "none";
+                }
+                previousScreen.style.display = "block";
+            });
+        }
+    }]);
+
+    return UO027;
 }();
 
 /***/ })

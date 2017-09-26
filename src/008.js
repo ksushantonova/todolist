@@ -62,7 +62,6 @@ export class UO008 {
             }
             e.target.className = classNameSecond;
             this.data[name] = e.target.parentNode.lastChild.data;
-            console.log(this.data);
         } else if (e.target.className == pClassName) {
             e.target.firstElementChild.className = classNameSecond;
             for (let j = 0; j < p.length; j++) {
@@ -71,7 +70,6 @@ export class UO008 {
                 }
             }
             this.data[name] = e.target.lastChild.data;
-            console.log(this.data);
         }
     }
 

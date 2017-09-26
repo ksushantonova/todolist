@@ -14,14 +14,15 @@ export class UO016 {
 
     init() {
         this.getPlanNumber(this.input);
-        this.changeScreen(this.button, this.allScreens, this.nextScreen);
         this.returnBack(this.backButton, this.allScreens, this.previousScreen);
     }
 
     getPlanNumber(input) {
-        input.addEventListener('change', () => {
+        input.addEventListener('input', () => {
             this.changeButton(this.button);
             this.data.businessName = input.value;
+            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+
         });
     }
 

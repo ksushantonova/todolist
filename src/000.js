@@ -12,7 +12,6 @@ export class UO000 {
     }
 
     init() {
-        console.log(this.allScreens);
         this.showMenues(this.menues);
         this.changeScreen(this.button, this.allScreens, this.nextScreen);
         this.returnBack(this.backButton, this.allScreens, this.previousScreen);

@@ -49,7 +49,6 @@ export class UO011 {
             }
             e.target.className = classNameSecond;
             this.data[name] = e.target.parentNode.lastChild.data;
-            console.log(this.data);
         } else if (e.target.className == pClassName) {
             e.target.firstElementChild.className = classNameSecond;
             for (let j = 0; j < p.length; j++) {
@@ -58,30 +57,28 @@ export class UO011 {
                 }
             }
             this.data[name] = e.target.lastChild.data;
-            console.log(this.data);
         }
     }
 
     unlockButton(button) {
-        if (this.data.roleWithinTheGasIndustry.length !== undefined) {
-            this.changeButton(button);
+        if (this.data.roleWithinTheGasIndustry.length > 2) {
             if (this.data.roleWithinTheGasIndustry !== "Other (please specify)"){
                 this.changeScreen(button, this.allScreens, this.nextScreen);
+                this.changeButton(button);
                 this.changeCircle(this.button, this.allCircles, this.nextCircle);
             } else {
                 this.specify.style.display = "block";
                 this.getSpecify(this.specify.firstElementChild);
-                this.changeScreen(button, this.allScreens, this.nextScreen);
-                this.changeCircle(this.button, this.allCircles, this.nextCircle);
-
             }
         }
     }
 
     getSpecify(input){
-        input.addEventListener('change' , () => {
+        input.addEventListener('input' , () => {
             this.data.roleWithinTheGasIndustry = input.value;
             this.changeButton(this.button);
+            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+            this.changeCircle(this.button, this.allCircles, this.nextCircle);
         });
     }
 
