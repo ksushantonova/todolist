@@ -1,7 +1,6 @@
 export class UO002 {
     constructor(data) {
         this.data = data;
-        this.currentScreen = document.getElementById('UO-002');
         this.nextLandholder = document.getElementById('UO-004');
         this.nextGovernment = document.getElementById('UO-008');
         this.nextGas_industry = document.getElementById('UO-011');
@@ -10,14 +9,17 @@ export class UO002 {
         this.button = document.getElementById('next002');
         this.choiseContainer = document.getElementById('flexSquares');
         this.choiseContainers = document.getElementsByClassName('choiseImage');
-        this.currentCircle = document.getElementById('circle1');
+        this.allCircles = document.getElementsByClassName('circle');
         this.nextCircle = document.getElementById('circle2');
+        this.backButton =  document.getElementById('angleLeft002');
+        this.previousScreen = document.getElementById('UO-000');
         this.choiseData = "";
         this.init();
     }
 
     init() {
         this.makeChoise(this.choiseContainer, this.data);
+        this.returnBack(this.backButton, this.allScreens, this.previousScreen);
     }
 
     makeChoise(container, data) {
@@ -25,7 +27,7 @@ export class UO002 {
             this.choiseData = e.target.id;
             data.describeYouBest = this.choiseData;
             this.changeButton(this.button);
-            this.unlockButton(this.button);
+            this.unlockButton(this.button, this.data);
             this.changeImage(e, this.choiseData, this.choiseContainers);
 
         })
@@ -36,14 +38,14 @@ export class UO002 {
         button.style.opacity = "1";
     }
 
-    unlockButton(button){
-        if (this.data.describeYouBest == "Landholder"){
+    unlockButton(button, data){
+        if (data.describeYouBest == "landholder"){
             this.changeScreen(button, this.allScreens, this.nextLandholder);
-        } else if (this.data.describeYouBest == "Government"){
+        } else if (data.describeYouBest == "government"){
             this.changeScreen(button, this.allScreens, this.nextGovernment);
-        } else if(this.data.describeYouBest == "Gas-industry"){
+        } else if(data.describeYouBest == "gas_industry"){
             this.changeScreen(button, this.allScreens, this.nextGas_industry);
-        } else if (this.data.describeYouBest == "Community"){
+        } else if (data.describeYouBest == "community"){
             this.changeScreen(button, this.allScreens, this.nextCommunity);
 
         }
@@ -55,23 +57,35 @@ export class UO002 {
                 allScreens[i].style.display = "none";
             }
             nextScreen.style.display = "block";
-            this.changeCircle(this.currentCircle, this.nextCircle);
+            this.changeCircle(this.allCircles, this.nextCircle);
         })
 
     }
 
     changeImage( e , choise, containers) {
-            e.target.setAttribute("src", "./images/" + choise + ".png");
+            e.target.setAttribute("src", "./icons/" + choise + "_selected.png");
             for (let i = 0; i < containers.length; i++ ){
                 if (containers[i] !== e.target ){
-                    containers[i].setAttribute("src", "./images/" + containers[i].id + "first.png");
+                    containers[i].setAttribute("src", "./icons/" + containers[i].id + ".png");
                 }
             }
         }
 
-    changeCircle(current, next){
-        current.style.color = "white";
+    changeCircle(allCircles, next){
+        for (let i = 0; i < allCircles.length; i++){
+            allCircles[i].style.color = "white";
+        }
         next.style.color = "#007598";
     }
+
+    returnBack(backButton, allScreens, previousScreen){
+        backButton.addEventListener('click', () => {
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
+            previousScreen.style.display = "block";
+        })
+    }
+
 
 }

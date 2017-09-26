@@ -9,6 +9,10 @@ export class UO026 {
         this.button = document.getElementById('next026');
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('result');
+        this.backButton =  document.getElementById('angleLeft026');
+        this.previousScreen = document.getElementById('UO-022');
+        this.allCircles = document.getElementsByClassName('circle');
+        this.previousCircle = document.getElementById('circle4');
         this.init();
     }
 
@@ -17,6 +21,8 @@ export class UO026 {
         this.getPlanNumber(this.password, "userPassword");
         this.getPlanNumber(this.password_again, "userPassword_again");
         this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.allCircles, this.previousCircle);
+
     }
 
     getPlanNumber(input, name) {
@@ -46,6 +52,19 @@ export class UO026 {
             new Result(this.data);
         });
 
+    }
+
+    returnBack(backButton, allScreens, previousScreen, allCircles, previousCircle){
+        backButton.addEventListener('click', () => {
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
+            previousScreen.style.display = "block";
+            for (let i = 0; i < allCircles.length; i++) {
+                allCircles[i].style.color = 'white';
+            }
+            previousCircle.style.color = "#007598";
+        })
     }
 
 }

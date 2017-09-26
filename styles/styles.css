@@ -1,25 +1,24 @@
+@media (min-width: 1001px) and (max-width: 2000px) {
 
-
-@media (min-width: 1001px) and (max-width: 2000px){
-
- #content{
-     display: none;
- }
-  #noSize{
-      display: block;
-      font-size: 2em;
-      margin:10em auto;
-      color: darkgrey;
-      width: 19em;
-  }
-}
-
-
-@media (min-width: 10px) and (max-width : 1000px) {
-
-    #noSize{
+    #content {
         display: none;
     }
+
+    #noSize {
+        display: block;
+        font-size: 2em;
+        margin: 10em auto;
+        color: darkgrey;
+        width: 19em;
+    }
+}
+
+@media (min-width: 10px) and (max-width: 1000px) {
+
+    #noSize {
+        display: none;
+    }
+
     body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 10px;
@@ -39,8 +38,8 @@
         flex-direction: column;
         justify-content: center;
         width: 100em;
-        height:auto;
-        border: 1px solid #D0D0D0;
+        height: auto;
+        /*border: 1px solid #D0D0D0;*/
 
         /*background-color: #F3F3F3;*/
     }
@@ -140,11 +139,18 @@
         margin: 1em 0.8em !important;
     }
 
-    #flexSquares, #flexThree {
+    #flexSquares {
         display: flex;
         margin: 5em auto 3em auto;
         flex-wrap: wrap;
-        width: 83em;
+        width: 84em;
+    }
+
+    #flexThree {
+        display: flex;
+        margin: 0 auto 0 auto;
+        flex-wrap: wrap;
+        width: 84em;
     }
 
     .describesBest, .role, .location017 {
@@ -174,7 +180,7 @@
         cursor: auto;
     }
 
-    #Landholder, #Community, #Government, #Gas-industry {
+    #landholder, #community, #government, #gas_industry {
         font-size: 5em;
     }
 
@@ -200,12 +206,12 @@
         margin: 1.5em 0 1em 1.2em !important;
     }
 
-    .plan-number .information{
+    .plan-number .information {
         margin: 0 0 0 8em !important;
         bottom: 4em;
     }
 
-    #UO-004 .input{
+    #UO-004 .input {
         margin-bottom: 5em;
     }
 
@@ -228,7 +234,7 @@
         color: black;
     }
 
-    #UO-008 p{
+    #UO-008 p {
         margin-bottom: 0.5em;
     }
 
@@ -339,7 +345,7 @@
         height: 219em;
     }
 
-    #UO-018{
+    #UO-018 {
         height: 180em !important;
     }
 
@@ -394,15 +400,14 @@
     }
 
     /*#okay, #okay018, #okay019, #okay021 {*/
-        /*background: white;*/
-        /*width: 50px;*/
-        /*height: 50px;*/
-        /*color: #F15C21;*/
-        /*font-size: 48px;*/
-        /*margin: 0 50px 0px 265px;*/
-        /*cursor: pointer;*/
+    /*background: white;*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*color: #F15C21;*/
+    /*font-size: 48px;*/
+    /*margin: 0 50px 0px 265px;*/
+    /*cursor: pointer;*/
     /*}*/
-
     #okay i, #okay018 i, #okay021 i {
 
         background: white;
@@ -414,16 +419,23 @@
         font-size: 14em;
         cursor: pointer;
     }
-    #okay019 i{
+
+    #okay019 i {
 
         background: white;
         position: relative;
-        top: 10em;
-        left: 5em;
+        top: 0;
+        left: 0;
         width: 1em;
         color: #F15C21;
         font-size: 15em;
         cursor: pointer;
+    }
+
+    #UO-019 .button {
+        position: relative;
+        top: 152em;
+        left: 75em;
     }
 
     #UO-008 p, #UO-011 p, #UO-014 p, #UO-016 p, #UO-022 p {
@@ -446,7 +458,7 @@
         margin: 5em 27em 3em !important;
     }
 
-    img#BusinessOwner{
+    img#BusinessOwner {
         margin: 3em 6em !important;
     }
 
@@ -454,31 +466,8 @@
         margin: 0;
     }
 
-    .resident{
+    .resident {
         margin: 0 4em;
-    }
-
-
-    /*#flexThree i {*/
-        /*color: #00ADC5;*/
-        /*font-size: 50px;*/
-    /*}*/
-
-
-    #Resident_i {
-        position: absolute;
-        top: 6.95em;
-        left: 1.92em;
-        font-size: 13em;
-        color: #00ADC5;
-    }
-
-    #BusinessOwner_i {
-        position: absolute;
-        top: 7.58em;
-        left: 5.38em;
-        font-size: 12em;
-        color: #00ADC5;
     }
 
     #UO-016 .input, #UO-020 .input {
@@ -503,19 +492,20 @@
     }
 
     #UO-017 .location .information {
-        margin: 0 0 0px 0;
+        margin: -2em;
         position: relative;
-        bottom: 11em;
+        bottom: 13em;
     }
 
     #UO-020 .population_centre .information {
-        margin: 0 0 0px 3px;
+        margin: -0.5em;
         position: relative;
-        bottom: 20px;
+        bottom: 4em;
     }
 
     #UO-017 .wide img {
         margin: 0 36em !important;
+        height: 28em;
     }
 
     #UO-017 .wide p {
@@ -535,10 +525,10 @@
     }
 
     #UO-021 {
-        height: 202em !important;
+        height: 179em !important;
     }
 
-    .wide{
+    .wide {
         width: 100em;
     }
 
@@ -590,25 +580,27 @@
         margin: 8em 0;
     }
 
-    #UO-026 .next{
+    #UO-026 .next {
         margin-top: 1.5em !important;
     }
 
-    #UO-011{
+    #UO-011 {
         height: 180em !important;
     }
 
-    #next011{
+    #next011 {
         margin: 3em 1.05em 2em 1.05em !important;
     }
-    #angleLeft000, #angleLeft002, #angleLeft004,#angleLeft008, #angleLeft011, #angleLeft014,  #angleLeft016,  #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022,  #angleLeft026{
+
+    #angleLeft000, #angleLeft002, #angleLeft004, #angleLeft008, #angleLeft011, #angleLeft014, #angleLeft016, #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022, #angleLeft026 {
         position: absolute;
         font-size: 8em;
         top: 0.7em;
         left: 0.7em;
         color: white;
     }
-    #x000, #x002,  #x004,  #x008,  #x011, #x014, #x016,  #x017,  #x019,  #x020,  #x022, #x026{
+
+    #x000, #x002, #x004, #x008, #x011, #x014, #x016, #x017, #x019, #x020, #x022, #x026 {
         position: absolute;
         font-size: 6em;
         top: 1em;
@@ -616,15 +608,16 @@
         color: white;
     }
 
-    #circles{
+    #circles {
         width: 27em;
         top: 32em;
         left: 37.5em;
         height: 5em;
         position: absolute;
-        z-index:2;
+        z-index: 2;
     }
-    #circles i{
+
+    #circles i {
         margin: 0.4em;
         display: inline-block;
         color: white;
@@ -632,11 +625,11 @@
         font-size: 2.5em;
     }
 
-    i#circle1{
+    i#circle1 {
         color: #007598;
     }
 
-    .fa-info-circle{
+    .fa-info-circle {
         font-size: 11em;
         color: #A6A3A7;
     }
@@ -646,14 +639,14 @@
         font-size: 5em;
     }
 
-    #location{
+    #location {
         font-size: 33em;
-        position:relative;
+        position: relative;
         margin: 0 1.08em;
         color: #F15C21;
     }
 
-    #mapMarker{
+    #mapMarker {
         position: absolute;
         top: 8.3em;
         left: 3.9em;
@@ -661,12 +654,20 @@
         color: #F15C21;
     }
 
-    #UO-016{
+    #UO-016 {
         height: 0em;
     }
 
-    #UO-016 .next{
+    #UO-016 .next {
         margin: 4.5em 1em 2em 1em !important;
+    }
+
+    .describesBest {
+        margin: 1em;
+    }
+
+    #business_owner {
+        margin: 3em 3em 3em 6em !important;
     }
 
 }

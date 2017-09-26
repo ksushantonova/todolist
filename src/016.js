@@ -5,14 +5,17 @@ export class UO016 {
         this.button = document.getElementById('next016');
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('UO-017');
-        this.currentCircle = document.getElementById('circle2');
+        this.allCircles = document.getElementsByClassName('circle');
         this.nextCircle = document.getElementById('circle3');
+        this.backButton =  document.getElementById('angleLeft016');
+        this.previousScreen = document.getElementById('UO-014');
         this.init();
     }
 
     init() {
         this.getPlanNumber(this.input);
         this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        this.returnBack(this.backButton, this.allScreens, this.previousScreen);
     }
 
     getPlanNumber(input) {
@@ -33,15 +36,23 @@ export class UO016 {
                 allScreens[i].style.display = "none";
             }
             nextScreen.style.display = "block";
-            this.changeCircle(this.button, this.currentCircle, this.nextCircle);
+            this.changeCircle(this.allCircles, this.nextCircle);
         });
-
     }
 
-    changeCircle(button, current, next){
-        button.addEventListener('click', () => {
-            current.style.color = "white";
-            next.style.color = "#007598";
+    changeCircle(allCircles, nextCircle){
+        for (let i = 0; i < allCircles.length; i++){
+            allCircles[i].style.color = "white";
+        }
+        nextCircle.style.color = "#007598";
+    }
+
+    returnBack(backButton, allScreens, previousScreen){
+        backButton.addEventListener('click', () => {
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
+            previousScreen.style.display = "block";
         })
-    }
+}
 }

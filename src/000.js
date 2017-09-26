@@ -1,17 +1,21 @@
 export class UO000 {
     constructor(data) {
         this.data = data;
-        this.currentScreen = document.getElementById('UO-000');
         this.nextScreen = document.getElementById('UO-002');
+        this.allScreens = document.getElementsByClassName('screen');
         this.menues = document.getElementsByClassName('dropdownMenu');
         this.button = document.getElementById('next000');
+        this.backButton =  document.getElementById('angleLeft000');
+        this.previousScreen = document.getElementById('UO-000');
         this.init();
 
     }
 
     init() {
+        console.log(this.allScreens);
         this.showMenues(this.menues);
-        this.changeScreen(this.button, this.currentScreen, this.nextScreen);
+        this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        this.returnBack(this.backButton, this.allScreens, this.previousScreen);
 
     }
 
@@ -23,9 +27,11 @@ export class UO000 {
         }
     }
 
-    changeScreen(button, previousScreen, nextScreen){
+    changeScreen(button, allScreens, nextScreen){
         button.onclick = () => {
-            previousScreen.style.display = "none";
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
             nextScreen.style.display = "block";
         }
     }
@@ -53,7 +59,14 @@ export class UO000 {
 
     }
 
-
+    returnBack(backButton, allScreens, previousScreen){
+        backButton.addEventListener('click', () => {
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
+            previousScreen.style.display = "block";
+        })
+    }
 
 }
 

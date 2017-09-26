@@ -4,10 +4,14 @@ export class UO019 {
         this.button = document.getElementById('okay019');
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('UO-020');
+        this.backButton =  document.getElementById('angleLeft019');
+        this.previousScreen = document.getElementById('UO-017');
+        this.circles = document.getElementById('circles');
         this.init();
     }
 
     init(){
+        this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.circles);
         this.getLocation(this.data);
         this.changeScreen(this.button, this.allScreens, this.nextScreen);
     }
@@ -24,5 +28,15 @@ export class UO019 {
 
     getLocation(data){
         data.userLocation = "user location";
+    }
+
+    returnBack(backButton, allScreens, previousScreen, circles){
+        backButton.addEventListener('click', () => {
+            for (let i = 0; i < allScreens.length; i++) {
+                allScreens[i].style.display = "none";
+            }
+            circles.style.display = "block";
+            previousScreen.style.display = "block";
+        })
     }
 }

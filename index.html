@@ -29,12 +29,12 @@
 
 <div id="content">
     <div id="circles">
-        <i id="circle1" class="fa fa-circle" aria-hidden="true"></i>
-        <i id="circle2" class="fa fa-circle" aria-hidden="true"></i>
-        <i id="circle3" class="fa fa-circle" aria-hidden="true"></i>
-        <i id="circle4" class="fa fa-circle" aria-hidden="true"></i>
-        <i id="circle5" class="fa fa-circle" aria-hidden="true"></i>
-        <i id="circle6" class="fa fa-circle" aria-hidden="true"></i>
+        <i id="circle1" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle2" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle3" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle4" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle5" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle6" class="fa fa-circle circle" aria-hidden="true"></i>
     </div>
     <!-- UO-000 -->
     <div id="UO-000" class="screen" style="display: block">
@@ -109,19 +109,19 @@
             </p>
             <div id="flexSquares">
                 <div class="describesBest">
-                    <img id="Landholder" class="choiseImage " src="./images/Landholderfirst.png" alt="">
+                    <img id="landholder" class="choiseImage " src="./icons/landholder.png" alt="">
                     <p>Landholder</p>
                 </div>
                 <div class="describesBest">
-                    <img id="Government" class="choiseImage" src="./images/Governmentfirst.png" alt="">
+                    <img id="government" class="choiseImage" src="./icons/government.png" alt="">
                     <p>Government</p>
                 </div>
                 <div class="describesBest">
-                    <img id="Gas-industry" class="choiseImage" src="./images/Gas-industryfirst.png" alt="">
+                    <img id="gas_industry" class="choiseImage" src="./icons/gas_industry.png" alt="">
                     <p>Gas industry</p>
                 </div>
                 <div class="describesBest">
-                    <img id="Community" class="choiseImage" src="./images/Communityfirst.png" alt="">
+                    <img id="community" class="choiseImage" src="./icons/community.png" alt="">
                     <p>Community</p>
                 </div>
             </div>
@@ -155,8 +155,8 @@
             </div>
             <p>Are you an owner or a leasee?</p>
             <div class="radio" id="radio004">
-                <p><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Owner</p>
-                <p><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Leasee</p>
+               <p class="p004"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Owner</p>
+                <p class="p004"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Leasee</p>
             </div>
             <div class="moreLand">
                 <div id="plus">
@@ -209,16 +209,16 @@
         <div class="body">
             <p>Please tell us where you work in Government?</p>
             <div class="radio" id="radio008_1">
-                <p><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Federate</p>
-                <p><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>State</p>
-                <p><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Local</p>
+                <p class="p008_1"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Federate</p>
+                <p class="p008_1"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>State</p>
+                <p class="p008_1"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Local</p>
             </div>
             <p>What is your area of interest in Government?</p>
             <div class="radio" id="radio008_2">
-                <p><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Resourses</p>
-                <p><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Health</p>
-                <p><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Environment</p>
-                <p><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Other</p>
+                <p class="p008_2"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Resourses</p>
+                <p class="p008_2"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Health</p>
+                <p class="p008_2"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Environment</p>
+                <p class="p008_2"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Other</p>
             </div>
         </div>
         <div class="button">
@@ -237,10 +237,10 @@
         <div class="body">
             <p>Please tell us about your role within the Gas industry</p>
             <div class="radio" id="radio011">
-                <p><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas company employee</p>
-                <p><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry supplier</p>
-                <p><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry contractor</p>
-                <p><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Other (please specify)</p>
+                <p class="p011"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas company employee</p>
+                <p class="p011"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry supplier</p>
+                <p class="p011"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry contractor</p>
+                <p class="p011"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Other (please specify)</p>
             </div>
             <div id="toSpecify" class="input" style="display:none">
                 <input id="specify" type="text" placeholder="Please specify" value=""/>
@@ -264,17 +264,15 @@
             <p>Please tell us about your role within the Community</p>
             <div id="flexThree">
                 <div class="role resident">
-                    <i id="Resident_i" class="fa fa-user" aria-hidden="true"></i>
-                    <img id="Resident" class="choiseImage014" src="./images/Residentfirst.png" alt=""/>
+                    <img id="resident" class="choiseImage014" src="./icons/resident.png" alt=""/>
                     <p>Resident</p>
                 </div>
                 <div class="role business">
-                    <i id="BusinessOwner_i" class="fa fa-suitcase" aria-hidden="true"></i>
-                    <img id="BusinessOwner" class="choiseImage014" src="./images/BusinessOwnerfirst.png" alt=""/>
+                    <img id="business_owner" class="choiseImage014" src="./icons/business_owner.png" alt=""/>
                     <p>Business Owner</p>
                 </div>
                 <div class="role wide">
-                    <img id="Both" class="choiseImage014" src="./images/Bothfirst.png" alt=""/>
+                    <img id="both" class="choiseImage014" src="./icons/both.png" alt=""/>
                     <p>Both</p>
                 </div>
             </div>
@@ -295,7 +293,7 @@
         <div class="body">
             <p>What is your business name?</p>
             <div class="input">
-                <input id="business-name" type="text" placeholder="" value=""/>
+                <input id="business-name" type="text" placeholder="Business name" value=""/>
                 <button class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
         </div>
@@ -315,18 +313,17 @@
         <div class="body">
             <div class="location">
                 <p> Please choose your local government area. You may choose more than one.</p>
-                <button class="information" id="information017"></button>
+                <button class="information" id="information017"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
             </div>
             <div class="location017 wide">
-                <i id="location" class="fa fa-circle-thin" aria-hidden="true"></i>
-                <i id="mapMarker" class="fa fa-map-marker" aria-hidden="true"></i>
+                <img id="find_on_map" class="bigImage" src="./icons/find_on_map.png" alt="No image"/>
                 <p>Find on map</p>
             </div>
         </div>
     </div>
 
     <!--UO-018-->
-    <div id="UO-018" style="display: none">
+    <div id="UO-018"  style="display: none">
         <div class="background"></div>
         <div class="visible">
             <div class="top">
@@ -337,7 +334,7 @@
                 </div>
             </div>
             <div class="button">
-                <div id="okay018"><i class="fa fa-circle"></i></div>
+                <div id="okay018"><i class="fa fa-check-circle"></i></div>
             </div>
         </div>
     </div>
@@ -362,11 +359,11 @@
         <div class="body">
             <div class="population_centre">
                 <p>Please provide your nearest regional population centre.</p>
-                <button class="information" id="information020"></button>
+                <button class="information" id="information020"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
 
             </div>
             <div class="input">
-                <input id="population-centre" type="text" placeholder="" value=""/>
+                <input id="population-centre" type="text" placeholder="town centre" value=""/>
                 <button class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
         </div>
@@ -387,7 +384,7 @@
                 </div>
             </div>
             <div class="button">
-                <div id="okay021"><i class="fa fa-circle"></i></div>
+                <div id="okay021"><i class="fa fa-check-circle"></i></div>
             </div>
         </div>
     </div>
@@ -403,12 +400,12 @@
         <div class="body">
             <p>What type of content are you interested in:</p>
             <div class="radio" id="radio022">
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>General information</p>
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Research and reports</p>
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Latest news</p>
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Guidelines</p>
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Industry</p>
-                <p><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Region updates</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>General information</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Research and reports</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Latest news</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Guidelines</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Industry</p>
+                <p class="p022"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Region updates</p>
             </div>
         </div>
         <div class="button">
