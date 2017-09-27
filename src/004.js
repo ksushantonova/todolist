@@ -80,6 +80,8 @@ export class UO004 {
             }
             this.data.ownerOrLeasee = e.target.lastChild.data;
         }
+        let $target = $(e.target);
+        $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
     }
 
 

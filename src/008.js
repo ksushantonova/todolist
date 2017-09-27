@@ -71,6 +71,8 @@ export class UO008 {
             }
             this.data[name] = e.target.lastChild.data;
         }
+        let $target = $(e.target);
+        $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
     }
 
     unlockButton(button){

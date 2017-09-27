@@ -38,7 +38,7 @@ export class UO026 {
     checkInputs(data) {
         if((data.userEmail.length > 0) && (data.userPassword.length > 0) && (data.userPassword_again.length > 0) && (data.userPassword == data.userPassword_again)){
             this.changeButton(this.button);
-            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+            // this.changeScreen(this.button, this.allScreens, this.nextScreen);
         }
     }
 
@@ -47,17 +47,17 @@ export class UO026 {
         button.style.opacity = "1";
     }
 
-    changeScreen(button, allScreens, nextScreen) {
-        button.addEventListener('click', () => {
-            for (let i = 0; i < allScreens.length; i++) {
-                allScreens[i].style.display = "none";
-            }
-            nextScreen.style.display = "block";
-            this.circlesContainer.style.display = "none";
-            new Result(this.data);
-        });
-
-    }
+    // changeScreen(button, allScreens, nextScreen) {
+    //     button.addEventListener('click', () => {
+    //         for (let i = 0; i < allScreens.length; i++) {
+    //             allScreens[i].style.display = "none";
+    //         }
+    //         nextScreen.style.display = "block";
+    //         this.circlesContainer.style.display = "none";
+    //         new Result(this.data);
+    //     });
+    //
+    // }
 
     returnBack(backButton, allScreens, previousScreen, allCircles, previousCircle) {
         backButton.addEventListener('click', () => {

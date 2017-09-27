@@ -1,5 +1,7 @@
 // UO-000
 
+import 'babel-polyfill';
+
 import { UO000 } from './000.js';
 import { UO002 } from './002.js';
 import { UO004 } from './004.js';

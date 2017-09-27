@@ -35,8 +35,9 @@ export class UO017 {
             this.choiseData = e.target.id;
             this.changeImage(e, this.choiseData);
             this.changeScreen(this.allScreens, this.nextScreen);
+            let $target = $(e.target);
+            $target.closest('.radio-field-container').attr('data-current-value', $target.attr('data-value'));
         })
-
     }
 
     hideInfo(button, infoScreen){

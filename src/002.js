@@ -28,7 +28,8 @@ export class UO002 {
             data.describeYouBest = this.choiseData;
             this.unlockButton(this.button, this.data);
             this.changeImage(e, this.choiseData, this.choiseContainers);
-
+            let $target = $(e.target);
+            $target.closest('.radio-field-container').attr('data-current-value', $target.attr('data-value'));
         })
     }
 
