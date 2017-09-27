@@ -37,7 +37,7 @@
     #UO-000, #UO-002, #UO-004, #UO-005, #UO-008, #UO-009, #UO-011, #UO-014, #UO-016, #UO-017, #UO-018, #UO-019, #UO-020, #UO-021, #UO-022, #UO-026, #result, #UO-027 {
         flex-direction: column;
         justify-content: center;
-        width: 100em;
+        width: 102%;
         height: auto;
         /*border: 1px solid #D0D0D0;*/
 
@@ -234,6 +234,14 @@
         color: black;
     }
 
+    .input #specify{
+        border: 0.1em solid #BDBDBD !important;
+    }
+
+    .input #specify:focus{
+        border: 0.1em solid #F15D22 !important;
+    }
+
     #UO-008 p {
         margin-bottom: 0.5em;
     }
@@ -242,7 +250,7 @@
         margin-top: 10em;
     }
 
-    #plan-number:focus, #specify:focus, #business-name:focus, #population-centre:focus, #email:focus, #password:focus, #password_again:focus {
+    #plan-number:focus, #business-name:focus, #population-centre:focus, #email:focus, #password:focus, #password_again:focus {
         border: 0.1em solid #F15D22;
 
     }
