@@ -16,10 +16,13 @@ export class UO026 {
         this.allCircles = document.getElementsByClassName('circle');
         this.circlesContainer = document.getElementById('circles');
         this.previousCircle = document.getElementById('circle4');
+        this.warning = document.getElementById('dontMatch');
+        this.state = "false";
         this.init();
     }
 
     init() {
+        this.button.disabled = true;
         this.showTerms(this.terms, this.allScreens, this.termScreen);
         this.getPlanNumber(this.email, "userEmail");
         this.getPlanNumber(this.password, "userPassword");
@@ -32,20 +35,43 @@ export class UO026 {
         input.addEventListener('input', () => {
             this.data[name] = input.value;
             this.checkInputs(this.data);
+            if( name == "userEmail"){
+                this.validateEmail(input);
+            }
         });
+
     }
 
     checkInputs(data) {
-        if((data.userEmail.length > 0) && (data.userPassword.length > 0) && (data.userPassword_again.length > 0) && (data.userPassword == data.userPassword_again)){
-            this.changeButton(this.button);
+        if((this.state == "true") && (data.userPassword.length > 0) && (data.userPassword_again.length > 0) && (data.userPassword == data.userPassword_again)){
+            this.unlockButton(this.button);
+            this.warning.style.display = "none";
             // this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        } else {
+            this.lockButton(this.button);
+            this.warning.style.display = "none";
         }
+
+        if ((data.userPassword.length > 0) && (data.userPassword_again.length > 0) && (data.userPassword !== data.userPassword_again)){
+            this.lockButton(this.button);
+            this.warning.style.display = "block";
+        }
+
     }
 
-    changeButton(button) {
-        button.style.cursor = "pointer";
-        button.style.opacity = "1";
+    unlockButton(button) {
+            button.style.cursor = "pointer";
+            button.style.opacity = "1";
+            button.disabled = false;
     }
+
+    lockButton(button) {
+        button.style.cursor = "default";
+        button.style.opacity = "0.5";
+        button.disabled = true;
+    }
+
+
 
     // changeScreen(button, allScreens, nextScreen) {
     //     button.addEventListener('click', () => {
@@ -80,5 +106,21 @@ export class UO026 {
             screen.style.display = "block";
         })
 
+    }
+
+    validateEmail(input){
+        input.addEventListener('input', () => {
+            if(input.value != '') {
+                let pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                if(pattern.test(input.value)){
+                    this.state = "true";
+                } else {
+                    input.focus();
+                    this.state = "false";
+                }
+            } else {
+                this.state = "false";
+            }
+        });
     }
 }

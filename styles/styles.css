@@ -601,12 +601,12 @@
         color: white;
     }
 
-    #x000, #x002, #x004, #x008, #x011, #x014, #x016, #x017, #x019, #x020, #x022, #x026, #x027 {
-        position: absolute;
-        font-size: 6em;
-        top: 1em;
-        left: 15em;
-        color: white;
+    #UO-000 #x000, #UO-002 #x002, #UO-004 #x004, #UO-008 #x008,#UO-011 #x011, #UO-014 #x014, #UO-016 #x016, #UO-017 #x017,#UO-019 #x019, #UO-020 #x020, #UO-022 #x022,#UO-026 #x026,#UO-027 #x027 {
+        position: absolute  !important;
+        font-size: 7em! important;
+        top: 0.7em !important;
+        left: 12.5em  !important;
+        color: white  !important;
     }
 
     #circles {
@@ -674,6 +674,13 @@
     #UO-027 .body p{
         text-align: left;
         font-size: 3.5em;
+    }
+
+    #dontMatch{
+        display: none;
+        color: red;
+        font-size: 4em;
+        margin: 2em 3em;
     }
 
 }

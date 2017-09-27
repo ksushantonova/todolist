@@ -48,7 +48,6 @@ export class UO008 {
         changeData.container.addEventListener('click', (e) => {
             this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
             this.unlockButton(this.button);
-
         });
     }
 
@@ -76,7 +75,7 @@ export class UO008 {
     }
 
     unlockButton(button){
-        if ((this.data.whereAreYouWorkInGovernment.length !== undefined) && (this.data.areaOfInterest !== undefined)){
+        if ((this.data.whereAreYouWorkInGovernment.length > 2) && (this.data.areaOfInterest.length > 2)){
             this.changeButton(button);
             this.changeScreen(button, this.allScreens, this.nextScreen);
         }
