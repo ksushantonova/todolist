@@ -38,7 +38,7 @@ export class UO004 {
     getPlanNumber(input, data) {
         input.addEventListener('input', () => {
             data.planNumber = input.value;
-            if ((data.ownerOrLeasee.length > 2) && (data.planNumber.length == 8)){
+            if ((data.ownerOrLeasee.length > 2) && (data.planNumber.length > 2)){
                 this.state = "true";
                 this.unlockButton(this.button);
             } else {
@@ -51,7 +51,7 @@ export class UO004 {
     getRadioChoise(container, data) {
         container.addEventListener('click', (e) => {
             this.makeRadioButton(e, this.radioButtons, this.radioP);
-            if (data.ownerOrLeasee.length > 2 && data.planNumber.length == 8){
+            if (data.ownerOrLeasee.length > 2 && data.planNumber.length > 2){
                 this.state = "true";
                 this.unlockButton(this.button);
             } else {
@@ -122,13 +122,16 @@ export class UO004 {
     showInfo(button, infoScreen) {
         button.addEventListener('click', () => {
             infoScreen.style.display = "block";
+            document.getElementById('circles').style.display = "none";
         })
     }
 
     hideInfo(button, infoScreen) {
         button.addEventListener('click', () => {
             infoScreen.style.display = "none";
+            document.getElementById('circles').style.display = "block";
         });
+
     }
 
     changeCircle(allCircles, next) {

@@ -27,7 +27,7 @@ let data = {
     roleInTheCommunity: "",
     businessName: "",
     userLocation: "",
-    nearestPopulationCentre: "",
+    postCode: "",
     interests: "",
     userEmail: "",
     userPassword: "",

@@ -13,23 +13,35 @@ export class UO016 {
     }
 
     init() {
+        this.button.disabled = true;
         this.getPlanNumber(this.input);
         this.returnBack(this.backButton, this.allScreens, this.previousScreen);
     }
 
     getPlanNumber(input) {
         input.addEventListener('input', () => {
-            this.changeButton(this.button);
             this.data.businessName = input.value;
-            this.changeScreen(this.button, this.allScreens, this.nextScreen);
-
+            if(this.data.businessName.length > 2){
+                this.changeButton(this.button);
+            } else {
+                this.lockButton(this.button);
+            }
         });
     }
 
     changeButton(button) {
         button.style.cursor = "pointer";
         button.style.opacity = "1";
+        button.disabled = false;
+        this.changeScreen(this.button, this.allScreens, this.nextScreen);
     }
+
+    lockButton(button){
+        button.style.cursor = "default";
+        button.style.opacity = "0.5"
+        this.button.disabled = true;
+    }
+
 
     changeScreen(button, allScreens, nextScreen) {
         button.addEventListener('click', (e) => {

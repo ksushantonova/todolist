@@ -353,6 +353,7 @@
         height: 219em;
     }
 
+
     #UO-018 {
         height: 180em !important;
     }
@@ -391,7 +392,7 @@
 
     .body .one, .body .two, .body .three {
         font-weight: normal;
-        margin: 1.5em 1.3em 1em 1.3em;
+        margin: 1.5em 1.3em 0.3em 1.3em;
         font-size: 6em;
         color: #343534;
 
@@ -684,12 +685,19 @@
         font-size: 3.5em;
     }
 
-    #dontMatch{
+    .warnings{
         display: none;
         color: red;
         font-size: 4em;
         margin: 2em 3em;
+        text-align: center;
     }
+
+    #donotMatch.warnings{
+        position: relative;
+        bottom: 9em;
+    }
+
 
 }
 

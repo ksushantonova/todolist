@@ -17,6 +17,7 @@ export class UO011 {
     }
 
     init() {
+        this.button.disabled = true;
         let changeRadioData = {
             container: this.radioContainer,
             name: "roleWithinTheGasIndustry",
@@ -35,7 +36,8 @@ export class UO011 {
     getRadioChoise(changeData) {
         changeData.container.addEventListener('click', (e) => {
             this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
-            this.unlockButton(this.button);
+            console.log(this.data.roleWithinTheGasIndustry);
+            this.unlockButton(this.data);
 
         });
     }
@@ -62,26 +64,38 @@ export class UO011 {
         $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
     }
 
-    unlockButton(button) {
-        if (this.data.roleWithinTheGasIndustry.length > 2) {
-            if (this.data.roleWithinTheGasIndustry !== "Other (please specify)"){
-                this.changeScreen(button, this.allScreens, this.nextScreen);
-                this.changeButton(button);
-                this.changeCircle(this.button, this.allCircles, this.nextCircle);
+    unlockButton(data) {
+            if (data.roleWithinTheGasIndustry !== "Other (please specify)"){
+                this.validateInput(data);
+                this.specify.style.display = "none";
+                this.specify.firstElementChild.value = "";
             } else {
                 this.specify.style.display = "block";
-                this.getSpecify(this.specify.firstElementChild);
+                    data.roleWithinTheGasIndustry = "";
+                    this.lockButton(this.button);
+                    this.getSpecify(this.specify.firstElementChild);
+
+                }
+
             }
-        }
-    }
+
 
     getSpecify(input){
         input.addEventListener('input' , () => {
             this.data.roleWithinTheGasIndustry = input.value;
+            this.validateInput(this.data);
+        });
+    }
+
+    validateInput(data){
+        if( data.roleWithinTheGasIndustry.length > 2){
             this.changeButton(this.button);
             this.changeScreen(this.button, this.allScreens, this.nextScreen);
             this.changeCircle(this.button, this.allCircles, this.nextCircle);
-        });
+        } else {
+            this.lockButton(this.button);
+        }
+
     }
 
     changeScreen(button, allScreens, nextScreen) {
@@ -96,6 +110,13 @@ export class UO011 {
     changeButton(button) {
         button.style.cursor = "pointer";
         button.style.opacity = "1";
+        this.button.disabled = false;
+    }
+
+    lockButton(button){
+        button.style.cursor = "default";
+        button.style.opacity = "0.5"
+        this.button.disabled = true;
     }
 
 

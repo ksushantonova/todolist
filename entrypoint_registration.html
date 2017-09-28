@@ -29,471 +29,472 @@
 
 <form method="post" action=".">
 
-    <div id="content">
-        <div id="circles">
-            <i id="circle1" class="fa fa-circle circle" aria-hidden="true"></i>
-            <i id="circle2" class="fa fa-circle circle" aria-hidden="true"></i>
-            <i id="circle3" class="fa fa-circle circle" aria-hidden="true"></i>
-            <i id="circle4" class="fa fa-circle circle" aria-hidden="true"></i>
-            <i id="circle5" class="fa fa-circle circle" aria-hidden="true"></i>
-            <i id="circle6" class="fa fa-circle circle" aria-hidden="true"></i>
+<div id="content">
+    <div id="circles">
+        <i id="circle1" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle2" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle3" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle4" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle5" class="fa fa-circle circle" aria-hidden="true"></i>
+        <i id="circle6" class="fa fa-circle circle" aria-hidden="true"></i>
+    </div>
+    <!-- UO-000 -->
+    <div id="UO-000" class="screen" style="display: block">
+        <div class="header">
+            <p id="x000"><a href="liquidstate://app_user/dismiss/">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image" />
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
         </div>
-        <!-- UO-000 -->
-        <div id="UO-000" class="screen" style="display: block">
-            <div class="header">
-                <p id="x000"><a href="liquidstate://app_user/dismiss/">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image" />
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
 
-            <div class="body">
-                <p>Welcome to the GasApp Aus.This app provides a useful compensation calculator tool and connects
-                    landholders and community members with key agencies.</p>
+        <div class="body">
+            <p>Welcome to the GasApp Aus.This app provides a useful compensation calculator tool and connects
+                landholders and community members with key agencies.</p>
+            <p>
+                To ensure you receive information that is most relevant to you, please answer a few short questions.
+            </p>
+
+
+            <div id="000-firstMenu" class="dropdownMenu">
+                <p>Read more about the functions of GasApp Aus</p>
+                <button type="button" class="buttonMenu"><i class="fa fa-angle-down" style="font-size: 5em;"></i></button>
+            </div>
+            <div class="menuPocket">
+                <p class="p"> Find out what key agencies GasApp Aus can connect you with</p>
                 <p>
-                    To ensure you receive information that is most relevant to you, please answer a few short questions.
+                <ul>
+                    <li>Calculate an estimation of your compensation entitlements</li>
+                    <li>Receive updates, alerts and other information from key agencies</li>
+                    <li>Submit concerns to specific agencies or gas companies.</li>
+                </ul>
                 </p>
 
-
-                <div id="000-firstMenu" class="dropdownMenu">
-                    <p>Read more about the functions of GasApp Aus</p>
-                    <button type="button" class="buttonMenu"><i class="fa fa-angle-down" style="font-size: 5em;"></i></button>
-                </div>
-                <div class="menuPocket">
-                    <p class="p"> Find out what key agencies GasApp Aus can connect you with</p>
-                    <p>
-                    <ul>
-                        <li>Calculate an estimation of your compensation entitlements</li>
-                        <li>Receive updates, alerts and other information from key agencies</li>
-                        <li>Submit concerns to specific agencies or gas companies.</li>
-                    </ul>
-                    </p>
-
-                </div>
-
-                <div id="000-secondMenu" class="dropdownMenu">
-                    <p>Find out what key agencies GasApp Aus can connect you with</p>
-                    <button type="button" class="buttonMenu"><i class="fa fa-angle-down" style="font-size: 5em;"></i></button>
-                </div>
-                <div class="menuPocket">
-                    <p class="p">GasApp Aus connects landholders and other community members with: </p>
-                    <p>
-                    <ul>
-                        <li>Councils</li>
-                        <li>State government agencies and authorities</li>
-                        <li>Federal government agencies and authorities</li>
-                        <li>Gas companies</li>
-                        <li>The GasFields Commission Queensland</li>
-                        <li>Other industry agencies</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-            <div class="button">
-                <button type="button" id="next000" class="next">NEXT</button>
             </div>
 
-        </div>
-
-        <!-- UO-002 -->
-        <div id="UO-002" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft002" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x002"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
+            <div id="000-secondMenu" class="dropdownMenu">
+                <p>Find out what key agencies GasApp Aus can connect you with</p>
+                <button type="button" class="buttonMenu"><i class="fa fa-angle-down" style="font-size: 5em;"></i></button>
             </div>
-
-            <div class="body">
-
+            <div class="menuPocket">
+                <p class="p">GasApp Aus connects landholders and other community members with: </p>
                 <p>
-                    Which describes you best?
+                <ul>
+                    <li>Councils</li>
+                    <li>State government agencies and authorities</li>
+                    <li>Federal government agencies and authorities</li>
+                    <li>Gas companies</li>
+                    <li>The GasFields Commission Queensland</li>
+                    <li>Other industry agencies</li>
+                </ul>
                 </p>
-                <div id="flexSquares" class="radio-field-container" data-current-value="" data-field-name="User description">
-                    <div class="describesBest">
-                        <img id="landholder" class="choiseImage " src="./icons/landholder.png" alt="" data-value="landholder">
-                        <p>Landholder</p>
-                    </div>
-                    <div class="describesBest">
-                        <img id="government" class="choiseImage" src="./icons/government.png" alt="" data-value="government">
-                        <p>Government</p>
-                    </div>
-                    <div class="describesBest">
-                        <img id="gas_industry" class="choiseImage" src="./icons/gas_industry.png" alt="" data-value="gas industry">
-                        <p>Gas industry</p>
-                    </div>
-                    <div class="describesBest">
-                        <img id="community" class="choiseImage" src="./icons/community.png" alt="" data-value="community">
-                        <p>Community</p>
-                    </div>
-                </div>
             </div>
-            <div class="button">
-                <button type="button" id="next002" class="next">NEXT</button>
-            </div>
-
+        </div>
+        <div class="button">
+            <button type="button" id="next000" class="next">NEXT</button>
         </div>
 
-        <!-- UO-004 -->
-        <div id="UO-004" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft004" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x004"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
+    </div>
 
-            </div>
+    <!-- UO-002 -->
+    <div id="UO-002" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft002" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x002"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
 
-            <div class="body">
+        <div class="body">
 
-                <p>Please tell us more about your land holdings.</p>
-
-                <div class="plan-number">
-                    <p class="plan-number">What is your lot / plan number?</p>
-                    <button type="button" class="information" id="information"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
+            <p>
+                Which describes you best?
+            </p>
+            <div id="flexSquares" class="radio-field-container" data-current-value="" data-field-name="User description">
+                <div class="describesBest">
+                    <img id="landholder" class="choiseImage " src="./icons/landholder.png" alt="" data-value="landholder">
+                    <p>Landholder</p>
                 </div>
-                <div class="input">
-                    <input id="plan-number" name="plan_number" type="text" placeholder="RP123456" value=""/>
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <div class="describesBest">
+                    <img id="government" class="choiseImage" src="./icons/government.png" alt="" data-value="government">
+                    <p>Government</p>
                 </div>
-                <p>Are you an owner or a leasee?</p>
-                <div id="radio004" class="radio radio-field-container" data-current-value="" data-field-name="Owner or Leasee">
-                    <p class="p004" data-value="owner"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Owner</p>
-                    <p class="p004" data-value="leasee"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Leasee</p>
+                <div class="describesBest">
+                    <img id="gas_industry" class="choiseImage" src="./icons/gas_industry.png" alt="" data-value="gas industry">
+                    <p>Gas industry</p>
                 </div>
-                <div class="moreLand">
-                    <div id="plus">
-                        <i class="fa fa-plus-circle" aria-hidden="true">
-                        </i>
-                    </div>
-                    <div id="add">
-                        Add another land holding
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="button">
-                <button type="button" id="next004" class="next">NEXT</button>
-            </div>
-            <div id="UO-005">
-                <div class="background"></div>
-                <div class="visible">
-                    <div class="top">
-                        <p>Information</p>
-                    </div>
-                    <div class="body">
-                        <div class="one">Your lot on plan numbers will help us customise your app experience so you receive
-                            information specific to you
-                        </div>
-                        <div class="two"> Find your lot on plan</div>
-                        <div class="three">Your lot on plan is listed on your property title or on a council rates notice.
-                            Alternatively, you can search online by entering ‘[your address] + lot on plan’.
-                        </div>
-                    </div>
-                    <div class="button">
-                        <div id="okay"><i class="fa fa-check-circle"></i></div>
-                    </div>
+                <div class="describesBest">
+                    <img id="community" class="choiseImage" src="./icons/community.png" alt="" data-value="community">
+                    <p>Community</p>
                 </div>
             </div>
         </div>
+        <div class="button">
+            <button type="button" id="next002" class="next">NEXT</button>
+        </div>
 
-        <!--UO-005-->
+    </div>
 
+    <!-- UO-004 -->
+    <div id="UO-004" class="screen" style="display: none">
+         <div class="header">
+             <i id="angleLeft004" class="fa fa-angle-left" aria-hidden="true"></i>
+             <p id="x004"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+        <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+        <img class="littleImage" src="images/icon.png" alt="No image"/>
 
-        <!--UO-008-->
-        <div id="UO-008" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft008" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x008"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
+    </div>
+
+        <div class="body">
+
+            <p>Please tell us more about your land holdings.</p>
+
+            <div class="plan-number">
+                <p class="plan-number">What is your lot / plan number?</p>
+                <button type="button" class="information" id="information"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
             </div>
-            <div class="body">
-                <p>Please tell us where you work in Government?</p>
-                <div id="radio008_1" class="radio radio-field-container" data-current-value="" data-field-name="Government type">
-                    <p class="p008_1" data-value="federal"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Federal</p>
-                    <p class="p008_1" data-value="state"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>State</p>
-                    <p class="p008_1" data-value="local"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Local</p>
-                </div>
-                <p>What is your area of interest in Government?</p>
-                <div id="radio008_2" class="radio radio-field-container" data-current-value="" data-field-name="Government area of interest">
-                    <p class="p008_2" data-value="resources"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Resources</p>
-                    <p class="p008_2" data-value="health"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Health</p>
-                    <p class="p008_2" data-value="environment"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Environment</p>
-                    <p class="p008_2" data-value="other"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Other</p>
-                </div>
+            <div class="input">
+                <input id="plan-number" name="plan_number" type="text" placeholder="RP123456" value=""/>
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
-            <div class="button">
-                <button type="button" id="next008" class="next">NEXT</button>
+            <p>Are you an owner or a leasee?</p>
+            <div id="radio004" class="radio radio-field-container" data-current-value="" data-field-name="Owner or Leasee">
+               <p class="p004" data-value="owner"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Owner</p>
+                <p class="p004" data-value="leasee"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Leasee</p>
+            </div>
+            <div class="moreLand">
+                <div id="plus">
+                    <i class="fa fa-plus-circle" aria-hidden="true">
+                    </i>
+                </div>
+                <div id="add">
+                    Add another land holding
+                </div>
+
             </div>
         </div>
 
-        <!--UO-011-->
-        <div id="UO-011" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft011" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x011"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <p>Please tell us about your role within the Gas industry</p>
-                <div id="radio011" class="radio radio-field-container" data-current-value="" data-field-name="Gas industry role">
-                    <p class="p011" data-value="company-employee"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas company employee</p>
-                    <p class="p011" data-value="industry-supplier"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry supplier</p>
-                    <p class="p011" data-value="industry-contractor"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry contractor</p>
-                    <p class="p011" data-value="other"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Other (please specify)</p>
-                </div>
-                <div id="toSpecify" class="input" style="display:none">
-                    <input id="specify" name="role_details" type="text" placeholder="Please specify" value=""/>
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="button">
-                <button type="button" id="next011" class="next">NEXT</button>
-            </div>
-        </div>
 
-        <!--UO-0014-->
-        <div id="UO-014" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft014" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x014"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <p>Please tell us about your role within the Community</p>
-                <div id="flexThree">
-                    <div class="role resident">
-                        <img id="resident" class="choiseImage014" src="./icons/resident.png" alt=""/>
-                        <p>Resident</p>
+        <div class="button">
+            <button type="button" id="next004" class="next">NEXT</button>
+        </div>
+        <div id="UO-005">
+            <div class="background"></div>
+            <div class="visible">
+                <div class="top">
+                    <p>Information</p>
+                </div>
+                <div class="body">
+                    <div class="one">Your lot on plan numbers will help us customise your app experience so you receive
+                        information specific to you
                     </div>
-                    <div class="role business">
-                        <img id="business_owner" class="choiseImage014" src="./icons/business_owner.png" alt=""/>
-                        <p>Business Owner</p>
-                    </div>
-                    <div class="role wide">
-                        <img id="role_both" class="choiseImage014" src="./icons/role_both.png" alt=""/>
-                        <p>Both</p>
+                    <div class="two"> Find your lot on plan</div>
+                    <div class="three">Your lot on plan is listed on your property title or on a council rates notice.
+                        Alternatively, you can search online by entering ‘[your address] + lot on plan’.
                     </div>
                 </div>
-            </div>
-            <div class="button">
-                <button type="button" id="next014" class="next">NEXT</button>
-            </div>
-        </div>
-
-        <!--UO-016-->
-        <div id="UO-016" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft016" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x016"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <p>What is your business name?</p>
-                <div class="input">
-                    <input id="business-name" name="business_name" type="text" placeholder="Business name" value=""/>
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <div class="button">
+                    <div id="okay"><i class="fa fa-check-circle"></i></div>
                 </div>
             </div>
-            <div class="button">
-                <button type="button" id="next016" class="next">NEXT</button>
-            </div>
-        </div>
-
-        <!--UO-017-->
-        <div id="UO-017" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft017" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x017"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <div class="location">
-                    <p> Please choose your local government area. You may choose more than one.</p>
-                    <button type="button" class="information" id="information017"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
-                </div>
-                <div class="location017 wide">
-                    <img id="find_on_map" class="bigImage" src="./icons/find_on_map.png" alt="No image"/>
-                    <p>Find on map</p>
-                </div>
-            </div>
-            <div id="UO-018"  style="display: none">
-                <div class="background"></div>
-                <div class="visible">
-                    <div class="top">
-                        <p>Information</p>
-                    </div>
-                    <div class="body">
-                        <div class="one">Entering the name of your local council will help us customise your app experience so you receive information specific to your community.
-                        </div>
-                    </div>
-                    <div class="button">
-                        <div id="okay018"><i class="fa fa-check-circle"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--UO-018-->
-        <!--UO-019-->
-        <div id="UO-019" class="screen" style="display: none">
-            <i id="angleLeft019" class="fa fa-angle-left" aria-hidden="true" style="color: white"></i>
-            <p id="x019" style="color: #F15D22"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-            <div class="button">
-                <div id="okay019"><i class="fa fa-check-circle"></i></div>
-            </div>
-        </div>
-
-        <!--UO-020-->
-        <div id="UO-020" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft020" class="fa fa-angle-left" aria-hidden="true" ></i>
-                <p id="x020" ><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <div class="population_centre">
-                    <p>Please provide your postcode.</p>
-                    <button type="button" class="information" id="information020"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
-
-                </div>
-                <div class="input">
-                    <input id="population-centre" name="population_centre" type="text" placeholder="Postcode" value=""/>
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="button">
-                <button type="button" id="next020" class="next">NEXT</button>
-            </div>
-            <div id="UO-021" style="display: none">
-                <div class="background"></div>
-                <div class="visible">
-                    <div class="top">
-                        <p>Information</p>
-                    </div>
-                    <div class="body">
-                        <div class="one">Entering the name of your local council will help us customise your app experience so you receive information specific to your community.
-                        </div>
-                    </div>
-                    <div class="button">
-                        <div id="okay021"><i class="fa fa-check-circle"></i></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!--UO-021-->
-
-        <!--UO-022-->
-        <div id="UO-022" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft022" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x022"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <p>What type of content are you interested in:</p>
-                <div id="radio022" class="radio radio-field-container" data-current-value="" data-field-name="Content interest">
-                    <p class="p022" data-value="general information"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>General information</p>
-                    <p class="p022" data-value="research reports"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Research and reports</p>
-                    <p class="p022" data-value="latest news"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Latest news</p>
-                    <p class="p022" data-value="guidelines"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Guidelines</p>
-                    <p class="p022" data-value="industry"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Industry</p>
-                    <p class="p022" data-value="region updates"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Region updates</p>
-                </div>
-            </div>
-            <div class="button">
-                <button type="button" id="next022" class="next">NEXT</button>
-            </div>
-        </div>
-
-        <!--UO-026-->
-        <div id="UO-026" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft026" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x026"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image"/>
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-            <div class="body">
-                <p id="p026">Please register your login details. Your email will be your username for the app.</p>
-                <div class="input">
-                    <input id="email" name="email" type="text" placeholder="Email" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                </div>
-                <div class="input">
-                    <input id="password" name="password" type="password" placeholder="Password" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                </div>
-                <div class="input">
-                    <input id="password_again" type="password" placeholder="Password-again" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                </div>
-                <div id="dontMatch">Passwords do not match. Please try again</div>
-
-                <p id="terms">By registering, you accept these terms & conditions</p>
-            </div>
-            <div class="button">
-                <button type="submit" id="next026" class="next">REGISTER</button>
-            </div>
-        </div>
-
-        <div id="UO-027" class="screen" style="display: none">
-            <div class="header">
-                <i id="angleLeft027" class="fa fa-angle-left" aria-hidden="true"></i>
-                <p id="x027"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
-                <img class="bigImage" src="images/bigImage.png" alt="No image" />
-                <img class="littleImage" src="images/icon.png" alt="No image"/>
-            </div>
-
-            <div class="body">
-                <p><b>Last updated:<b> 29th March 2017</p>
-                <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using this mobile application (the "Service") operated by Liquid State (“us","we", or "our").</p>
-                <p>Your access to, and use of, the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all users and others who access or use the Service.</p>
-                <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
-                <p><b>App Content And Links To Other Content &amp; Web Sites</b></p>
-                <p>Our Service may contain content supplied by other parties or links to third-party web sites or services that are not owned or controlled by Liquid State.</p>
-                <p>Liquid State has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites, content or services. You further acknowledge and agree that Liquid State shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web >sites or services.</p>
-                <p><b>Changes</b></p>
-                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 14 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                <p><b>Contact Us</b></p>
-                <p>If you have any questions about these Terms, please contact us.</p>
-                <p>info@liquid-state.com</p>
-            </div>
-            <div class="button">
-                <button type="button" id="next027" class="next">OK</button>
-            </div>
-
-        </div>
-
-        <div id="result" style="display:none">
-            <p id="describeYouBest" ></p>
-            <p id="planNumber" ></p>
-            <p id="ownerOrLeasee" ></p>
-            <p id="whereAreYouWorkInGovernment" ></p>
-            <p id="areaOfInterest" ></p>
-            <p id="roleWithinTheGasIndustry"></p>
-            <p id="roleInTheCommunity" ></p>
-            <p id="businessName" ></p>
-            <p id="userLocation" ></p>
-            <p id="nearestPopulationCentre" ></p>
-            <p id="interests" ></p>
-            <p id="userEmail" ></p>
-            <p id="userPassword" ></p>
-            <p id="userPassword_again" ></p>
         </div>
     </div>
+
+    <!--UO-005-->
+
+
+    <!--UO-008-->
+    <div id="UO-008" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft008" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x008"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>Please tell us where you work in Government?</p>
+            <div id="radio008_1" class="radio radio-field-container" data-current-value="" data-field-name="Government type">
+                <p class="p008_1" data-value="federal"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Federal</p>
+                <p class="p008_1" data-value="state"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>State</p>
+                <p class="p008_1" data-value="local"><i class="fa fa-circle-thin radio008_1" aria-hidden="true"></i>Local</p>
+            </div>
+            <p>What is your area of interest in Government?</p>
+            <div id="radio008_2" class="radio radio-field-container" data-current-value="" data-field-name="Government area of interest">
+                <p class="p008_2" data-value="resources"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Resources</p>
+                <p class="p008_2" data-value="health"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Health</p>
+                <p class="p008_2" data-value="environment"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Environment</p>
+                <p class="p008_2" data-value="other"><i class="fa fa-circle-thin radio008_2" aria-hidden="true"></i>Other</p>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="next008" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-011-->
+    <div id="UO-011" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft011" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x011"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>Please tell us about your role within the Gas industry</p>
+            <div id="radio011" class="radio radio-field-container" data-current-value="" data-field-name="Gas industry role">
+                <p class="p011" data-value="company-employee"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas company employee</p>
+                <p class="p011" data-value="industry-supplier"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry supplier</p>
+                <p class="p011" data-value="industry-contractor"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Gas industry contractor</p>
+                <p class="p011" data-value="other"><i class="fa fa-circle-thin radio011" aria-hidden="true"></i>Other (please specify)</p>
+            </div>
+            <div id="toSpecify" class="input" style="display:none">
+                <input id="specify" name="role_details" type="text" placeholder="Please specify" value=""/>
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="next011" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-0014-->
+    <div id="UO-014" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft014" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x014"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>Please tell us about your role within the Community</p>
+            <div id="flexThree">
+                <div class="role resident">
+                    <img id="resident" class="choiseImage014" src="./icons/resident.png" alt=""/>
+                    <p>Resident</p>
+                </div>
+                <div class="role business">
+                    <img id="business_owner" class="choiseImage014" src="./icons/business_owner.png" alt=""/>
+                    <p>Business Owner</p>
+                </div>
+                <div class="role wide">
+                    <img id="role_both" class="choiseImage014" src="./icons/role_both.png" alt=""/>
+                    <p>Both</p>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="next014" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-016-->
+    <div id="UO-016" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft016" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x016"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>What is your business name?</p>
+            <div class="input">
+                <input id="business-name" name="business_name" type="text" placeholder="Business name" value=""/>
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="next016" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-017-->
+    <div id="UO-017" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft017" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x017"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <div class="location">
+                <p> Please choose your local government area. You may choose more than one.</p>
+                <button type="button" class="information" id="information017"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
+            </div>
+            <div class="location017 wide">
+                <img id="find_on_map" class="bigImage" src="./icons/find_on_map.png" alt="No image"/>
+                <p>Find on map</p>
+            </div>
+        </div>
+        <div id="UO-018"  style="display: none">
+            <div class="background"></div>
+            <div class="visible">
+                <div class="top">
+                    <p>Information</p>
+                </div>
+                <div class="body">
+                    <div class="one">Entering the name of your local council will help us customise your app experience so you receive information specific to your community.
+                    </div>
+                </div>
+                <div class="button">
+                    <div id="okay018"><i class="fa fa-check-circle"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--UO-018-->
+    <!--UO-019-->
+    <div id="UO-019" class="screen" style="display: none">
+        <i id="angleLeft019" class="fa fa-angle-left" aria-hidden="true" style="color: white"></i>
+        <p id="x019" style="color: #F15D22"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+        <div class="button">
+            <div id="okay019"><i class="fa fa-check-circle"></i></div>
+        </div>
+    </div>
+
+    <!--UO-020-->
+    <div id="UO-020" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft020" class="fa fa-angle-left" aria-hidden="true" ></i>
+            <p id="x020" ><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <div class="population_centre">
+                <p>Please provide your postcode.</p>
+                <button type="button" class="information" id="information020"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
+
+            </div>
+            <div class="input">
+                <input id="population-centre" name="population_centre" type="text" placeholder="Postcode" value=""/>
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+            <div id="donotMatch" class="warnings"> Post code must be a four-digit number</div>
+        </div>
+        <div class="button">
+            <button type="button" id="next020" class="next">NEXT</button>
+        </div>
+        <div id="UO-021" style="display: none">
+            <div class="background"></div>
+            <div class="visible">
+                <div class="top">
+                    <p>Information</p>
+                </div>
+                <div class="body">
+                    <div class="one">Entering your Postcode will help us customize your app experience so you receive information specific to your community.
+                    </div>
+                </div>
+                <div class="button">
+                    <div id="okay021"><i class="fa fa-check-circle"></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--UO-021-->
+
+    <!--UO-022-->
+    <div id="UO-022" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft022" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x022"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>What type of content are you interested in:</p>
+            <div id="radio022" class="radio radio-field-container" data-current-value="" data-field-name="Content interest">
+                <p class="p022" data-value="general information"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>General information</p>
+                <p class="p022" data-value="research reports"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Research and reports</p>
+                <p class="p022" data-value="latest news"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Latest news</p>
+                <p class="p022" data-value="guidelines"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Guidelines</p>
+                <p class="p022" data-value="industry"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Industry</p>
+                <p class="p022" data-value="region updates"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Region updates</p>
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" id="next022" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-026-->
+    <div id="UO-026" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft026" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x026"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+    </div>
+        <div class="body">
+                <p id="p026">Please register your login details. Your email will be your username for the app.</p>
+            <div class="input">
+                <input id="email" name="email" type="text" placeholder="Email" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+            <div class="input">
+                <input id="password" name="password" type="password" placeholder="Password" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+            <div class="input">
+                <input id="password_again" type="password" placeholder="Password-again" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </div>
+            <div id="dontMatch" class="warnings">Passwords do not match. Please try again</div>
+
+            <p id="terms">By registering, you accept these terms & conditions</p>
+        </div>
+        <div class="button">
+            <button type="submit" id="next026" class="next">REGISTER</button>
+        </div>
+    </div>
+
+    <div id="UO-027" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft027" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x027"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image" />
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+
+        <div class="body">
+            <p><b>Last updated:<b> 29th March 2017</p>
+            <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using this mobile application (the "Service") operated by Liquid State (“us","we", or "our").</p>
+            <p>Your access to, and use of, the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all users and others who access or use the Service.</p>
+            <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
+            <p><b>App Content And Links To Other Content &amp; Web Sites</b></p>
+            <p>Our Service may contain content supplied by other parties or links to third-party web sites or services that are not owned or controlled by Liquid State.</p>
+            <p>Liquid State has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites, content or services. You further acknowledge and agree that Liquid State shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web >sites or services.</p>
+            <p><b>Changes</b></p>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 14 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+            <p><b>Contact Us</b></p>
+            <p>If you have any questions about these Terms, please contact us.</p>
+            <p>info@liquid-state.com</p>
+        </div>
+        <div class="button">
+            <button type="button" id="next027" class="next">OK</button>
+        </div>
+
+    </div>
+
+    <div id="result" style="display:none">
+        <p id="describeYouBest" ></p>
+        <p id="planNumber" ></p>
+        <p id="ownerOrLeasee" ></p>
+        <p id="whereAreYouWorkInGovernment" ></p>
+        <p id="areaOfInterest" ></p>
+        <p id="roleWithinTheGasIndustry"></p>
+        <p id="roleInTheCommunity" ></p>
+        <p id="businessName" ></p>
+        <p id="userLocation" ></p>
+        <p id="nearestPopulationCentre" ></p>
+        <p id="interests" ></p>
+        <p id="userEmail" ></p>
+        <p id="userPassword" ></p>
+        <p id="userPassword_again" ></p>
+    </div>
+</div>
 
 
 </form>

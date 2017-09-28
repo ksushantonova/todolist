@@ -4019,7 +4019,7 @@ var data = {
     roleInTheCommunity: "",
     businessName: "",
     userLocation: "",
-    nearestPopulationCentre: "",
+    postCode: "",
     interests: "",
     userEmail: "",
     userPassword: "",
@@ -9923,7 +9923,7 @@ var UO004 = exports.UO004 = function () {
 
             input.addEventListener('input', function () {
                 data.planNumber = input.value;
-                if (data.ownerOrLeasee.length > 2 && data.planNumber.length == 8) {
+                if (data.ownerOrLeasee.length > 2 && data.planNumber.length > 2) {
                     _this.state = "true";
                     _this.unlockButton(_this.button);
                 } else {
@@ -9939,7 +9939,7 @@ var UO004 = exports.UO004 = function () {
 
             container.addEventListener('click', function (e) {
                 _this2.makeRadioButton(e, _this2.radioButtons, _this2.radioP);
-                if (data.ownerOrLeasee.length > 2 && data.planNumber.length == 8) {
+                if (data.ownerOrLeasee.length > 2 && data.planNumber.length > 2) {
                     _this2.state = "true";
                     _this2.unlockButton(_this2.button);
                 } else {
@@ -10014,6 +10014,7 @@ var UO004 = exports.UO004 = function () {
         value: function showInfo(button, infoScreen) {
             button.addEventListener('click', function () {
                 infoScreen.style.display = "block";
+                document.getElementById('circles').style.display = "none";
             });
         }
     }, {
@@ -10021,6 +10022,7 @@ var UO004 = exports.UO004 = function () {
         value: function hideInfo(button, infoScreen) {
             button.addEventListener('click', function () {
                 infoScreen.style.display = "none";
+                document.getElementById('circles').style.display = "block";
             });
         }
     }, {
@@ -10238,6 +10240,7 @@ var UO011 = exports.UO011 = function () {
     _createClass(UO011, [{
         key: 'init',
         value: function init() {
+            this.button.disabled = true;
             var changeRadioData = {
                 container: this.radioContainer,
                 name: "roleWithinTheGasIndustry",
@@ -10258,7 +10261,8 @@ var UO011 = exports.UO011 = function () {
 
             changeData.container.addEventListener('click', function (e) {
                 _this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
-                _this.unlockButton(_this.button);
+                console.log(_this.data.roleWithinTheGasIndustry);
+                _this.unlockButton(_this.data);
             });
         }
     }, {
@@ -10286,16 +10290,16 @@ var UO011 = exports.UO011 = function () {
         }
     }, {
         key: 'unlockButton',
-        value: function unlockButton(button) {
-            if (this.data.roleWithinTheGasIndustry.length > 2) {
-                if (this.data.roleWithinTheGasIndustry !== "Other (please specify)") {
-                    this.changeScreen(button, this.allScreens, this.nextScreen);
-                    this.changeButton(button);
-                    this.changeCircle(this.button, this.allCircles, this.nextCircle);
-                } else {
-                    this.specify.style.display = "block";
-                    this.getSpecify(this.specify.firstElementChild);
-                }
+        value: function unlockButton(data) {
+            if (data.roleWithinTheGasIndustry !== "Other (please specify)") {
+                this.validateInput(data);
+                this.specify.style.display = "none";
+                this.specify.firstElementChild.value = "";
+            } else {
+                this.specify.style.display = "block";
+                data.roleWithinTheGasIndustry = "";
+                this.lockButton(this.button);
+                this.getSpecify(this.specify.firstElementChild);
             }
         }
     }, {
@@ -10305,10 +10309,19 @@ var UO011 = exports.UO011 = function () {
 
             input.addEventListener('input', function () {
                 _this2.data.roleWithinTheGasIndustry = input.value;
-                _this2.changeButton(_this2.button);
-                _this2.changeScreen(_this2.button, _this2.allScreens, _this2.nextScreen);
-                _this2.changeCircle(_this2.button, _this2.allCircles, _this2.nextCircle);
+                _this2.validateInput(_this2.data);
             });
+        }
+    }, {
+        key: 'validateInput',
+        value: function validateInput(data) {
+            if (data.roleWithinTheGasIndustry.length > 2) {
+                this.changeButton(this.button);
+                this.changeScreen(this.button, this.allScreens, this.nextScreen);
+                this.changeCircle(this.button, this.allCircles, this.nextCircle);
+            } else {
+                this.lockButton(this.button);
+            }
         }
     }, {
         key: 'changeScreen',
@@ -10325,6 +10338,14 @@ var UO011 = exports.UO011 = function () {
         value: function changeButton(button) {
             button.style.cursor = "pointer";
             button.style.opacity = "1";
+            this.button.disabled = false;
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            this.button.disabled = true;
         }
     }, {
         key: 'changeCircle',
@@ -10426,6 +10447,9 @@ var UO014 = exports.UO014 = function () {
                 if (this.data.roleInTheCommunity == "business_owner") {
                     this.changeScreen(button, this.allScreens, this.nextScreen);
                     this.changeCircle(this.button, this.allCircles, this.currentCircle);
+                } else if (this.data.roleInTheCommunity == "role_both") {
+                    this.changeScreen(button, this.allScreens, this.nextScreen);
+                    this.changeCircle(this.button, this.allCircles, this.currentCircle);
                 } else {
                     this.changeScreen(button, this.allScreens, this.nextMainScreen);
                     this.changeCircle(this.button, this.allCircles, this.nextCircle);
@@ -10515,6 +10539,7 @@ var UO016 = exports.UO016 = function () {
     _createClass(UO016, [{
         key: 'init',
         value: function init() {
+            this.button.disabled = true;
             this.getPlanNumber(this.input);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen);
         }
@@ -10524,9 +10549,12 @@ var UO016 = exports.UO016 = function () {
             var _this = this;
 
             input.addEventListener('input', function () {
-                _this.changeButton(_this.button);
                 _this.data.businessName = input.value;
-                _this.changeScreen(_this.button, _this.allScreens, _this.nextScreen);
+                if (_this.data.businessName.length > 2) {
+                    _this.changeButton(_this.button);
+                } else {
+                    _this.lockButton(_this.button);
+                }
             });
         }
     }, {
@@ -10534,6 +10562,15 @@ var UO016 = exports.UO016 = function () {
         value: function changeButton(button) {
             button.style.cursor = "pointer";
             button.style.opacity = "1";
+            button.disabled = false;
+            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            this.button.disabled = true;
         }
     }, {
         key: 'changeScreen',
@@ -10794,13 +10831,14 @@ var UO020 = exports.UO020 = function () {
         this.backButton = document.getElementById('angleLeft020');
         this.previousScreen = document.getElementById('UO-019');
         this.circles = document.getElementById('circles');
+        this.warning = document.getElementById('donotMatch');
         this.init();
     }
 
     _createClass(UO020, [{
         key: 'init',
         value: function init() {
-
+            this.button.disabled = true;
             this.showInfo(this.infoButton, this.infoScreen);
             this.hideInfo(this.infoScreenButton, this.infoScreen);
             this.getPlanNumber(this.input);
@@ -10811,10 +10849,14 @@ var UO020 = exports.UO020 = function () {
         value: function getPlanNumber(input) {
             var _this = this;
 
-            input.addEventListener('input', function (e) {
-                _this.changeButton(_this.button);
-                _this.data.nearestPopulationCentre = input.value;
-                _this.changeScreen(_this.button, _this.allScreens, _this.nextScreen);
+            // this.enterOnlyNumbers(input);
+            input.addEventListener('input', function () {
+                _this.data.postCode = input.value;
+                if (_this.data.postCode.length == 4 && /^[0-9]*$/.test(_this.data.postCode)) {
+                    _this.changeButton(_this.button);
+                } else {
+                    _this.lockButton(_this.button);
+                }
             });
         }
     }, {
@@ -10822,7 +10864,18 @@ var UO020 = exports.UO020 = function () {
         value: function changeButton(button) {
             button.style.cursor = "pointer";
             button.style.opacity = "1";
+            this.button.disabled = false;
+            this.warning.style.display = "none";
             this.changeCircle(this.button, this.allCircles, this.nextCircle);
+            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            this.button.disabled = true;
+            this.warning.style.display = "block";
         }
     }, {
         key: 'changeScreen',
@@ -10869,6 +10922,35 @@ var UO020 = exports.UO020 = function () {
                 previousScreen.style.display = "block";
             });
         }
+
+        //
+        // enterOnlyNumbers(input){
+        //     input.addEventListener('keypress', (e) => {
+        //         e = e || event;
+        //         if (e.ctrlKey || e.altKey || e.metaKey) return;
+        //         let chr = this.getChar(e);
+        //         if (chr == null) return;
+        //         if (chr < '0' || chr > '9') {
+        //             return false;
+        //         }
+        //     });
+        // }
+        //
+        //  getChar(event) {
+        //     if (event.which == null) {
+        //         if (event.keyCode < 32) return null;
+        //         return String.fromCharCode(event.keyCode)
+        //     }
+        //
+        //     if (event.which != 0 && event.charCode != 0) {
+        //         if (event.which < 32) return null;
+        //         return String.fromCharCode(event.which)
+        //     }
+        //
+        //     return null;
+        // }
+
+
     }]);
 
     return UO020;

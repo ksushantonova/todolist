@@ -46,6 +46,9 @@ export class UO014 {
             if (this.data.roleInTheCommunity == "business_owner"){
                 this.changeScreen(button, this.allScreens, this.nextScreen);
                 this.changeCircle(this.button, this.allCircles, this.currentCircle);
+            } else if (this.data.roleInTheCommunity == "role_both") {
+                this.changeScreen(button, this.allScreens, this.nextScreen);
+                this.changeCircle(this.button, this.allCircles, this.currentCircle);
             } else {
                 this.changeScreen(button, this.allScreens, this.nextMainScreen);
                 this.changeCircle(this.button, this.allCircles, this.nextCircle);
