@@ -3987,34 +3987,37 @@ var _2 = __webpack_require__(329);
 
 var _3 = __webpack_require__(330);
 
-var _4 = __webpack_require__(331);
+var _4 = __webpack_require__(332);
 
-var _5 = __webpack_require__(332);
+var _5 = __webpack_require__(333);
 
-var _6 = __webpack_require__(333);
+var _6 = __webpack_require__(334);
 
-var _7 = __webpack_require__(334);
+var _7 = __webpack_require__(335);
 
-var _8 = __webpack_require__(335);
+var _8 = __webpack_require__(336);
 
-var _9 = __webpack_require__(336);
+var _9 = __webpack_require__(337);
 
-var _10 = __webpack_require__(337);
+var _10 = __webpack_require__(338);
 
-var _11 = __webpack_require__(338);
+var _11 = __webpack_require__(339);
 
-var _12 = __webpack_require__(339);
+var _12 = __webpack_require__(340);
 
-var _13 = __webpack_require__(341);
+var _13 = __webpack_require__(342);
+
+var _14 = __webpack_require__(343);
 
 // Final data for sending off to the server
-// UO-000
 var data = {
     describeYouBest: "",
     planNumber: "",
-    ownerOrLeasee: "",
+    landHolder: [],
     whereAreYouWorkInGovernment: "",
     areaOfInterest: "",
+    receiveInfoFrom: [],
+    exampleCouncil: "",
     roleWithinTheGasIndustry: "",
     roleInTheCommunity: "",
     businessName: "",
@@ -4025,7 +4028,8 @@ var data = {
     userPassword: "",
     userPassword_again: ""
 
-};
+}; // UO-000
+
 
 new _.UO000(data);
 new _2.UO002(data);
@@ -4038,8 +4042,9 @@ new _8.UO017(data);
 new _9.UO019(data);
 new _10.UO020(data);
 new _11.UO022(data);
+new _13.UO025(data);
 new _12.UO026(data);
-new _13.UO027();
+new _14.UO027();
 
 /***/ }),
 /* 125 */
@@ -9871,8 +9876,11 @@ var UO002 = exports.UO002 = function () {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.UO004 = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _container = __webpack_require__(331);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -9883,20 +9891,24 @@ var UO004 = exports.UO004 = function () {
         this.data = data;
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('UO-017');
-        this.currentScreen = document.getElementById('UO-004');
-        this.radioContainer = document.getElementById('radio004');
-        this.radioButtons = document.getElementsByClassName('radio004');
-        this.planNumberInput = document.getElementById('plan-number');
         this.button = document.getElementById('next004');
-        this.infoButton = document.getElementById('information');
-        this.infoScreen = document.getElementById('UO-005');
-        this.infoScreenButton = document.getElementById('okay');
         this.allCircles = document.getElementsByClassName('circle');
         this.nextCircle = document.getElementById('circle3');
         this.previousCircle = document.getElementById('circle1');
         this.backButton = document.getElementById('angleLeft004');
         this.previousScreen = document.getElementById('UO-002');
-        this.radioP = document.getElementsByClassName('p004');
+        this.addLotButton = document.getElementById('addLot');
+        this.infoScreen = document.getElementById('UO-005');
+        this.infoScreenButton = document.getElementById('okay');
+        this.radioContainer = document.getElementById('radio004 number-1'), this.planNumberInput = document.getElementById('plan-number-1'), this.infoButton = document.getElementById('information-1'), this.radioP = document.getElementsByClassName('p0041'), this.radioButtons = document.getElementsByClassName('radio0041');
+        this.choiseArray1 = {
+            id: 1,
+            ownerOrLeasee: "",
+            planNumber: ""
+        };
+        this.mainState = "false";
+        this.iterator = 1;
+        this.localData = [];
         this.state = "false";
         this.init();
     }
@@ -9904,71 +9916,71 @@ var UO004 = exports.UO004 = function () {
     _createClass(UO004, [{
         key: 'init',
         value: function init() {
+
             this.button.disabled = true;
+            this.addNewPlanNumber(this.addLotButton);
             this.getChoises(this.data);
+
             this.showInfo(this.infoButton, this.infoScreen);
             this.hideInfo(this.infoScreenButton, this.infoScreen);
             this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.allCircles, this.previousCircle);
         }
     }, {
-        key: 'getChoises',
-        value: function getChoises(data) {
-            this.getPlanNumber(this.planNumberInput, data);
-            this.getRadioChoise(this.radioContainer, data);
-        }
-    }, {
-        key: 'getPlanNumber',
-        value: function getPlanNumber(input, data) {
+        key: 'addNewPlanNumber',
+        value: function addNewPlanNumber(button) {
             var _this = this;
 
-            input.addEventListener('input', function () {
-                data.planNumber = input.value;
-                if (data.ownerOrLeasee.length > 2 && data.planNumber.length > 2) {
-                    _this.state = "true";
-                    _this.unlockButton(_this.button);
-                } else {
-                    _this.state = "false";
-                    _this.unlockButton(_this.button);
-                }
+            button.addEventListener('click', function () {
+                _this.manageContainers(_this.mainState);
+                document.getElementById('lot-plan-number-1').style.borderBottom = "0.3em solid #BDBDBD";
+                document.getElementById('lot-plan-number-1').style.paddingBottom = "9em";
             });
         }
     }, {
-        key: 'getRadioChoise',
-        value: function getRadioChoise(container, data) {
-            var _this2 = this;
-
-            container.addEventListener('click', function (e) {
-                _this2.makeRadioButton(e, _this2.radioButtons, _this2.radioP);
-                if (data.ownerOrLeasee.length > 2 && data.planNumber.length > 2) {
-                    _this2.state = "true";
-                    _this2.unlockButton(_this2.button);
-                } else {
-                    _this2.state = "false";
-                    _this2.unlockButton(_this2.button);
-                }
-            });
+        key: 'manageContainers',
+        value: function manageContainers(state) {
+            this.iterator += 1;
+            this.localData.push(new _container.ContainerForLandholder(this.iterator, this.data, state));
         }
     }, {
         key: 'changeScreen',
         value: function changeScreen(button, allScreens, nextScreen) {
-            var _this3 = this;
+            var _this2 = this;
 
             button.addEventListener('click', function () {
                 for (var i = 0; i < allScreens.length; i++) {
                     allScreens[i].style.display = "none";
                 }
-                _this3.changeCircle(_this3.allCircles, _this3.nextCircle);
+                _this2.changeCircle(_this2.allCircles, _this2.nextCircle);
                 nextScreen.style.display = "block";
             });
         }
     }, {
         key: 'unlockButton',
         value: function unlockButton(button) {
-            if (this.state == "true") {
+            if (this.data.landHolder.length > 0) {
                 this.changeButton(button);
                 this.changeScreen(button, this.allScreens, this.nextScreen);
-            } else {
+            } else if (this.data.landHolder.length < 1) {
                 this.lockButton(button);
+            }
+        }
+    }, {
+        key: 'checkAll',
+        value: function checkAll() {
+            if (this.state == "true") {
+                var newArr = this.data.landHolder.filter(function (array) {
+                    return array.id !== 1;
+                });
+                this.data.landHolder = newArr;
+                this.data.landHolder.push(this.choiseArray1);
+            } else {
+                if (this.data.landHolder.length > 0) {
+                    var _newArr = this.data.landHolder.filter(function (array) {
+                        return array.id !== 1;
+                    });
+                    this.data.landHolder = _newArr;
+                }
             }
         }
     }, {
@@ -9981,49 +9993,9 @@ var UO004 = exports.UO004 = function () {
     }, {
         key: 'lockButton',
         value: function lockButton(button) {
-
             button.style.cursor = "default";
             button.style.opacity = "0.5";
             this.button.disabled = true;
-        }
-    }, {
-        key: 'makeRadioButton',
-        value: function makeRadioButton(e, buttons, p) {
-            if (e.target.className == "fa fa-circle-thin radio004") {
-                for (var i = 0; i < buttons.length; i++) {
-                    if (buttons[i] !== e.target) {
-                        buttons[i].className = "fa fa-circle-thin radio004";
-                    }
-                }
-                e.target.className = "fa fa-circle radio004";
-                this.data.ownerOrLeasee = e.target.parentNode.lastChild.data;
-            } else if (e.target.className == "p004") {
-                e.target.firstElementChild.className = 'fa fa-circle radio004';
-                for (var j = 0; j < p.length; j++) {
-                    if (p[j] !== e.target) {
-                        p[j].firstElementChild.className = 'fa fa-circle-thin radio004';
-                    }
-                }
-                this.data.ownerOrLeasee = e.target.lastChild.data;
-            }
-            var $target = $(e.target);
-            $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
-        }
-    }, {
-        key: 'showInfo',
-        value: function showInfo(button, infoScreen) {
-            button.addEventListener('click', function () {
-                infoScreen.style.display = "block";
-                document.getElementById('circles').style.display = "none";
-            });
-        }
-    }, {
-        key: 'hideInfo',
-        value: function hideInfo(button, infoScreen) {
-            button.addEventListener('click', function () {
-                infoScreen.style.display = "none";
-                document.getElementById('circles').style.display = "block";
-            });
         }
     }, {
         key: 'changeCircle',
@@ -10047,6 +10019,88 @@ var UO004 = exports.UO004 = function () {
                 previousScreen.style.display = "block";
             });
         }
+    }, {
+        key: 'getChoises',
+        value: function getChoises(data) {
+            this.getPlanNumber(this.planNumberInput, data);
+            this.getRadioChoise(this.radioContainer, data);
+        }
+    }, {
+        key: 'getPlanNumber',
+        value: function getPlanNumber(input, data) {
+            var _this3 = this;
+
+            input.addEventListener('input', function () {
+                _this3.choiseArray1.planNumber = input.value;
+                if (_this3.choiseArray1.ownerOrLeasee.length > 2 && _this3.choiseArray1.planNumber.length > 2) {
+                    _this3.state = "true";
+                    _this3.checkAll(_this3.button);
+                    _this3.unlockButton(_this3.button);
+                } else {
+                    _this3.state = "false";
+                    _this3.checkAll(_this3.button);
+                    _this3.unlockButton(_this3.button);
+                }
+            });
+        }
+    }, {
+        key: 'getRadioChoise',
+        value: function getRadioChoise(container) {
+            var _this4 = this;
+
+            container.addEventListener('click', function (e) {
+                _this4.makeRadioButton(e, _this4.radioButtons, _this4.radioP);
+                if (_this4.choiseArray1.ownerOrLeasee.length > 2 && _this4.choiseArray1.planNumber.length > 2) {
+                    _this4.state = "true";
+                    _this4.checkAll(_this4.button);
+                    _this4.unlockButton(_this4.button);
+                } else {
+                    _this4.state = "false";
+                    _this4.checkAll(_this4.button);
+                    _this4.unlockButton(_this4.button);
+                }
+            });
+        }
+    }, {
+        key: 'makeRadioButton',
+        value: function makeRadioButton(e, buttons, p) {
+
+            if (e.target.className == 'fa fa-circle-thin radio0041') {
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i] !== e.target) {
+                        buttons[i].className = 'fa fa-circle-thin radio0041';
+                    }
+                }
+                e.target.className = 'fa fa-circle radio0041';
+                this.choiseArray1.ownerOrLeasee = e.target.parentNode.lastChild.data;
+            } else if (e.target.className == 'p0041') {
+                e.target.firstElementChild.className = 'fa fa-circle radio0041';
+                for (var j = 0; j < p.length; j++) {
+                    if (p[j] !== e.target) {
+                        p[j].firstElementChild.className = 'fa fa-circle-thin radio0041';
+                    }
+                }
+                this.choiseArray1.ownerOrLeasee = e.target.lastChild.data;
+            }
+            var $target = $(e.target);
+            $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
+        }
+    }, {
+        key: 'showInfo',
+        value: function showInfo(button, infoScreen) {
+            button.addEventListener('click', function () {
+                infoScreen.style.display = "block";
+                document.getElementById('circles').style.display = "none";
+            });
+        }
+    }, {
+        key: 'hideInfo',
+        value: function hideInfo(button, infoScreen) {
+            button.addEventListener('click', function () {
+                infoScreen.style.display = "none";
+                document.getElementById('circles').style.display = "block";
+            });
+        }
     }]);
 
     return UO004;
@@ -10054,6 +10108,172 @@ var UO004 = exports.UO004 = function () {
 
 /***/ }),
 /* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ContainerForLandholder = exports.ContainerForLandholder = function () {
+    function ContainerForLandholder(i, data, state) {
+        _classCallCheck(this, ContainerForLandholder);
+
+        this.i = i;
+        this.data = data;
+        this.mainState = state;
+        this.infoScreen = document.getElementById('UO-005');
+        this.lotPlanNumberContainer = document.getElementById('lot-plan-number-containers');
+        this.infoScreenButton = document.getElementById('okay');
+        this.button = document.getElementById('next004');
+        this.state = "false";
+        this.choiseArray = {
+            id: this.i,
+            ownerOrLeasee: "",
+            planNumber: ""
+        };
+        this.init();
+    }
+
+    _createClass(ContainerForLandholder, [{
+        key: 'init',
+        value: function init() {
+            var i = this.i;
+            var lotPlanNumberFrame = '\n                <div class="plan-number">\n                    <p class="plan-number">What is your lot / plan number?</p>\n                    <button type="button" class="information" id="information-' + i + '"><i class="\tfa fa-info-circle"\n                                                                                  aria-hidden="true"></i></button>\n                </div>\n                <div class="input">\n                    <input id="plan-number-' + i + '" class="planNumber" name="plan_number_' + i + '" type="text" placeholder="RP123456"\n                           value=""/>\n                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>\n                </div>\n                <p>Are you an owner or a leasee?</p>\n                <div id="radio004 number-' + i + '" class="radio radio-field-container" data-current-value=""\n                     data-field-name="Owner or Leasee">\n                    <p class="p004' + i + '" data-value="owner"><i class="fa fa-circle-thin radio004' + i + '" aria-hidden="true"></i>Owner</p>\n                    <p class="p004' + i + '" data-value="leasee"><i class="fa fa-circle-thin radio004' + i + '" aria-hidden="true"></i>Leasee</p>\n                </div>\n        ';
+
+            this.addContainer(this.lotPlanNumberContainer, lotPlanNumberFrame);
+            this.getChoises(this.data);
+            this.showInfo(this.infoButton, this.infoScreen);
+            this.hideInfo(this.infoScreenButton, this.infoScreen);
+        }
+    }, {
+        key: 'addContainer',
+        value: function addContainer(container, frame) {
+            var planContainer = document.createElement('div');
+            planContainer.id = 'lot-plan-number-' + this.i;
+            planContainer.className = "lot-plan-container";
+            planContainer.innerHTML = frame;
+            container.appendChild(planContainer);
+            this.getElements(this.i);
+        }
+    }, {
+        key: 'getElements',
+        value: function getElements(i) {
+            this.radioContainer = document.getElementById('radio004 number-' + i);
+            this.planNumberInput = document.getElementById('plan-number-' + i);
+            this.infoButton = document.getElementById('information-' + i);
+            this.radioP = document.getElementsByClassName('p004' + i);
+            this.radioButtons = document.getElementsByClassName('radio004' + i);
+        }
+    }, {
+        key: 'checkAll',
+        value: function checkAll(i) {
+            if (this.state == "true") {
+                var newArr = this.data.landHolder.filter(function (array) {
+                    return array.id !== i;
+                });
+                this.data.landHolder = newArr;
+                this.data.landHolder.push(this.choiseArray);
+            } else {
+                if (this.data.landHolder.length > 0) {
+                    var _newArr = this.data.landHolder.filter(function (array) {
+                        return array.id !== i;
+                    });
+                    this.data.landHolder = _newArr;
+                }
+            }
+        }
+    }, {
+        key: 'getChoises',
+        value: function getChoises(data) {
+            this.getPlanNumber(this.planNumberInput, data);
+            this.getRadioChoise(this.radioContainer, data);
+        }
+    }, {
+        key: 'getPlanNumber',
+        value: function getPlanNumber(input) {
+            var _this = this;
+
+            input.addEventListener('input', function () {
+                _this.choiseArray.planNumber = input.value;
+                if (_this.choiseArray.ownerOrLeasee.length > 2 && _this.choiseArray.planNumber.length > 2) {
+                    _this.state = "true";
+                    _this.checkAll(_this.i);
+                } else {
+                    _this.state = "false";
+                    _this.checkAll(_this.i);
+                }
+            });
+        }
+    }, {
+        key: 'getRadioChoise',
+        value: function getRadioChoise(container) {
+            var _this2 = this;
+
+            container.addEventListener('click', function (e) {
+                _this2.makeRadioButton(e, _this2.radioButtons, _this2.radioP, _this2.i);
+                if (_this2.choiseArray.ownerOrLeasee.length > 2 && _this2.choiseArray.planNumber.length > 2) {
+                    _this2.state = "true";
+                    _this2.checkAll(_this2.i);
+                } else {
+                    _this2.state = "false";
+                    _this2.checkAll(_this2.i);
+                }
+            });
+        }
+    }, {
+        key: 'makeRadioButton',
+        value: function makeRadioButton(e, buttons, p, i) {
+            if (e.target.className == 'fa fa-circle-thin radio004' + i) {
+                for (var _i = 0; _i < buttons.length; _i++) {
+                    if (buttons[_i] !== e.target) {
+                        buttons[_i].className = 'fa fa-circle-thin radio004' + _i;
+                    }
+                }
+                e.target.className = 'fa fa-circle radio004' + i;
+                this.choiseArray.ownerOrLeasee = e.target.parentNode.lastChild.data;
+            } else if (e.target.className == 'p004' + i) {
+                e.target.firstElementChild.className = 'fa fa-circle radio004' + i;
+                for (var j = 0; j < p.length; j++) {
+                    if (p[j] !== e.target) {
+                        p[j].firstElementChild.className = 'fa fa-circle-thin radio004' + i;
+                    }
+                }
+                this.choiseArray.ownerOrLeasee = e.target.lastChild.data;
+            }
+
+            var $target = $(e.target);
+            $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
+        }
+    }, {
+        key: 'showInfo',
+        value: function showInfo(button, infoScreen) {
+            button.addEventListener('click', function () {
+                infoScreen.style.display = "block";
+                document.getElementById('circles').style.display = "none";
+            });
+        }
+    }, {
+        key: 'hideInfo',
+        value: function hideInfo(button, infoScreen) {
+            button.addEventListener('click', function () {
+                infoScreen.style.display = "none";
+                document.getElementById('circles').style.display = "block";
+            });
+        }
+    }]);
+
+    return ContainerForLandholder;
+}();
+
+/***/ }),
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10203,7 +10423,7 @@ var UO008 = exports.UO008 = function () {
 }();
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10261,7 +10481,6 @@ var UO011 = exports.UO011 = function () {
 
             changeData.container.addEventListener('click', function (e) {
                 _this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
-                console.log(_this.data.roleWithinTheGasIndustry);
                 _this.unlockButton(_this.data);
             });
         }
@@ -10377,7 +10596,7 @@ var UO011 = exports.UO011 = function () {
 }();
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10506,7 +10725,7 @@ var UO014 = exports.UO014 = function () {
 }();
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10609,7 +10828,7 @@ var UO016 = exports.UO016 = function () {
 }();
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10732,7 +10951,7 @@ var UO017 = exports.UO017 = function () {
 }();
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10757,15 +10976,120 @@ var UO019 = exports.UO019 = function () {
         this.backButton = document.getElementById('angleLeft019');
         this.previousScreen = document.getElementById('UO-017');
         this.circles = document.getElementById('circles');
+        this.radioContainer = document.getElementById('radio019');
+        this.radioP = document.getElementsByClassName('p019');
+        this.radioButtons = document.getElementsByClassName('radio019');
+
         this.init();
     }
 
     _createClass(UO019, [{
         key: 'init',
         value: function init() {
+            this.button.disabled = true;
+
+            var changeRadioData = {
+                container: this.radioContainer,
+                name: "exampleCouncil",
+                p: this.radioP,
+                pClassName: "p019",
+                radioButtons: this.radioButtons,
+                firstClass: "fa fa-circle-thin radio019",
+                secondClass: "fa fa-circle radio019"
+            };
+
             this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.circles);
-            this.getLocation(this.data);
-            this.changeScreen(this.button, this.allScreens, this.nextScreen);
+            this.getRadioChoise(changeRadioData);
+        }
+    }, {
+        key: 'getRadioChoise',
+        value: function getRadioChoise(changeData) {
+            var _this = this;
+
+            changeData.container.addEventListener('click', function (e) {
+                _this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
+                _this.unlockButton(_this.data);
+            });
+        }
+    }, {
+        key: 'makeRadioButton',
+        value: function makeRadioButton(e, buttons, p, pClassName, classNameFirst, classNameSecond, name) {
+            if (e.target.className == classNameFirst) {
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i] !== e.target) {
+                        buttons[i].className = classNameFirst;
+                    }
+                }
+                document.getElementById('2').className = classNameFirst;
+                e.target.className = classNameSecond;
+                this.setChoise(e, name, pClassName);
+            } else if (e.target.className == pClassName) {
+                e.target.firstElementChild.className = classNameSecond;
+                for (var j = 0; j < p.length; j++) {
+                    if (p[j] !== e.target) {
+                        p[j].firstElementChild.className = classNameFirst;
+                    }
+                }
+                document.getElementById('2').className = classNameFirst;
+                this.setChoise(e, name, pClassName);
+            } else if (e.target.className == "text") {
+                e.target.previousElementSibling.className = classNameSecond;
+                for (var k = 0; k < p.length; k++) {
+                    if (p[k].firstElementChild.id !== "2") {
+                        p[k].firstElementChild.className = classNameFirst;
+                    }
+                }
+                this.setChoise(e, name, pClassName);
+            }
+        }
+    }, {
+        key: 'getDataForServer',
+        value: function getDataForServer() {
+            $('#radio019').attr('data-current-value', this.data.exampleCouncil);
+        }
+    }, {
+        key: 'setChoise',
+        value: function setChoise(e, name, pClassName) {
+            if (e.target.id == "2") {
+                this.data[name] = e.target.nextElementSibling.innerHTML;
+            } else if (e.target.className == "text") {
+                this.data[name] = e.target.innerHTML;
+            } else if (e.target.id == pClassName) {
+                this.data[name] = e.target.lastChild.data;
+            } else if (e.target.className == "fa fa-circle radio019") {
+                this.data[name] = e.target.nextSibling.data;
+            } else {
+                this.data[name] = e.target.innerText;
+            }
+        }
+    }, {
+        key: 'unlockButton',
+        value: function unlockButton(data) {
+            if (data.exampleCouncil.length > 0) {
+                console.log(data);
+                this.changeButton(this.button);
+                this.changeScreen(this.button, this.allScreens, this.nextScreen);
+                this.getDataForServer();
+            } else {
+                this.lockButton(this.button);
+                console.log(data);
+            }
+        }
+    }, {
+        key: 'changeButton',
+        value: function changeButton(button) {
+            button.style.cursor = "pointer";
+            button.style.opacity = "1";
+            button.parentNode.style.opacity = "1 ";
+            this.button.disabled = false;
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            button.parentNode.style.opacity = "0.5 !important";
+            this.button.disabled = true;
         }
     }, {
         key: 'changeScreen',
@@ -10777,11 +11101,6 @@ var UO019 = exports.UO019 = function () {
                 nextScreen.style.display = "block";
                 document.getElementById('circles').style.display = "block";
             });
-        }
-    }, {
-        key: 'getLocation',
-        value: function getLocation(data) {
-            data.userLocation = "user location";
         }
     }, {
         key: 'returnBack',
@@ -10800,7 +11119,7 @@ var UO019 = exports.UO019 = function () {
 }();
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10957,7 +11276,7 @@ var UO020 = exports.UO020 = function () {
 }();
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10977,30 +11296,28 @@ var UO022 = exports.UO022 = function () {
 
         this.data = data;
         this.radioContainer = document.getElementById('radio022');
-        this.radioButtons = document.getElementsByClassName('radio022');
-        this.nextScreen = document.getElementById('UO-026');
+        this.nextScreen = document.getElementById('UO-025');
         this.button = document.getElementById('next022');
         this.allScreens = document.getElementsByClassName('screen');
         this.allCircles = document.getElementsByClassName('circle');
-        this.nextCircle = document.getElementById('circle6');
+        this.nextCircle = document.getElementById('circle5');
         this.backButton = document.getElementById('angleLeft022');
         this.previousScreen = document.getElementById('UO-020');
         this.previousCircle = document.getElementById('circle3');
-        this.radioP = document.getElementsByClassName('p022');
         this.init();
     }
 
     _createClass(UO022, [{
         key: 'init',
         value: function init() {
+            this.button.disabled = true;
             var changeRadioData = {
                 container: this.radioContainer,
                 name: "interests",
-                p: this.radioP,
                 pClassName: "p022",
-                radioButtons: this.radioButtons,
-                firstClass: "fa fa-circle-thin radio022",
-                secondClass: "fa fa-circle radio022"
+                classNameFirst: "fa fa-square-o check022",
+                classNameSecond: "fa fa-check-square check022",
+                classCommon: "check022"
             };
 
             this.getRadioChoise(changeRadioData);
@@ -11012,32 +11329,55 @@ var UO022 = exports.UO022 = function () {
             var _this = this;
 
             changeData.container.addEventListener('click', function (e) {
-                _this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
+                _this.makeRadioButton(e, changeData);
+                _this.getData(changeData.classCommon, changeData.classNameSecond);
                 _this.unlockButton(_this.button);
             });
         }
     }, {
         key: 'makeRadioButton',
-        value: function makeRadioButton(e, buttons, p, pClassName, classNameFirst, classNameSecond, name) {
-            if (e.target.className == classNameFirst) {
-                for (var i = 0; i < buttons.length; i++) {
-                    if (buttons[i] !== e.target) {
-                        buttons[i].className = classNameFirst;
-                    }
-                }
-                e.target.className = classNameSecond;
-                this.data[name] = e.target.parentNode.lastChild.data;
-            } else if (e.target.className == pClassName) {
-                e.target.firstElementChild.className = classNameSecond;
-                for (var j = 0; j < p.length; j++) {
-                    if (p[j] !== e.target) {
-                        p[j].firstElementChild.className = classNameFirst;
-                    }
-                }
-                this.data[name] = e.target.lastChild.data;
+        value: function makeRadioButton(e, changeData) {
+            if (e.target.className == changeData.classNameFirst || e.target.className == changeData.classNameSecond) {
+                this.setICheck(e, changeData);
+            } else if (e.target.className == changeData.pClassName) {
+                this.setPCheck(e, changeData);
             }
-            var $target = $(e.target);
-            $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
+            this.getDataForServer(e, changeData, 'p022');
+        }
+    }, {
+        key: 'getDataForServer',
+        value: function getDataForServer() {
+            $('#radio022').attr('data-current-value', this.data.interests);
+        }
+    }, {
+        key: 'setICheck',
+        value: function setICheck(e, changeData) {
+            if (e.target.className == changeData.classNameFirst) {
+                e.target.className = changeData.classNameSecond;
+            } else if (e.target.className == changeData.classNameSecond) {
+                e.target.className = changeData.classNameFirst;
+            }
+        }
+    }, {
+        key: 'setPCheck',
+        value: function setPCheck(e, changeData) {
+            if (e.target.firstElementChild.className == changeData.classNameFirst) {
+                e.target.firstElementChild.className = changeData.classNameSecond;
+            } else if (e.target.firstElementChild.className == changeData.classNameSecond) {
+                e.target.firstElementChild.className = changeData.classNameFirst;
+            }
+        }
+    }, {
+        key: 'getData',
+        value: function getData(commonClass, secondClass) {
+            var checkBoxArray = document.getElementsByClassName(commonClass);
+            var dataArray = [];
+            for (var i = 0; i < checkBoxArray.length; i++) {
+                if (checkBoxArray[i].className == secondClass) {
+                    dataArray.push(checkBoxArray[i].nextSibling.data);
+                }
+            }
+            this.data.interests = dataArray;
         }
     }, {
         key: 'unlockButton',
@@ -11046,12 +11386,15 @@ var UO022 = exports.UO022 = function () {
                 this.changeButton(button);
                 this.changeScreen(button, this.allScreens, this.nextScreen);
                 this.changeCircle(this.button, this.allCircles, this.nextCircle);
+                this.getDataForServer();
+            } else if (this.data.interests.length < 1) {
+                this.lockButton(button);
             }
         }
     }, {
         key: 'changeScreen',
         value: function changeScreen(button, allScreens, nextScreen) {
-            button.addEventListener('click', function (e) {
+            button.addEventListener('click', function () {
                 for (var i = 0; i < allScreens.length; i++) {
                     allScreens[i].style.display = "none";
                 }
@@ -11063,6 +11406,14 @@ var UO022 = exports.UO022 = function () {
         value: function changeButton(button) {
             button.style.cursor = "pointer";
             button.style.opacity = "1";
+            this.button.disabled = false;
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            this.button.disabled = true;
         }
     }, {
         key: 'changeCircle',
@@ -11094,7 +11445,7 @@ var UO022 = exports.UO022 = function () {
 }();
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11107,7 +11458,7 @@ exports.UO026 = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _result = __webpack_require__(340);
+var _result = __webpack_require__(341);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -11125,10 +11476,10 @@ var UO026 = exports.UO026 = function () {
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('result');
         this.backButton = document.getElementById('angleLeft026');
-        this.previousScreen = document.getElementById('UO-022');
+        this.previousScreen = document.getElementById('UO-025');
         this.allCircles = document.getElementsByClassName('circle');
         this.circlesContainer = document.getElementById('circles');
-        this.previousCircle = document.getElementById('circle4');
+        this.previousCircle = document.getElementById('circle5');
         this.warning = document.getElementById('dontMatch');
         this.state = "false";
         this.init();
@@ -11171,6 +11522,7 @@ var UO026 = exports.UO026 = function () {
 
             if (data.userPassword.length > 0 && data.userPassword_again.length > 0 && data.userPassword !== data.userPassword_again) {
                 this.lockButton(this.button);
+                this.warning.innerHTML = "Passwords do not match. Please try again";
                 this.warning.style.display = "block";
             }
         }
@@ -11238,9 +11590,13 @@ var UO026 = exports.UO026 = function () {
                     } else {
                         input.focus();
                         _this2.state = "false";
+                        _this2.warning.innerHTML = "Incorrect E-mail";
+                        _this2.warning.style.display = "block";
                     }
                 } else {
                     _this2.state = "false";
+                    _this2.warning.innerHTML = "Passwords do not match. Please try again";
+                    _this2.warning.style.display = "block";
                 }
             });
         }
@@ -11250,7 +11606,7 @@ var UO026 = exports.UO026 = function () {
 }();
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11293,7 +11649,221 @@ var Result = exports.Result = function () {
 }();
 
 /***/ }),
-/* 341 */
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var UO025 = exports.UO025 = function () {
+    function UO025(data) {
+        _classCallCheck(this, UO025);
+
+        this.data = data;
+        this.check025 = document.getElementById('radio025');
+        this.check025_1 = document.getElementById('radio025-1');
+        this.check025_2 = document.getElementById('radio025-2');
+        this.button = document.getElementById('next025');
+        this.nextScreen = document.getElementById('UO-026');
+        this.nextCircle = document.getElementById('circle6');
+        this.allCircles = document.getElementsByClassName('circle');
+        this.backButton = document.getElementById('angleLeft025');
+        this.previousScreen = document.getElementById('UO-022');
+        this.previousCircle = document.getElementById('circle4');
+        this.allScreens = document.getElementsByClassName('screen');
+        this.temporaryData = {
+            councils: "",
+            government_agencies: "",
+            gas_companies: ""
+        };
+        this.dataState = "false";
+        this.init();
+    }
+
+    _createClass(UO025, [{
+        key: 'init',
+        value: function init() {
+            this.button.disabled = true;
+
+            var check025 = {
+                container: this.check025,
+                name: "councils",
+                pClassName: "p025",
+                classNameFirst: "fa fa-square-o check025",
+                classNameSecond: "fa fa-check-square check025",
+                classCommon: "check025"
+            };
+
+            var check025_1 = {
+                container: this.check025_1,
+                name: "government_agencies",
+                pClassName: "p025-1",
+                classNameFirst: "fa fa-square-o check025-1",
+                classNameSecond: "fa fa-check-square check025-1",
+                classCommon: "check025-1"
+            };
+
+            var check025_2 = {
+                container: this.check025_2,
+                name: "gas_companies",
+                pClassName: "p025-2",
+                classNameFirst: "fa fa-square-o check025-2",
+                classNameSecond: "fa fa-check-square check025-2",
+                classCommon: "check025-2"
+            };
+
+            this.getRadioChoise(check025, check025_1, check025_2);
+            this.getRadioChoise(check025_1, check025, check025_2);
+            this.getRadioChoise(check025_2, check025, check025_1);
+            this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.allCircles, this.previousCircle);
+        }
+    }, {
+        key: 'getRadioChoise',
+        value: function getRadioChoise(changeData, changeData2, changeData3) {
+            var _this = this;
+
+            changeData.container.addEventListener('click', function (e) {
+                _this.makeCheckButton(e, changeData);
+                _this.getData(changeData.classCommon, changeData.classNameSecond, changeData.name);
+                _this.getData(changeData2.classCommon, changeData2.classNameSecond, changeData2.name);
+                _this.getData(changeData3.classCommon, changeData3.classNameSecond, changeData3.name);
+                _this.checkAll();
+                _this.unlockButton(_this.button);
+            });
+        }
+    }, {
+        key: 'checkAll',
+        value: function checkAll() {
+            this.dataState = "false";
+            if (this.temporaryData.councils.length > 0 && this.temporaryData.government_agencies.length > 0 && this.temporaryData.gas_companies.length > 0) {
+                this.dataState = "true";
+            } else {
+                this.dataState = "false";
+            }
+        }
+    }, {
+        key: 'makeCheckButton',
+        value: function makeCheckButton(e, changeData) {
+            if (e.target.className == changeData.classNameFirst || e.target.className == changeData.classNameSecond) {
+                this.setICheck(e, changeData);
+            } else if (e.target.className == "text") {
+                this.setPCheck(e, changeData);
+            }
+        }
+    }, {
+        key: 'getData',
+        value: function getData(commonClass, secondClass, name) {
+            var checkBoxArray = document.getElementsByClassName(commonClass);
+            var dataArray = [];
+            for (var i = 0; i < checkBoxArray.length; i++) {
+                if (checkBoxArray[i].className == secondClass) {
+                    dataArray.push(checkBoxArray[i].nextElementSibling.innerHTML);
+                }
+            }
+            this.temporaryData[name] = dataArray;
+        }
+    }, {
+        key: 'setICheck',
+        value: function setICheck(e, changeData) {
+            if (e.target.className == changeData.classNameFirst) {
+                e.target.className = changeData.classNameSecond;
+            } else if (e.target.className == changeData.classNameSecond) {
+                e.target.className = changeData.classNameFirst;
+            }
+        }
+    }, {
+        key: 'setPCheck',
+        value: function setPCheck(e, changeData) {
+            if (e.target.previousElementSibling.className == changeData.classNameFirst) {
+                e.target.previousElementSibling.className = changeData.classNameSecond;
+            } else if (e.target.previousElementSibling.className == changeData.classNameSecond) {
+                e.target.previousElementSibling.className = changeData.classNameFirst;
+            }
+        }
+    }, {
+        key: 'unlockButton',
+        value: function unlockButton(button) {
+            if (this.dataState == "true") {
+                this.changeButton(button);
+                this.changeScreen(button, this.allScreens, this.nextScreen);
+                this.changeCircle(this.button, this.allCircles, this.nextCircle);
+                this.data.receiveInfoFrom = [];
+                this.data.receiveInfoFrom = this.temporaryData;
+                this.getDataForServer();
+            } else {
+                this.lockButton(button);
+            }
+        }
+    }, {
+        key: 'getDataForServer',
+        value: function getDataForServer() {
+            $('#radio025').attr('data-current-value', this.data.receiveInfoFrom.councils);
+            $('#radio025-1').attr('data-current-value', this.data.receiveInfoFrom.government_agencies);
+            $('#radio025-2').attr('data-current-value', this.data.receiveInfoFrom.gas_companies);
+        }
+    }, {
+        key: 'changeScreen',
+        value: function changeScreen(button, allScreens, nextScreen) {
+            button.addEventListener('click', function () {
+                for (var i = 0; i < allScreens.length; i++) {
+                    allScreens[i].style.display = "none";
+                }
+                nextScreen.style.display = "block";
+            });
+        }
+    }, {
+        key: 'changeButton',
+        value: function changeButton(button) {
+            button.style.cursor = "pointer";
+            button.style.opacity = "1";
+            this.button.disabled = false;
+        }
+    }, {
+        key: 'lockButton',
+        value: function lockButton(button) {
+            button.style.cursor = "default";
+            button.style.opacity = "0.5";
+            this.button.disabled = true;
+        }
+    }, {
+        key: 'changeCircle',
+        value: function changeCircle(button, allCircles, next) {
+            button.addEventListener('click', function () {
+                for (var i = 0; i < allCircles.length; i++) {
+                    allCircles[i].style.color = "white";
+                }
+                next.style.color = "#007598";
+            });
+        }
+    }, {
+        key: 'returnBack',
+        value: function returnBack(backButton, allScreens, previousScreen, allCircles, previousCircle) {
+            backButton.addEventListener('click', function () {
+                for (var i = 0; i < allScreens.length; i++) {
+                    allScreens[i].style.display = "none";
+                }
+                previousScreen.style.display = "block";
+                for (var _i = 0; _i < allCircles.length; _i++) {
+                    allCircles[_i].style.color = 'white';
+                }
+                previousCircle.style.color = "#007598";
+            });
+        }
+    }]);
+
+    return UO025;
+}();
+
+/***/ }),
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

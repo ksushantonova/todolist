@@ -2,28 +2,26 @@ export class UO022 {
     constructor(data) {
         this.data = data;
         this.radioContainer = document.getElementById('radio022');
-        this.radioButtons = document.getElementsByClassName('radio022');
-        this.nextScreen = document.getElementById('UO-026');
+        this.nextScreen = document.getElementById('UO-025');
         this.button = document.getElementById('next022');
         this.allScreens = document.getElementsByClassName('screen');
         this.allCircles = document.getElementsByClassName('circle');
-        this.nextCircle = document.getElementById('circle6');
+        this.nextCircle = document.getElementById('circle5');
         this.backButton =  document.getElementById('angleLeft022');
         this.previousScreen = document.getElementById('UO-020');
         this.previousCircle = document.getElementById('circle3');
-        this.radioP = document.getElementsByClassName('p022')
         this.init();
     }
 
     init() {
+        this.button.disabled = true;
         let changeRadioData = {
             container: this.radioContainer,
             name: "interests",
-            p: this.radioP,
             pClassName: "p022",
-            radioButtons: this.radioButtons,
-            firstClass: "fa fa-circle-thin radio022",
-            secondClass: "fa fa-circle radio022"
+            classNameFirst: "fa fa-square-o check022",
+            classNameSecond: "fa fa-check-square check022",
+            classCommon: "check022"
         }
 
         this.getRadioChoise(changeRadioData);
@@ -33,45 +31,69 @@ export class UO022 {
 
     getRadioChoise(changeData) {
         changeData.container.addEventListener('click', (e) => {
-            this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
+            this.makeRadioButton(e, changeData);
+            this.getData(changeData.classCommon, changeData.classNameSecond);
             this.unlockButton(this.button);
-
         });
     }
 
-    makeRadioButton(e, buttons, p, pClassName ,classNameFirst, classNameSecond, name) {
-        if (e.target.className == classNameFirst) {
-            for (let i = 0; i < buttons.length; i++) {
-                if (buttons[i] !== e.target) {
-                    buttons[i].className = classNameFirst;
-                }
-            }
-            e.target.className = classNameSecond;
-            this.data[name] = e.target.parentNode.lastChild.data;
-        } else if (e.target.className == pClassName) {
-            e.target.firstElementChild.className = classNameSecond;
-            for (let j = 0; j < p.length; j++) {
-                if (p[j] !== e.target) {
-                    p[j].firstElementChild.className = classNameFirst;
-                }
-            }
-            this.data[name] = e.target.lastChild.data;
+    makeRadioButton(e, changeData) {
+        if (e.target.className == changeData.classNameFirst || e.target.className == changeData.classNameSecond) {
+            this.setICheck(e, changeData);
+        } else if (e.target.className == changeData.pClassName) {
+            this.setPCheck(e, changeData);
         }
-        let $target = $(e.target);
-        $target.closest('.radio-field-container').attr('data-current-value', $target.closest('[data-value]').attr('data-value'));
+        this.getDataForServer(e,changeData, 'p022');
     }
+
+    getDataForServer(){
+            $('#radio022').attr('data-current-value', this.data.interests);
+    }
+
+    setICheck(e, changeData) {
+        if (e.target.className == changeData.classNameFirst) {
+            e.target.className = changeData.classNameSecond;
+        } else if (e.target.className == changeData.classNameSecond) {
+            e.target.className = changeData.classNameFirst;
+        }
+    }
+
+    setPCheck(e, changeData) {
+        if (e.target.firstElementChild.className == changeData.classNameFirst) {
+            e.target.firstElementChild.className = changeData.classNameSecond;
+
+        } else if (e.target.firstElementChild.className == changeData.classNameSecond) {
+            e.target.firstElementChild.className = changeData.classNameFirst;
+        }
+    }
+
+
+    getData(commonClass, secondClass){
+        let checkBoxArray = document.getElementsByClassName(commonClass);
+        let dataArray = [];
+        for (let i = 0; i < checkBoxArray.length; i++){
+            if (checkBoxArray[i].className == secondClass){
+                dataArray.push(checkBoxArray[i].nextSibling.data);
+            }
+        }
+        this.data.interests = dataArray;
+    }
+
 
     unlockButton(button) {
         if (this.data.interests.length > 0) {
             this.changeButton(button);
             this.changeScreen(button, this.allScreens, this.nextScreen);
             this.changeCircle(this.button, this.allCircles, this.nextCircle);
+            this.getDataForServer();
+        } else if (this.data.interests.length < 1){
+            this.lockButton(button);
         }
     }
 
 
     changeScreen(button, allScreens, nextScreen) {
-        button.addEventListener('click', (e) => {
+        button.addEventListener('click', () => {
             for (let i = 0; i < allScreens.length; i++) {
                 allScreens[i].style.display = "none";
             }
@@ -83,7 +105,15 @@ export class UO022 {
     changeButton(button) {
         button.style.cursor = "pointer";
         button.style.opacity = "1";
+        this.button.disabled = false;
     }
+
+    lockButton(button) {
+        button.style.cursor = "default";
+        button.style.opacity = "0.5";
+        this.button.disabled = true;
+    }
+
 
     changeCircle(button, allCircles, next){
         button.addEventListener('click', () => {

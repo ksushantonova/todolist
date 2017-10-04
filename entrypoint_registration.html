@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.4">
     <title>Registration</title>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,8 +49,7 @@
         </div>
 
         <div class="body">
-            <p>Welcome to the GasApp Aus.This app provides a useful compensation calculator tool and connects
-                landholders and community members with key agencies.</p>
+            <p>"Welcome to GasApp Aus. This app provides a useful compensation estimator tool and connects landholders and community members with key agencies.</p>
             <p>
                 To ensure you receive information that is most relevant to you, please answer a few short questions.
             </p>
@@ -149,20 +148,31 @@
 
             <p>Please tell us more about your land holdings.</p>
 
-            <div class="plan-number">
-                <p class="plan-number">What is your lot / plan number?</p>
-                <button type="button" class="information" id="information"><i class="	fa fa-info-circle" aria-hidden="true"></i></button>
+
+            <div id="lot-plan-number-containers">
+            <div id="lot-plan-number-1" >
+                <div class="plan-number">
+                    <p class="plan-number">What is your lot / plan number?</p>
+                    <button type="button" class="information" id="information-1"><i class="	fa fa-info-circle"
+                                                                                  aria-hidden="true"></i></button>
+                </div>
+                <div class="input">
+                    <input id="plan-number-1" class="planNumber" name="plan_number_1" type="text" placeholder="RP123456"
+                           value=""/>
+                    <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                </div>
+                <p>Are you an owner or a leasee?</p>
+                <div id="radio004 number-1" class="radio radio-field-container" data-current-value=""
+                     data-field-name="Owner or Leasee">
+                    <p class="p0041" data-value="owner"><i class="fa fa-circle-thin radio0041" aria-hidden="true"></i>Owner</p>
+                    <p class="p0041" data-value="leasee"><i class="fa fa-circle-thin radio0041" aria-hidden="true"></i>Leasee</p>
+                </div>
             </div>
-            <div class="input">
-                <input id="plan-number" name="plan_number" type="text" placeholder="RP123456" value=""/>
-                <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
             </div>
-            <p>Are you an owner or a leasee?</p>
-            <div id="radio004" class="radio radio-field-container" data-current-value="" data-field-name="Owner or Leasee">
-               <p class="p004" data-value="owner"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Owner</p>
-                <p class="p004" data-value="leasee"><i class="fa fa-circle-thin radio004" aria-hidden="true"></i>Leasee</p>
-            </div>
-            <div class="moreLand">
+
+
+            <div id="addLot" class="moreLand">
                 <div id="plus">
                     <i class="fa fa-plus-circle" aria-hidden="true">
                     </i>
@@ -345,8 +355,30 @@
     <!--UO-018-->
     <!--UO-019-->
     <div id="UO-019" class="screen" style="display: none">
+
         <i id="angleLeft019" class="fa fa-angle-left" aria-hidden="true" style="color: white"></i>
-        <p id="x019" style="color: #F15D22"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a></p>
+        <p id="x019" style="color: #F15D22"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" style="color: #F15D22" aria-hidden="true"></i></a></p>
+
+        <div class="body">
+
+            <p class="caption">PLEASE SELECT AN EXAMPLE COUNCIL BELOW.</p>
+            <p>Note that in the next version of this app, this selections will be replaced by a state-wide-map. </p>
+            <div id="radio019" class="radio radio-field-container" data-current-value=""
+                 data-field-name="Example Council">
+                <div class="p019" data-value="western-downs-regional-council">
+                    <i id="2" class="fa fa-circle-thin radio019" aria-hidden="true" style="position: relative;
+    bottom:  0.85em; margin-right: 0.3em"></i>
+                    <div class="text"> Western Downs Regional Council</div>
+                </div>
+                <div class="p019" data-value="marinoa-regional-council"><i class="fa fa-circle-thin radio019" aria-hidden="true"></i>Marinoa Regional Council</div>
+                <div class="p019" data-value="murweh-shire-council"><i class="fa fa-circle-thin radio019" aria-hidden="true"></i>Murweh Shire Council</div>
+                <div class="p019" data-value="banana-shire-council"><i class="fa fa-circle-thin radio019" aria-hidden="true"></i>Banana Shire Council</div>
+                <div class="p019" data-value="quilpie-shire-council"><i class="fa fa-circle-thin radio019" aria-hidden="true"></i>Quilpie Shire Council</div>
+                </div>
+
+            </div>
+
+
         <div class="button">
             <div id="okay019"><i class="fa fa-check-circle"></i></div>
         </div>
@@ -382,7 +414,7 @@
                     <p>Information</p>
                 </div>
                 <div class="body">
-                    <div class="one">Entering your Postcode will help us customize your app experience so you receive information specific to your community.
+                    <div class="one">Entering your Postcode will help us customise your app experience so you receive information specific to your community.
                     </div>
                 </div>
                 <div class="button">
@@ -405,17 +437,163 @@
         </div>
         <div class="body">
             <p>What type of content are you interested in:</p>
-            <div id="radio022" class="radio radio-field-container" data-current-value="" data-field-name="Content interest">
-                <p class="p022" data-value="general information"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>General information</p>
-                <p class="p022" data-value="research reports"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Research and reports</p>
-                <p class="p022" data-value="latest news"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Latest news</p>
-                <p class="p022" data-value="guidelines"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Guidelines</p>
-                <p class="p022" data-value="industry"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Industry</p>
-                <p class="p022" data-value="region updates"><i class="fa fa-circle-thin radio022" aria-hidden="true"></i>Region updates</p>
+            <div id="radio022" class="radio radio-field-container" data-current-value="" data-field-name="Content-interest">
+                <p class="p022" data-value="general information"><i class="fa fa-square-o check022" aria-hidden="true"></i>General information</p>
+                <p class="p022" data-value="research reports"><i class="fa fa-square-o check022" aria-hidden="true"></i>Research and reports</p>
+                <p class="p022" data-value="latest news"><i class="fa fa-square-o check022" aria-hidden="true"></i>Latest news</p>
+                <p class="p022" data-value="guidelines"><i class="fa fa-square-o check022" aria-hidden="true"></i>Guidelines</p>
+                <p class="p022" data-value="industry"><i class="fa fa-square-o check022" aria-hidden="true"></i>Industry</p>
+                <p class="p022" data-value="region updates"><i class="fa fa-square-o check022" aria-hidden="true"></i>Region updates</p>
             </div>
         </div>
         <div class="button">
             <button type="button" id="next022" class="next">NEXT</button>
+        </div>
+    </div>
+
+    <!--UO-025-->
+    <div id="UO-025" class="screen" style="display: none">
+        <div class="header">
+            <i id="angleLeft025" class="fa fa-angle-left" aria-hidden="true"></i>
+            <p id="x025"><a href="liquidstate://app_user/dismiss/"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </p>
+            <img class="bigImage" src="images/bigImage.png" alt="No image"/>
+            <img class="littleImage" src="images/icon.png" alt="No image"/>
+        </div>
+        <div class="body">
+            <p>Who would you like to receive this information from:</p>
+            <p class="caption">COUNCILS</p>
+
+            <div id="radio025" class="radio radio-field-container" data-current-value=""
+                 data-field-name="councils">
+
+
+                <div class="p025" data-value="banana_shire_council">
+                    <i class="fa fa-square-o check025" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text"> Banana Shire Council</div>
+                    <button type="button" class="information" id="banana-shire-council">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025" data-value="maranoa_regional_council">
+                    <i class="fa fa-square-o check025" aria-hidden="true" style="position: relative;
+    bottom: 0.68em"></i>
+                    <div class="text"> Maranoa Regional Council</div>
+                    <button type="button" class="information" id="maranoa-regional-council">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="position: relative;
+    bottom:  0.4em"></i>
+                    </button>
+                </div>
+
+                <div class="p025" data-value="murweh_shire_council">
+                    <i class="fa fa-square-o check025" aria-hidden="true" style="top:0.05em"></i>
+                    <div class="text">Murweh Shire Council</div>
+                    <button type="button" class="information" id="murweh-shire-council">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025" data-value="western_downs_regional_council">
+                    <i class="fa fa-square-o check025" aria-hidden="true" style="position: relative;
+    bottom:  0.68em"></i>
+                    <div class="text"> Western Downs Regional Council</div>
+                    <button type="button" class="information" id="western-downs" >
+                        <i class="fa fa-info-circle" aria-hidden="true" style="position: relative;
+    bottom: 0.4em"></i>
+                    </button>
+                </div>
+
+                <div class="p025" data-value="Quilpie Shire Council">
+                    <i class="fa fa-square-o check025" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">Quilpie Shire Council</div>
+                    <button type="button" class="information" id="quilpie-shire">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+
+            </div>
+
+            <p class="caption">GOVERNMENT AGENCIES</p>
+
+            <div id="radio025-1" class="radio radio-field-container" data-current-value=""
+                 data-field-name="government_agencies">
+
+
+                <div class="p025-1" data-value="csg_compliance_unit">
+                    <i class="fa fa-check-square check025-1" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text"> CSG Compliance Unit</div>
+                    <button type="button" class="information" id="csg-comliance">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025-1" data-value="department_of_environment_and_heritage">
+                    <i class="fa fa-check-square check025-1" aria-hidden="true" style="position: relative;
+    bottom: 0.68em"></i>
+                    <div class="text">Department of Environment and Heritage protection</div>
+                    <button type="button" class="information" id="environment-heritage">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="position: relative;
+    bottom: 0.4em"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <p class="caption">GAS COMPANIES</p>
+
+            <div id="radio025-2" class="radio radio-field-container" data-current-value=""
+                 data-field-name="gas_companies">
+
+
+                <div class="p025-2" data-value="arrow">
+                    <i class="fa fa-check-square check025-2" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">Arrow</div>
+                    <button type="button" class="information" id="arrow">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025-2" data-value="origin">
+                    <i class="fa fa-check-square check025-2" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">Origin</div>
+                    <button type="button" class="information" id="origin">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025-2" data-value="qgc">
+                    <i class="fa fa-check-square check025-2" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">QGC</div>
+                    <button type="button" class="information" id="qgs">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025-2" data-value="Santos">
+                    <i class="fa fa-check-square check025-2" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">Santos</div>
+                    <button type="button" class="information" id="santos">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+                <div class="p025-2" data-value="senex">
+                    <i class="fa fa-check-square check025-2" aria-hidden="true" style="top: 0.05em"></i>
+                    <div class="text">Senex</div>
+                    <button type="button" class="information" id="senex">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="top: 0.2em"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <p class="bottomText">You will automatically receive information from GasFields Commission Queensland </p>
+
+        </div>
+        <div class="button">
+            <button type="button" id="next025" class="next">NEXT</button>
         </div>
     </div>
 
@@ -438,7 +616,7 @@
                 <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
             <div class="input">
-                <input id="password_again" type="password" placeholder="Password-again" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                <input id="password_again" type="password" placeholder="Password again" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
                 <button type="button" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </div>
             <div id="dontMatch" class="warnings">Passwords do not match. Please try again</div>
@@ -459,7 +637,7 @@
         </div>
 
         <div class="body">
-            <p><b>Last updated:<b> 29th March 2017</p>
+            <p><b>Last updated:</b> 29th March 2017</p>
             <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using this mobile application (the "Service") operated by Liquid State (“us","we", or "our").</p>
             <p>Your access to, and use of, the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all users and others who access or use the Service.</p>
             <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
@@ -511,11 +689,9 @@
 <script type="text/javascript">
     $(function() {
         window.LS.registration.default_setup();
-
 //        $('form').on('submit', function() {
 //            alert('submitting');
 //        });
-
         function collect_radio_values() {
             var return_values = {};
             $('.radio-field-container').each(function(index, el) {
@@ -527,7 +703,6 @@
             });
             return return_values;
         }
-
         window.LS.registration.callbacks.transform_form_data_pre_save = function(form_data) {
             form_data['username'] = form_data['email'];
             var radio_values = collect_radio_values();

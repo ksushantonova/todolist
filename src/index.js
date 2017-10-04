@@ -13,6 +13,7 @@ import { UO019 } from './019.js';
 import { UO020 } from './020.js';
 import { UO022 } from './022.js';
 import { UO026 } from './026.js';
+import { UO025 } from './025.js';
 import { UO027 } from './027.js';
 
 
@@ -20,9 +21,11 @@ import { UO027 } from './027.js';
 let data = {
     describeYouBest: "",
     planNumber: "",
-    ownerOrLeasee: "",
+    landHolder: [],
     whereAreYouWorkInGovernment: "",
     areaOfInterest: "",
+    receiveInfoFrom: [],
+    exampleCouncil: "",
     roleWithinTheGasIndustry: "",
     roleInTheCommunity: "",
     businessName: "",
@@ -46,6 +49,7 @@ new UO017(data);
 new UO019(data);
 new UO020(data);
 new UO022(data);
+new UO025(data);
 new UO026(data);
 new UO027();
 

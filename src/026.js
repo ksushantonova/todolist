@@ -12,10 +12,10 @@ export class UO026 {
         this.allScreens = document.getElementsByClassName('screen');
         this.nextScreen = document.getElementById('result');
         this.backButton = document.getElementById('angleLeft026');
-        this.previousScreen = document.getElementById('UO-022');
+        this.previousScreen = document.getElementById('UO-025');
         this.allCircles = document.getElementsByClassName('circle');
         this.circlesContainer = document.getElementById('circles');
-        this.previousCircle = document.getElementById('circle4');
+        this.previousCircle = document.getElementById('circle5');
         this.warning = document.getElementById('dontMatch');
         this.state = "false";
         this.init();
@@ -28,7 +28,6 @@ export class UO026 {
         this.getPlanNumber(this.password, "userPassword");
         this.getPlanNumber(this.password_again, "userPassword_again");
         this.returnBack(this.backButton, this.allScreens, this.previousScreen, this.allCircles, this.previousCircle);
-
     }
 
     getPlanNumber(input, name) {
@@ -54,6 +53,7 @@ export class UO026 {
 
         if ((data.userPassword.length > 0) && (data.userPassword_again.length > 0) && (data.userPassword !== data.userPassword_again)){
             this.lockButton(this.button);
+            this.warning.innerHTML = "Passwords do not match. Please try again";
             this.warning.style.display = "block";
         }
 
@@ -117,9 +117,17 @@ export class UO026 {
                 } else {
                     input.focus();
                     this.state = "false";
+                    this.warning.innerHTML = "Please enter a valid email address";
+                    this.warning.style.display = "block";
+
+
                 }
             } else {
                 this.state = "false";
+                this.warning.innerHTML = "Passwords do not match. Please try again";
+                this.warning.style.display = "block";
+
+
             }
         });
     }

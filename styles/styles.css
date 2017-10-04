@@ -15,6 +15,7 @@
 
 @media (min-width: 10px) and (max-width: 1000px) {
 
+
     #noSize {
         display: none;
     }
@@ -221,7 +222,7 @@
         background-color: white;
     }
 
-    .input #plan-number, .input #specify, .input #business-name, .input #population-centre, .input #email, .input #password, .input #password_again {
+    .input .planNumber, .input #specify, .input #business-name, .input #population-centre, .input #email, .input #password, .input #password_again {
         font-size: 6em;
         font-weight: normal;
         letter-spacing: -0.000166666679px;
@@ -304,6 +305,18 @@
         color: #F15D22;
     }
 
+    .fa-square-o{
+        color: #007698;
+        font-size: 1.3em !important;
+        margin: 0 0.8em 0 1em !important;
+    }
+
+    .fa-check-square{
+        color: #F15D22;
+        font-size: 1.3em !important;
+        margin: 0 0.73em 0 1em !important;
+    }
+
     .fa-plus-circle {
         color: #BDBDBD;
         font-size: 12em;
@@ -332,7 +345,7 @@
         color: #4D4D4F;
     }
 
-    #UO-004 .next, #UO-008 .next, #UO-014 .next, #UO-011 .next, #UO-016 .next, #UO-020 .next, #UO-022 .next, #UO-026 .next {
+    #UO-004 .next, #UO-008 .next, #UO-014 .next, #UO-011 .next, #UO-016 .next, #UO-020 .next, #UO-022 .next, #UO-026 .next, #UO-025 .next, #UO-019 #okay019 {
         margin: 2.5em 1em 2em 1em !important;
         opacity: 0.5;
         cursor: default;
@@ -441,11 +454,7 @@
         cursor: pointer;
     }
 
-    #UO-019 .button {
-        position: relative;
-        top: 152em;
-        left: 75em;
-    }
+
 
     #UO-008 p, #UO-011 p, #UO-014 p, #UO-016 p, #UO-022 p {
         text-align: left;
@@ -602,7 +611,7 @@
         margin: 3em 1.05em 2em 1.05em !important;
     }
 
-    #angleLeft000, #angleLeft002, #angleLeft004, #angleLeft008, #angleLeft011, #angleLeft014, #angleLeft016, #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022, #angleLeft026,  #angleLeft027 {
+    #angleLeft000, #angleLeft002, #angleLeft004, #angleLeft008, #angleLeft011, #angleLeft014, #angleLeft016, #angleLeft017, #angleLeft019, #angleLeft020, #angleLeft022, #angleLeft026,  #angleLeft027, #angleLeft025 {
         position: absolute;
         font-size: 8em;
         top: 0.7em;
@@ -610,7 +619,7 @@
         color: white;
     }
 
-    #UO-000 #x000, #UO-002 #x002, #UO-004 #x004, #UO-008 #x008,#UO-011 #x011, #UO-014 #x014, #UO-016 #x016, #UO-017 #x017,#UO-019 #x019, #UO-020 #x020, #UO-022 #x022,#UO-026 #x026,#UO-027 #x027 {
+    #UO-000 #x000, #UO-002 #x002, #UO-004 #x004, #UO-008 #x008,#UO-011 #x011, #UO-014 #x014, #UO-016 #x016, #UO-017 #x017,#UO-019 #x019, #UO-020 #x020, #UO-022 #x022,#UO-026 #x026,#UO-027 #x027, #UO-025 #x025 {
         position: absolute  !important;
         font-size: 7em! important;
         top: 0.7em !important;
@@ -698,6 +707,130 @@
         bottom: 9em;
     }
 
+    .lot-plan-container{
+        border-bottom: 0.3em solid #BDBDBD;
+        padding-bottom: 9em;
+        margin: 0 1em;
+
+    }
+
+    #UO-025 .body p{
+        text-align: left;
+        width: 13em;
+        font-size: 6.4em;
+        line-height: 1.3em;
+        margin: 1.6em 1.2em 0.5em 1.2em !important;
+    }
+
+    #UO-025 .body .radio div {
+         height: 15em;
+
+         width: 100em;
+         margin: 2em 0;
+     }
+
+    #UO-025 .body .radio .i{
+        display: inline-block;
+        height: 15em;
+        width: 20em;
+    }
+
+    #UO-025 .p025 i,  #UO-025 .p025-1 i,  #UO-025 .p025-2 i{
+        font-size: 8em !important;
+        display: inline-block;
+        position: relative;
+        bottom: 0em;
+    }
+
+    #UO-025 .p025 .text, #UO-025 .p025-1 .text,  #UO-025 .p025-2 .text{
+        height: auto !important;
+        font-size: 5.5em;
+        width: 10em !important;
+        margin: 0 !important;
+        display: inline-block;
+        line-height: 1.2em;
+        position: relative;
+        bottom: 0.1em;
+
+    }
+
+    #UO-025 .caption {
+        text-align: center !important;
+        font-weight: bold;
+    }
+
+    #UO-025 .information{
+        text-align: center !important;
+        font-weight: bold;
+        font-size: 1.4em;
+    }
+
+    #UO-025 .information i{
+        margin: 0 0em 0em 0.6em !important;
+    }
+
+    #UO-025 .p025-2{
+        margin: 0 !important;
+    }
+
+    #UO-025 #radio025-1,  #UO-025 #radio025-2{
+        margin-top: 9em;
+        margin-bottom: 16em;
+    }
+
+    #UO-025 .bottomText{
+        text-align: center !important;
+        font-size: 4em !important;
+        width: 22em !important;
+        position: relative;
+        left: 0.25em;
+    }
+
+    #UO-019 .caption{
+        font-weight: bold;
+        margin: 3em 1em 0 1em;
+        text-align: center;
+    }
+
+    #UO-019 p{
+        text-align: left;
+
+    }
+
+    #UO-019 #radio019{
+        text-align: left;
+
+    }
+
+    #UO-019 #radio019 .p019{
+        text-align: left;
+        margin: 0.5em;
+        font-size: 5.5em;
+    }
+
+    #UO-019 {
+
+    }
+
+    #UO-019 .p019 .text{
+        width:12em;
+        display: inline-block;
+    }
+
+
+    #UO-019 .p019 i{
+
+        display: inline-block;
+    }
+
+    #UO-019 .button {
+        top: 1em;
+        left: 79em;
+    }
+
+    .fa-times{
+        color: white;
+    }
 
 }
 

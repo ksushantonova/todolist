@@ -36,7 +36,6 @@ export class UO011 {
     getRadioChoise(changeData) {
         changeData.container.addEventListener('click', (e) => {
             this.makeRadioButton(e, changeData.radioButtons, changeData.p, changeData.pClassName, changeData.firstClass, changeData.secondClass, changeData.name);
-            console.log(this.data.roleWithinTheGasIndustry);
             this.unlockButton(this.data);
 
         });
