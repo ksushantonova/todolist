@@ -50,14 +50,11 @@ Components - Lists
 Components– Lists: Controls
 Components– Text fields
 Components– Toolbars */
-  body{
-    font-family: Helvetica;
-  }
 
   #header{
     display: flex;
     flex-direction: row;
-    background-color:  #246E7E !important;
+    background-color:  #ffe200;
      width: 100%;
     color: white;
     height: 64px;
@@ -65,6 +62,11 @@ Components– Toolbars */
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  }
+
+  #footer{
+    width: 100%;
+    height: 88px;
   }
 
   .header:focus {
@@ -75,7 +77,7 @@ Components– Toolbars */
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: white;
+    background:#EFEFEF;
     justify-content: center;
   }
 
@@ -95,7 +97,7 @@ Components– Toolbars */
     right: 16px;
     display: flex;
     justify-content: center;
-    background:#246E7E;
+    background:#00BFA5;
     border: none;
     height: 56px;
     width: 56px;
@@ -142,8 +144,9 @@ Components– Toolbars */
     justify-content: center;
     flex-direction: column;
     height: auto;
+    background: white;
     width: 250px;
-    margin: 10px 5px 0 5px;
+    margin: 8px 16px 0 16px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -430,7 +433,7 @@ Components– Toolbars */
     outline: none;
     border: 0;
     margin: 0px 0 0 0;
-    padding: 9px 12px 0 8px;
+    padding: 9px 14px 0 8px;
     cursor: pointer;
     float: right;
   } 

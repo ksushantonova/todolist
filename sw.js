@@ -1,21 +1,20 @@
-const cash_Data = [
+const cashData = [
         'index.html',
         'index3.css',
-        'src/todolist.js',
-        'src/todolistitem.js',
-        'src/builditem.js',
+        'src/todolist.ts',
+        'src/todolistitem.ts',
+        'src/builditem.ts',
         'all2.png',
         'del2.png',
         'cross.png',
         'plus.png',
-        'src/index.js'
+        'src/index.ts'
       ];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll(cashData);
-    }
     })
   );
 });

@@ -1,4 +1,0 @@
-# marvel
-
-npm run webpack
-
